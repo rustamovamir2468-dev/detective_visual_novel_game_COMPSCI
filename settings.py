@@ -1,7 +1,9 @@
 # settings.py
-# Authors: 5752530
 # ============================================================
-# This file contains all the settings for the game, such as screen dimensions, colors, and other constants.
+# LOGIC TEAM: All constants for the game live here.
+# If a number or colour is used in more than one place, it belongs here.
+# Never hardcode values elsewhere.
+# Authors: 5752530
 # ============================================================
 
 import pygame
