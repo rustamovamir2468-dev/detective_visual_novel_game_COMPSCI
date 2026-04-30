@@ -37,7 +37,7 @@ class GameStateManager:
     def revert(self):
         """Go back to the previous state (unpausing/closing bulletin baord, etc.)"""
         if self.previous_state is not None:
-            self.current_state, self.previous_state = (self.previous_state, self.current_state)
+            self.current_state, self.previous_state = self.previous_state, self.current_state
 
     def is_state(self, state: State) -> bool:
         """Check if we're currently in a specific state."""
