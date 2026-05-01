@@ -1,8 +1,8 @@
 # settings.py
 # ============================================================
-# LOGIC TEAM: All constants for the game live here.
-# If a number or colour is used in more than one place, it belongs here.
-# Never hardcode values elsewhere.
+# LOGIC TEAM: All constants for the game are stored here.
+# If a number or colour is used in more than one place, write it here.
+# Never hardcode values elsewhere!!!
 # Authors: 5752530
 # ============================================================
 

@@ -20,7 +20,7 @@ class State(enum.Enum):
     GAME_OVER  = "game_over"
 
 class GameStateManager:
-    """Controls which state the game is currently in, and handles transitions."""
+    """Controls which state the game is currently in and handles transitions."""
 
     def __init__(self):
         self.current_state = State.MAIN_MENU
@@ -32,7 +32,7 @@ class GameStateManager:
             raise ValueError(f"Invalid state: {new_state}")
         self.previous_state = self.current_state
         self.current_state = new_state
-        print(f"State changed {self.previous_state.value} -> {self.current_state.value}")
+        print(f"State changed {self.previous_state.value} -> {self.current_state.value}") # Debug for now, delete later
 
     def revert(self):
         """Go back to the previous state (unpausing/closing bulletin baord, etc.)"""
@@ -45,4 +45,3 @@ class GameStateManager:
     
 # core/game_state.py is done using a Finite State Machine. 
 # Every system in the game will import State and GameStateManager from this file. 
-# If you ever need to add a new screen or state (for example a CREDITS screen), add it to the State enum here — don't create your own state tracking anywhere else.
