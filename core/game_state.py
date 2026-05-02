@@ -10,14 +10,15 @@ import enum
 
 class State(enum.Enum):
     """All possible game states."""
-    MAIN_MENU = "main_menu"
-    PLAYING   = "playing"
-    DIALOGUE  = "dialogue"
-    CUTSCENE  = "cutscene"
-    PAUSED    = "paused"
-    BULLETIN_BOARD = "bulletin_board"
-    DEDUCTION  = "deduction"
-    GAME_OVER  = "game_over"
+    MAIN_MENU      = "main_menu"
+    SCENE          = "scene"          # A VN scene is active
+    DIALOGUE       = "dialogue"       # Dialogue box is open
+    CUTSCENE       = "cutscene"       # Non-interactive moment
+    PAUSED         = "paused"         # Pause menu open
+    BULLETIN_BOARD = "bulletin_board" # Evidence journal open
+    DEDUCTION      = "deduction"      # Final accusation screen
+    TITLE_CARD     = "title_card"     # "Act 1: ..." screen
+    GAME_OVER      = "game_over"      # Bad ending reached"
 
 class GameStateManager:
     """Controls which state the game is currently in and handles transitions."""
