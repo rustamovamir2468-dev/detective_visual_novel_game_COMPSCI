@@ -14,9 +14,6 @@ SCREEN_HEIGHT = 640
 FPS           = 60
 TITLE         = "Alias"
 
-# --- Tiling ---
-TILE_SIZE = 32
-
 # --- Colors (RGB) ---
 WHITE      = (255, 255, 255)
 BLACK      = (0, 0, 0)
@@ -51,15 +48,6 @@ DIALOGUE_BOX_HEIGHT  = 160
 DIALOGUE_BOX_PADDING = 20
 DIALOGUE_BOX_Y       = SCREEN_HEIGHT - DIALOGUE_BOX_HEIGHT
 
-# --- Player settings ---
-PLAYER_SPEED  = 3
-PLAYER_WIDTH  = 32
-PLAYER_HEIGHT = 48
-
-# ---- Interaction settings ---
-INTERACT_RADIUS = 50
-INTERACT_KEY    = pygame.K_e
-
 # --- Save file settings ---
 SAVE_FILE_PATH = "save_data.json"
 
@@ -78,6 +66,47 @@ ACT_1 = "act_1"
 ACT_2 = "act_2"
 ACT_3 = "act_3"
 ACT_4 = "act_4"
+
+# --- Portrait States ---
+# Tell creative team each character needs these exact filenames e.g. sado_neutral.png, sado_happy.png, etc.
+PORTRAIT_STATES = ["neutral", "happy", "nervous", "shocked", "sad", "angry"]
+
+# --- Characters ---
+CHAR_SADO    = "sado"
+CHAR_MAYA    = "maya"
+CHAR_ELIAS   = "elias"
+CHAR_MOTHER  = "mother"
+CHAR_NARRATOR = None    # No portrait for narration
+
+# --- Portrait display ---
+PORTRAIT_WIDTH  = 200
+PORTRAIT_HEIGHT = 300
+PORTRAIT_X      = 60    # Left side of screen
+PORTRAIT_Y      = SCREEN_HEIGHT - DIALOGUE_BOX_HEIGHT - PORTRAIT_HEIGHT - 10
+
+# --- Scene backgrounds ---
+BACKGROUND_WIDTH  = SCREEN_WIDTH
+BACKGROUND_HEIGHT = SCREEN_HEIGHT
+
+# --- Dual Palette (Act 1 = warm, Act 2+ = cold) ---
+PALETTE_WARM = {
+    "bg":      (255, 248, 230),
+    "text":    (40,  30,  20 ),
+    "ui":      (100, 180, 255),
+    "accent":  (255, 200, 50 ),
+    "dialogue_bg": (245, 240, 220),
+}
+
+PALETTE_COLD = {
+    "bg":      (210, 215, 220),
+    "text":    (20,  20,  30 ),
+    "ui":      (80,  100, 140),
+    "accent":  (180, 60,  60 ),
+    "dialogue_bg": (220, 220, 225),
+}
+
+# --- Transition ---
+TRANSITION_SPEED = 5    # Fade speed between scenes (frames)
 
 # settings.py is now written — this is the file everyone imports from.
 # Please do NOT hardcode any numbers or colours directly in your files.

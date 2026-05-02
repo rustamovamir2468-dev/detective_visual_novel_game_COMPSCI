@@ -51,7 +51,7 @@ class Game:
 
             if event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_ESCAPE:
-                    if self.gsm.is_state(State.PLAYING):
+                    if self.gsm.is_state(State.SCENE):
                         self.gsm.change_state(State.PAUSED)
                     elif self.gsm.is_state(State.PAUSED):
                         self.gsm.revert()
@@ -63,7 +63,7 @@ class Game:
         if self.gsm.is_state(State.MAIN_MENU):
             pass # main_menu.py
 
-        elif self.gsm.is_state(State.PLAYING):
+        elif self.gsm.is_state(State.SCENE):
             pass # scene_manager.py
 
         elif self.gsm.is_state(State.DIALOGUE):
@@ -90,8 +90,8 @@ class Game:
         if self.gsm.is_state(State.MAIN_MENU):
             self._draw_placeholder("MAIN MENU - press Enter to start")
 
-        elif self.gsm.is_state(State.PLAYING):
-            self._draw_placeholder("PLAYING - press ESC to pause")
+        elif self.gsm.is_state(State.SCENE):
+            self._draw_placeholder("SCENE - press ESC to pause")
 
         elif self.gsm.is_state(State.DIALOGUE):
             self._draw_placeholder("DIALOGUE STATE")
