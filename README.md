@@ -31,3 +31,4 @@ FP016 SA2 - Python Detective Visual Novel - Amir, David, Nicolette, Federico
 - All constants go in settings.py — never hardcode numbers
 - Commit often with clear messages
 - Run main.py to test, never game.py directly
+
