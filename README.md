@@ -1,9 +1,9 @@
 # detective_visual_novel_game_COMPSCI
 FP016 SA2 - Python Detective Visual Novel - Amir, David, Nicolette, Federico
 
-## Project Structure
+# Project Structure
 
-### Logic Team: David & Amir
+# Logic Team: David & Amir
 - core/      - Game loop, FSM, scene manager, save system
 - systems/   - Story tree, dialogue, evidence, deduction
 - entities/  - Player, NPC, evidence item classes

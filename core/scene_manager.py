@@ -1,0 +1,1 @@
+# scene_manager.py - File that loads the right scene and background

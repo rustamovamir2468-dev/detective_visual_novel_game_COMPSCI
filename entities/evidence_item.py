@@ -1,0 +1,1 @@
+# evidence_item.py - File that contains a blueprint for an evidence item

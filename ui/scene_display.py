@@ -1,0 +1,1 @@
+# scene_display.py - File that draws the backround image and portraits

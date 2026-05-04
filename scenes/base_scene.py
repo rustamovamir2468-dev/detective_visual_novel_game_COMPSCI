@@ -1,0 +1,1 @@
+# base_scene.py - File that contains the template all scenes are built from

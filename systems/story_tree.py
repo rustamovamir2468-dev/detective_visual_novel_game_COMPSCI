@@ -1,172 +1,119 @@
-# systems/story_tree.py
-# =============================================================
-# LOGIC TEAM: The Story Tree — the core data structure.
-# Every line of dialogue, every choice, every story branch is here as a tree of StoryNode objects.
-# Authors: 5752530
-# =============================================================
+# story_tree.py - File that has the entire story stored in a tree structure
+# Author(s): 5752530
+# ====================================================
+# The entire story is stored here as a tree structure.
+# Each moment in the story is a node. Each node points to the next. Choices create branches in the tree.
+# Contains a Depth First Search algorithm to find nodes.
+# ====================================================
 
 import enum
 
+# --- The four types a story node can be ---
 class NodeType(enum.Enum):
-    """All possible types of story nodes."""
     NARRATION = "narration"
     DIALOGUE  = "dialogue"
     CHOICE    = "choice"
-    CUTSCENE   = "cutscene"
+    CUTSCENE  = "cutscene"
 
+# --- Represents one selectable option in a choice node ---
 class Choice:
-    """Represents one selectable option in a choice node.
-    
-    Attributes:
-        text: The text shown to the player for this choice.
-        next_node: The StoryNode that this choice leads to.
-        flag_to_set: Optional string name of a flag to set when this choice is selected (for tracking player decisions).
-    """
 
-    def __init__(self, text: str, next_node_id:str, flag_to_set: str = None):
-        self.text = text
-        self.next_node_id = next_node_id
-        self.flag_to_set = flag_to_set
+    def __init__(self, text, next_node_id, choice_to_record=None): # The =None makes it optional. You don't have to pass it in when creating a Choice — only when that choice needs to be remembered.
+        self.text              = text
+        self.next_node_id      = next_node_id
+        self.choice_to_record  = choice_to_record
 
-    def __repr__(self):
-        return f"Choice('{self.text}' --> '{self.next_node_id}')"
-    
+# --- One single moment in the story ---
 class StoryNode:
-    """A sinde node in a story tree
-    
-    Attributes:
-        node_id (str): Unique ID, e.g. "act_1_001"
-        node_type (NodeType): One of the NodeType enum values.
-        speaker (str): Who is speaking (NOT NARRATION!)
-        text (str): The line of dialogue or narration to show.
-        next_node_id (str): ID of the next node
-        choices (list): List of Choice objects (only for CHOICE nodes)
-        required_flags (dict): Flags required to be true for this node to be accessible.
-        flags_to_set (dict): Flags to set when this node is reached (for tracking player decisions).
-        act (str): Which act this node belongs to
-        portrait (str): Filename of speaker portrait (for creative team)
-        """
-    
-    def __init__(self, node_id: str, node_type: NodeType,
-                 text: str, speaker: str = None,
-                 next_node_id: str = None, choices: list = None,
-                 required_flags: dict = None, flags_to_set: dict = None,
-                 act: str = "act1", portrait: str = None):
 
-        self.node_id        = node_id
-        self.node_type      = node_type
-        self.speaker        = speaker
-        self.text           = text
-        self.next_node_id   = next_node_id
-        self.choices        = choices or []
-        self.required_flags = required_flags or {}
-        self.flags_to_set   = flags_to_set or {}
-        self.act            = act
-        self.portrait       = portrait
+    def __init__(self, node_id, node_type, text, speaker=None, portrait=None, next_node_id=None, choices=None, required_choices=None, choices_to_record=None, act=None): # Most are optional because not every node will need all of them. For example, a choice node doesn't need a speaker or portrait, but it does need choices.
+        self.node_id        = node_id # E.g. "act1_sado_wakes_up". This is how we will find the node in the tree.
+        self.node_type      = node_type # One of the 4 node types defined in NodeType enum.
+        self.text           = text # Words displayed on screen for this moment in the story.
+        self.speaker        = speaker # Character name to display in dialogue box, None if narration or choice node.
+        self.portrait       = portrait # Character portrait to display in dialogue box, None if narration or choice node.
+        self.next_node_id   = next_node_id # The id of the node after this one.
+        self.act            = act # Which act the node belongs to
 
-    def is_choice_node(self) -> bool:
+        # Use empty list/dict if nothing was passed in usign ternary expression. "If choices is not None, use choices, otherwise use []". This is because using a mutable default value like a list or dict is shared across all intances of the class, which can lead to bugs.
+        self.choices           = choices           if choices           is not None else [] # A list of objects of type Choice, only for CHOICE nodes.
+        self.required_choices  = required_choices  if required_choices  is not None else [] # A list of choice_to_record values that must be in the player's record for this node to be accessible, only for CHOICE nodes.
+        self.choices_to_record = choices_to_record if choices_to_record is not None else [] # A list of choice_to_record values that will be added to the player's record when this choice is made.
+
+    def is_choice_node(self): # A helper function to check if this node is a choice node, since we will need to do that a lot.
         return self.node_type == NodeType.CHOICE
-
-    def is_ending(self) -> bool:
-        return self.next_node_id is None and len(self.choices) == 0
-
-    def __repr__(self):
-        return (f"StoryNode(id='{self.node_id}', "
-                f"type={self.node_type.value}, "
-                f"speaker='{self.speaker}')")
     
+# --- Holds all story nodes and connects them ---
 class StoryTree:
-    """The full story tree for the game, containing all StoryNodes in a dictionary keyed by node_id
-    Methods:
-        add_node: Add a StoryNode to the tree.
-        get_node: Retrieve a StoryNode by its ID.
-        dfs_find: Search for a target node using DFS
-        get_children: Get all direct children of a node
-        validate: Check for broken links in the tree
-        """
-    
-    def __init__(self, root_id: str = None):
-        self.nodes   = {}
-        self.root_id = root_id
 
-    # --- Building the tree ---
-    def add_node(self, node: StoryNode):
-        if node.node_id in self.nodes:
-            raise ValueError(f"Duplicate node ID: '{node.node_id}'")
+    def __init__(self):
+        self.nodes    = {} # This is where every single node in the game gets stored. The key is the node_id string, the value is the StoryNode object.
+        self.root_id  = None # None for now because we haven't added any nodes yet.
+
+    def add_node(self, node):
         self.nodes[node.node_id] = node
 
-    def set_root(self, node_id: str):
-        if node_id not in self.nodes:
-            raise ValueError(f"Root node '{node_id}' not found in tree")
+    def set_root(self, node_id): # Beginning of the story, the first node that gets loaded when the game starts. Should only be called once.
         self.root_id = node_id
 
-    # --- Retrieving nodes ---
-    def get_node(self, node_id: str):
-        node = self.nodes.get(node_id)
-        if node is None:
-            print(f"Node '{node_id}' not found in tree")
-        return node
+    def get_node(self, node_id): 
+        return self.nodes.get(node_id, None) # Returns the node with the given id, or None if it doesn't exist.
     
-    def get_children(self, node_id: str) -> list:
+    def get_children(self, node_id): # Returns a list of all nodes that can come after a given node. For a linear node that's just one — the next_node_id. For a choice node it's multiple — one per choice option. This is what makes it a tree.
         node = self.get_node(node_id)
+
         if node is None:
             return []
-        
-        children = []
 
-        if node.next_node_id:
-            child = self.get_node(node.next_node_id)
-            if child:
-                children.append(child)
+        if node.is_choice_node(): # If it's a choice node, children are all the choice destinations.
+            return [self.get_node(c.next_node_id) for c in node.choices] # It reads as: "for every choice c in this node's choices, get the node that choice points to."
 
-        for choice in node.choices:
-            child = self.get_node(choice.next_node_id)
-            if child:
-                children.append(child)
+        if node.next_node_id: # If it's a linear node, the only child is the next node.
+            return [self.get_node(node.next_node_id)]
 
-        return children
+        return []
     
-    # --- DFS Search Algorithm ---
-    def dfs_find(self, start_id: str, target_id: str, visited=None) -> bool:
-        
-        if visited is None:
+    def dfs_find(self, target_id, current_id=None, visited=None):
+        if current_id is None: # # Start from the root if no starting point given.
+            current_id = self.root_id
+
+        if visited is None: # Keep track of visited nodes to avoid infinite loops.
             visited = set()
 
-        if start_id == target_id:
-            return True
+        if current_id is None or current_id in visited:  # If this node doesn't exist or was already visited, stop.
+            return None
 
-        if start_id in visited:
-            return False
-        
-        visited.add(start_id)
+        visited.add(current_id) # Mark this node as visited.
 
-        node = self.get_node(start_id)
-        if node is None:
-            return False
+        if current_id == target_id:  # If this is the node we're looking for, return it.
+            return self.get_node(current_id)
         
-        for child in self.get_children(start_id):
-            if self.dfs_find(child.node_id, target_id, visited):
-                return True
-            
-        return False
+        for child in self.get_children(current_id): # Search every child of this node recursively. It keeps going deeper and deeper until it either finds the target or runs out of nodes to check.
+            if child is not None:
+                result = self.dfs_find(target_id, child.node_id, visited)
+                if result is not None:
+                    return result
+
+        return None # Nothing found down this branch.
     
-    # --- Validation ---
-    def validate(self):
-        print("[StoryTree] Validating story tree...")
-        errors = 0
+    def validate(self): # When you've written the whole story tree, you call validate() once to check that every next_node_id actually exists. If you made a typo in an ID somewhere, it immediately catches it and tells you exactly where the problem is.
+        errors = []
 
         for node_id, node in self.nodes.items():
 
-            if node.next_node_id and node.next_node_id not in self.nodes:
-                print(f"ERROR: '{node_id}' -> next_node_id '{node.next_node_id}' not found")
-                errors += 1
+            if node.next_node_id: #  Check linear nodes point to existing nodes.
+                if node.next_node_id not in self.nodes:
+                    errors.append(f"Node '{node_id}' points to missing node '{node.next_node_id}'")
 
-            for choice in node.choices:
+            for choice in node.choices: # Check choice nodes point to existing nodes.
                 if choice.next_node_id not in self.nodes:
-                    print(f"ERROR: '{node_id}' -> choice '{choice.text}' -> next_node_id '{choice.next_node_id}' not found")
-                    errors += 1
+                    errors.append(f"Node '{node_id}' choice '{choice.text}' points to missing node '{choice.next_node_id}'")
 
-        if errors == 0:
-            print("Validation passed: No broken links found!")
+        if errors:
+            print("[StoryTree] Validation failed:")
+            for error in errors:
+                print(f"  - {error}")
         else:
-            print(f"Validation failed: {errors} broken links found.")
+            print("[StoryTree] Validation passed. All nodes connected.")
+
+        return len(errors) == 0

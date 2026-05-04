@@ -1,12 +1,11 @@
-# main.py
-# =============================================================
-# This is the main entry point for the game.
-# It initializes everything and contains the main game loop.
-# Authors: 5752530
-# =============================================================
+# main.py - File that runs the game.
+# Author(s): 5752530
+# ====================================================
+# The entry point for the game.
+# Run this file to start Alias.
+# ====================================================
 
 from core.game import Game
 
-if __name__ == "__main__":
-    game = Game()
-    game.run()
+game = Game()
+game.run()
