@@ -7,20 +7,23 @@
 
 import pygame
 import sys # Only needed for sys,exit() to close the game when the player clicks the X button on the window.
-from settings import * # Import all the constants from settings.py.
-from core.game_state import GameStateManager, State
+from settings            import * # Import all the constants from settings.py.
+from core.game_state     import GameStateManager, State
 from core.player_profile import PlayerProfile
+from core.save_system    import CheckpointManager
 
 # --- The main game class ---
 class Game:
     def __init__(self):
         pygame.init()
-        self.player_profile = PlayerProfile()
-        self.screen  = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
+        self.player_profile     = PlayerProfile()
+        self.screen             = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
         pygame.display.set_caption(TITLE)
-        self.clock   = pygame.time.Clock() # Controls game loop timing (FPS).
-        self.gsm     = GameStateManager()
-        self.running = True
+        self.clock              = pygame.time.Clock() # Controls game loop timing (FPS).
+        self.gsm                = GameStateManager()
+        self.scene_manager      = None  # Gets set up properly in a start_game() method later.
+        self.checkpoint_manager = CheckpointManager()
+        self.running            = True
 
     def run(self):
         while self.running:
