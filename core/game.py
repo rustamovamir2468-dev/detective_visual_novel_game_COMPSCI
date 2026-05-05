@@ -9,11 +9,13 @@ import pygame
 import sys # Only needed for sys,exit() to close the game when the player clicks the X button on the window.
 from settings import * # Import all the constants from settings.py.
 from core.game_state import GameStateManager, State
+from core.player_profile import PlayerProfile
 
 # --- The main game class ---
 class Game:
     def __init__(self):
         pygame.init()
+        self.player_profile = PlayerProfile()
         self.screen  = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
         pygame.display.set_caption(TITLE)
         self.clock   = pygame.time.Clock() # Controls game loop timing (FPS).
@@ -56,6 +58,10 @@ class Game:
             pass
         elif self.gsm.is_state(State.GAME_OVER):
             pass
+        elif self.gsm.is_state(State.TITLE_CARD):
+            pass
+        elif self.gsm.is_state(State.CUTSCENE):
+            pass
 
     def draw(self): # DRAW THE APPROPRIATE THINGS FOR EACH STATE, FOR NOW JUST PLACEHOLDERS.
         self.screen.fill(BLACK) # Clear the screen with a black background before drawing anything.
@@ -74,7 +80,10 @@ class Game:
             self._draw_placeholder("DEDUCTION")
         elif self.gsm.is_state(State.GAME_OVER):
             self._draw_placeholder("GAME OVER")
-
+        elif self.gsm.is_state(State.TITLE_CARD):
+            self._draw_placeholder("TITLE CARD")
+        elif self.gsm.is_state(State.CUTSCENE):
+            self._draw_placeholder("CUTSCENE")
         pygame.display.flip() # Update the full screen with this frame, because we are using double buffering (the default in Pygame).
 
     def _draw_placeholder(self, label: str):

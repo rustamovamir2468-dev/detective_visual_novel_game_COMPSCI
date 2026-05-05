@@ -64,15 +64,23 @@ PORTRAIT_HEIGHT = 300
 PORTRAIT_X      = 60
 PORTRAIT_Y      = SCREEN_HEIGHT - DIALOGUE_BOX_HEIGHT - PORTRAIT_HEIGHT - 10
 
-# --- Characters --- (Add more characters here as needed, just make sure to update the dialogue system to recognize them).
-CHAR_SADO     = "Sado"
-CHAR_MAYA     = "Maya"
-CHAR_ELIAS    = "Dr.Elias"
-CHAR_MOTHER   = "Mother"
-CHAR_NARRATOR = None
+# --- Characters ---
+CHAR_PLAYER   = "player"      # Name set by player at start.
+CHAR_MAYA     = "maya"
+CHAR_MOTHER   = "mother"
+CHAR_ELIAS    = "elias"       # Main villain.
+CHAR_FELIX    = "felix"       # Red herring suspect.
+CHAR_HINA     = "hina"        # Ally, also a suspect briefly.
+CHAR_NARRATOR = None          # No name tag, no portrait.
+
+# --- Minor NPCs --- (ADD MORE AS NEEDED, THESE ARE JUST EXAMPLES).
+CHAR_BOY1         = "boy1"         # Red jacket kid (kidnapped).
+CHAR_BOY2         = "boy2"         # Rude kid in Felix's class.
+CHAR_SECURITY     = "security"     # School security guard in Act 2.
+CHAR_NEWS_ANCHOR  = "news_anchor"  # Voice on TV news segments.
 
 # --- Portrait States --- (Emotions that the characters can display, make sure to have corresponding images for each state in the assets folder).
-PORTRAIT_STATES = ["neutral", "happy", "nervous", "shocked", "sad", "angry"]
+PORTRAIT_STATES = ["neutral", "happy", "nervous", "shocked", "sad", "angry", "scared", "suspicious", "demon"]
 
 # --- Save ---
 SAVE_FILE_PATH = "save_data.json"
@@ -82,6 +90,17 @@ ACT_1 = "Act 1"
 ACT_2 = "Act 2"
 ACT_3 = "Act 3"
 ACT_4 = "Act 4"
+
+# --- Endings ---
+ENDING_BAD_CANDY       = "ending_bad_candy"      # Act 1 Choice 1.1 death
+ENDING_BAD_CO2         = "ending_bad_co2"        # Act 2 Choice 2.1 death
+ENDING_BAD_MUDERDERED  = "ending_bad_murdered" # Act 3 Choice 3.1 death
+ENDING_BAD_EXPLOSION   = "ending_bad_explosion"  # Act 3 Choice 4.1 death
+ENDING_BAD_POLICE      = "ending_bad_police"     # Act 4 Choice 6.1 death
+ENDING_BAD_CHOICE5     = "ending_bad_choice5"    # Act 4 Didn't tell mother (Choice 5.2)
+ENDING_SACRIFICE_SELF  = "ending_sacrifice_self"
+ENDING_SACRIFICE_HINA  = "ending_sacrifice_hina"
+ENDING_TRUE_FINAL      = "ending_true_final"   # Mother called police
 
 # --- Transitions ---
 TRANSITION_SPEED = 5
