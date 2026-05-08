@@ -10,12 +10,11 @@ import enum # Creates a set of named constants for safer(fails loudly, raising V
 # --- All possible screens the game can be on ---
 class State(enum.Enum):
     MAIN_MENU      = "main_menu"
+    NAME_INPUT     = "name_input"
     SCENE          = "scene"
     DIALOGUE       = "dialogue"
     CUTSCENE       = "cutscene"
     PAUSED         = "paused"
-    BULLETIN_BOARD = "bulletin_board"
-    DEDUCTION      = "deduction"
     TITLE_CARD     = "title_card"
     GAME_OVER      = "game_over"
 

@@ -1,1 +1,0 @@
-# evidence_system.py - File that collects and sorts evidence

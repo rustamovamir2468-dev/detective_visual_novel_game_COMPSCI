@@ -1,1 +1,0 @@
-# deduction_system.py - File that handles the final accusation screen

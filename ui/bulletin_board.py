@@ -1,1 +1,0 @@
-# bulletin_board.py - File that draws the evidence journal screen
