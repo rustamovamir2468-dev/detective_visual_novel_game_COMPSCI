@@ -204,29 +204,29 @@ ACT1_NODES = {
         "type": "NARRATION",
         "act": 1,
         "text": "The school buildings rise into view. The morning bell shrieks, and the corridor floods with students hurrying to class.",
-        "next": "act1_tuesday_physics_felix_intro",
+        "next": "act1_tuesday_physics_finn_intro",
     },
 
-    "act1_tuesday_physics_felix_intro": {
+    "act1_tuesday_physics_finn_intro": {
         "type": "DIALOGUE",
         "act": 1,
         "speaker": "player",
         "portrait": "neutral",
-        "text": "First up: physics with Dr. Felix. Lucky me.",
+        "text": "First up: physics with Dr. Finn. Lucky me.",
         "next": "act1_tuesday_physics_classroom_scene",
     },
 
     "act1_tuesday_physics_classroom_scene": {
         "type": "NARRATION",
         "act": 1,
-        "text": "You take your seat. Dr. Felix, the stern, grey\u2011haired teacher, scribbles equations across the board while the class half\u2011listens.",
-        "next": "act1_tuesday_physics_felix_line",
+        "text": "You take your seat. Dr. Finn, the stern, grey\u2011haired teacher, scribbles equations across the board while the class half\u2011listens.",
+        "next": "act1_tuesday_physics_finn_line",
     },
 
-    "act1_tuesday_physics_felix_line": {
+    "act1_tuesday_physics_finn_line": {
         "type": "NARRATION",
         "act": 1,
-        "text": "A student loudly laughs with his friends. Dr. Felix slams the chalk down and snaps, \u201cYou need some disciplining!\u201d",
+        "text": "A student loudly laughs with his friends. Dr. Finn slams the chalk down and snaps, \u201cYou need some disciplining!\u201d",
         "next": "act1_tuesday_physics_player_ears_prick",
     },
 
@@ -260,7 +260,7 @@ ACT1_NODES = {
         "act": 1,
         "speaker": "player",
         "portrait": "nervous",
-        "text": "Everyone else is cheering, but I can\u2019t stop thinking about Felix and that red jacket.",
+        "text": "Everyone else is cheering, but I can\u2019t stop thinking about Finn and that red jacket.",
         "next": "act1_tuesday_chem_overhear_red_jacket",
     },
 
@@ -418,19 +418,19 @@ ACT1_NODES = {
         "type": "NARRATION",
         "act": 1,
         "text": "Classes finally end. You and Maya leave the gates together, the sky melting into shades of orange and pink.",
-        "next": "act1_tuesday_after_school_talk_felix",
+        "next": "act1_tuesday_after_school_talk_finn",
     },
 
-    "act1_tuesday_after_school_talk_felix": {
+    "act1_tuesday_after_school_talk_finn": {
         "type": "DIALOGUE",
         "act": 1,
         "speaker": "maya",
         "portrait": "suspicious",
-        "text": "So\u2026 what do you think about Felix now? He looked like he wanted to throw that kid out the window.",
-        "next": "act1_tuesday_after_school_player_reply_felix",
+        "text": "So\u2026 what do you think about Finn now? He looked like he wanted to throw that kid out the window.",
+        "next": "act1_tuesday_after_school_player_reply_finn",
     },
 
-    "act1_tuesday_after_school_player_reply_felix": {
+    "act1_tuesday_after_school_player_reply_finn": {
         "type": "DIALOGUE",
         "act": 1,
         "speaker": "player",
