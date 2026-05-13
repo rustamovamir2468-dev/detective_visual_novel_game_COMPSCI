@@ -80,7 +80,7 @@ CHAR_SECURITY     = "security"     # School security guard in Act 2.
 CHAR_NEWS_ANCHOR  = "news_anchor"  # Voice on TV news segments.
 
 # --- Portrait States --- (Emotions that the characters can display, make sure to have corresponding images for each state in the assets folder).
-PORTRAIT_STATES = ["neutral", "happy", "nervous", "shocked", "sad", "angry", "scared", "suspicious", "demon"]
+PORTRAIT_STATES = ["neutral", "happy", "nervous", "shocked", "sad", "angry", "scared", "suspicious", "demon", "red_eyes"]
 
 # --- Acts ---
 ACT_1 = "Act 1"
