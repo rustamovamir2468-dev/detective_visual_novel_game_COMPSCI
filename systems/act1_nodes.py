@@ -1,0 +1,592 @@
+# systems/act1_nodes.py - Act 1 story nodes (Monday and Tuesday).
+# Author(s): 5752530
+# ====================================================
+
+from systems.story_tree import StoryTree, StoryNode, NodeType, Choice
+from settings import *
+
+
+def add_act1_nodes(tree: StoryTree):
+
+    # =========================================================
+    # MONDAY
+    # =========================================================
+
+    tree.add_node(StoryNode(
+        node_id="act1_bedroom_monday_morning",
+        node_type=NodeType.NARRATION,
+        text="It's Monday morning. Your alarm cuts through the silence of your room.",
+        next_node_id="act1_bedroom_phone_buzz",
+        act=ACT_1
+    ))
+
+    tree.add_node(StoryNode(
+        node_id="act1_bedroom_phone_buzz",
+        node_type=NodeType.NARRATION,
+        text="Your phone buzzes on the nightstand with a new message.",
+        next_node_id="act1_bedroom_player_reads_maya",
+        act=ACT_1
+    ))
+
+    tree.add_node(StoryNode(
+        node_id="act1_bedroom_player_reads_maya",
+        node_type=NodeType.DIALOGUE,
+        text="Maya again. She says she's still sick and won't be in today.",
+        speaker="[PLAYER]",
+        portrait=("player", "sad"),
+        next_node_id="act1_bedroom_player_thinks_maya",
+        act=ACT_1
+    ))
+
+    tree.add_node(StoryNode(
+        node_id="act1_bedroom_player_thinks_maya",
+        node_type=NodeType.DIALOGUE,
+        text="It's been days now. I really hope she's okay.",
+        speaker="[PLAYER]",
+        portrait=("player", "nervous"),
+        next_node_id="act1_house_hallway_mom_calls",
+        act=ACT_1
+    ))
+
+    tree.add_node(StoryNode(
+        node_id="act1_house_hallway_mom_calls",
+        node_type=NodeType.NARRATION,
+        text="You grab your bag and head for the front door. The smell of toasted bread and peanut butter drifts from the kitchen.",
+        next_node_id="act1_house_door_mom_lunch",
+        act=ACT_1
+    ))
+
+    tree.add_node(StoryNode(
+        node_id="act1_house_door_mom_lunch",
+        node_type=NodeType.DIALOGUE,
+        text="I packed your favourite today, peanut-butter jelly sandwiches.",
+        speaker="mom",
+        portrait=("mom", "happy"),
+        next_node_id="act1_house_door_player_reply",
+        act=ACT_1
+    ))
+
+    tree.add_node(StoryNode(
+        node_id="act1_house_door_player_reply",
+        node_type=NodeType.DIALOGUE,
+        text="Thanks, mom. You're the best.",
+        speaker="[PLAYER]",
+        portrait=("player", "happy"),
+        next_node_id="act1_house_exit_walk_to_school",
+        act=ACT_1
+    ))
+
+    tree.add_node(StoryNode(
+        node_id="act1_house_exit_walk_to_school",
+        node_type=NodeType.NARRATION,
+        text="You step out into the cool morning air, lunchbox in hand, and start the walk to school.",
+        next_node_id="act1_school_cs_class_intro",
+        act=ACT_1
+    ))
+
+    tree.add_node(StoryNode(
+        node_id="act1_school_cs_class_intro",
+        node_type=NodeType.NARRATION,
+        text="The day blurs by until computer science, your last and favourite class of the day.",
+        next_node_id="act1_school_cs_player_thought",
+        act=ACT_1
+    ))
+
+    tree.add_node(StoryNode(
+        node_id="act1_school_cs_player_thought",
+        node_type=NodeType.DIALOGUE,
+        text="I love this class. but as a final period, it always drags.",
+        speaker="[PLAYER]",
+        portrait=("player", "happy"),
+        next_node_id="act1_school_cs_look_out_window",
+        act=ACT_1
+    ))
+
+    tree.add_node(StoryNode(
+        node_id="act1_school_cs_look_out_window",
+        node_type=NodeType.NARRATION,
+        text="Your attention drifts to the window. Outside, a tall figure leads a younger student in a red jacket toward the side gate.",
+        next_node_id="act1_school_cs_strange_line",
+        act=ACT_1
+    ))
+
+    tree.add_node(StoryNode(
+        node_id="act1_school_cs_strange_line",
+        node_type=NodeType.NARRATION,
+        text="You can't hear everything, but one sentence cuts through the noise: \"You need some disciplining.\"",
+        next_node_id="act1_school_cs_player_reacts",
+        act=ACT_1
+    ))
+
+    tree.add_node(StoryNode(
+        node_id="act1_school_cs_player_reacts",
+        node_type=NodeType.DIALOGUE,
+        text="Unlucky kid...",
+        speaker="[PLAYER]",
+        portrait=("player", "suspicious"),
+        next_node_id="act1_street_sunset_walk_home",
+        act=ACT_1
+    ))
+
+    tree.add_node(StoryNode(
+        node_id="act1_street_sunset_walk_home",
+        node_type=NodeType.NARRATION,
+        text="Classes end. You walk home alone under an orange sunset, the image of the red jacket still stuck in your mind.",
+        next_node_id="act1_monday_end_fade",
+        act=ACT_1
+    ))
+
+    tree.add_node(StoryNode(
+        node_id="act1_monday_end_fade",
+        node_type=NodeType.NARRATION,
+        text="The street grows darker as you turn the last corner toward home.",
+        next_node_id="act1_tuesday_morning_house_front",
+        act=ACT_1
+    ))
+
+    # =========================================================
+    # TUESDAY
+    # =========================================================
+
+    tree.add_node(StoryNode(
+        node_id="act1_tuesday_morning_house_front",
+        node_type=NodeType.NARRATION,
+        text="It's the next morning. You stand by the front door, tying your laces as the sun creeps over the rooftops.",
+        next_node_id="act1_tuesday_morning_bye_mom",
+        act=ACT_1
+    ))
+
+    tree.add_node(StoryNode(
+        node_id="act1_tuesday_morning_bye_mom",
+        node_type=NodeType.DIALOGUE,
+        text="Bye, mom! I'm off to school!",
+        speaker="[PLAYER]",
+        portrait=("player", "happy"),
+        next_node_id="act1_tuesday_morning_mom_reply",
+        act=ACT_1
+    ))
+
+    tree.add_node(StoryNode(
+        node_id="act1_tuesday_morning_mom_reply",
+        node_type=NodeType.DIALOGUE,
+        text="Have a good day, sweetie. Text me if you need anything.",
+        speaker="mom",
+        portrait=("mom", "happy"),
+        next_node_id="act1_tuesday_walk_maya_surprise",
+        act=ACT_1
+    ))
+
+    tree.add_node(StoryNode(
+        node_id="act1_tuesday_walk_maya_surprise",
+        node_type=NodeType.NARRATION,
+        text="You pull the door shut and start down the familiar street. Footsteps rush up behind you.",
+        next_node_id="act1_tuesday_walk_maya_appears",
+        act=ACT_1
+    ))
+
+    tree.add_node(StoryNode(
+        node_id="act1_tuesday_walk_maya_appears",
+        node_type=NodeType.DIALOGUE,
+        text="Guess who's finally back from the dead?",
+        speaker="maya",
+        portrait=("maya", "happy"),
+        next_node_id="act1_tuesday_walk_player_reacts",
+        act=ACT_1
+    ))
+
+    tree.add_node(StoryNode(
+        node_id="act1_tuesday_walk_player_reacts",
+        node_type=NodeType.DIALOGUE,
+        text="Maya! You scared me. I thought you were still sick.",
+        speaker="[PLAYER]",
+        portrait=("player", "happy"),
+        next_node_id="act1_tuesday_walk_chat_leads_red_jacket",
+        act=ACT_1
+    ))
+
+    tree.add_node(StoryNode(
+        node_id="act1_tuesday_walk_chat_leads_red_jacket",
+        node_type=NodeType.NARRATION,
+        text="You fall into step together, trading stories about homework, teachers, and how boring the past 3 days were without her.",
+        next_node_id="act1_tuesday_walk_player_mentions_yesterday",
+        act=ACT_1
+    ))
+
+    tree.add_node(StoryNode(
+        node_id="act1_tuesday_walk_player_mentions_yesterday",
+        node_type=NodeType.DIALOGUE,
+        text="Actually… something weird did happen yesterday. I saw a kid in a red jacket being led away by some tall teacher near the side gate.",
+        speaker="[PLAYER]",
+        portrait=("player", "nervous"),
+        next_node_id="act1_tuesday_walk_maya_reacts_red_jacket",
+        act=ACT_1
+    ))
+
+    tree.add_node(StoryNode(
+        node_id="act1_tuesday_walk_maya_reacts_red_jacket",
+        node_type=NodeType.DIALOGUE,
+        text="That's creepy. Maybe it was just detention or something? Still, red jacket… kind of stands out.",
+        speaker="maya",
+        portrait=("maya", "suspicious"),
+        next_node_id="act1_tuesday_school_corridor_transition",
+        act=ACT_1
+    ))
+
+    tree.add_node(StoryNode(
+        node_id="act1_tuesday_school_corridor_transition",
+        node_type=NodeType.NARRATION,
+        text="The school buildings rise into view. The morning bell shrieks, and the corridor floods with students hurrying to class.",
+        next_node_id="act1_tuesday_physics_felix_intro",
+        act=ACT_1
+    ))
+
+    tree.add_node(StoryNode(
+        node_id="act1_tuesday_physics_felix_intro",
+        node_type=NodeType.DIALOGUE,
+        text="First up: physics with Dr. Felix. Lucky me.",
+        speaker="[PLAYER]",
+        portrait=("player", "neutral"),
+        next_node_id="act1_tuesday_physics_classroom_scene",
+        act=ACT_1
+    ))
+
+    tree.add_node(StoryNode(
+        node_id="act1_tuesday_physics_classroom_scene",
+        node_type=NodeType.NARRATION,
+        text="You take your seat. Dr. Felix, the stern, grey-haired teacher, scribbles equations across the board while the class half-listens.",
+        next_node_id="act1_tuesday_physics_felix_line",
+        act=ACT_1
+    ))
+
+    tree.add_node(StoryNode(
+        node_id="act1_tuesday_physics_felix_line",
+        node_type=NodeType.NARRATION,
+        text="A student loudly laughed with his friends. Dr. Felix slams the chalk down and snaps, \"You need some disciplining!\"",
+        next_node_id="act1_tuesday_physics_player_ears_prick",
+        act=ACT_1
+    ))
+
+    tree.add_node(StoryNode(
+        node_id="act1_tuesday_physics_player_ears_prick",
+        node_type=NodeType.DIALOGUE,
+        text="Wait… that's the exact same line from yesterday.",
+        speaker="[PLAYER]",
+        portrait=("player", "shocked"),
+        next_node_id="act1_tuesday_chem_elias_intro",
+        act=ACT_1
+    ))
+
+    tree.add_node(StoryNode(
+        node_id="act1_tuesday_chem_elias_intro",
+        node_type=NodeType.NARRATION,
+        text="Physics drags to an end. Later, in chemistry, the air feels lighter. Dr. Elias smiles as he wipes his hands on his red scarf.",
+        next_node_id="act1_tuesday_chem_elias_no_homework",
+        act=ACT_1
+    ))
+
+    tree.add_node(StoryNode(
+        node_id="act1_tuesday_chem_elias_no_homework",
+        node_type=NodeType.DIALOGUE,
+        text="No homework today, guys. Just make sure you actually listened this time.",
+        speaker="elias",
+        portrait=("elias", "happy"),
+        next_node_id="act1_tuesday_chem_player_still_thinking",
+        act=ACT_1
+    ))
+
+    tree.add_node(StoryNode(
+        node_id="act1_tuesday_chem_player_still_thinking",
+        node_type=NodeType.DIALOGUE,
+        text="Everyone else is cheering, but I can't stop thinking about Felix and that red jacket.",
+        speaker="[PLAYER]",
+        portrait=("player", "nervous"),
+        next_node_id="act1_tuesday_chem_overhear_red_jacket",
+        act=ACT_1
+    ))
+
+    tree.add_node(StoryNode(
+        node_id="act1_tuesday_chem_overhear_red_jacket",
+        node_type=NodeType.NARRATION,
+        text="Across the room, a girl whispers to her friends. The words \"red jacket\" and \"yesterday\" drift over the bubbling beakers.",
+        next_node_id="act1_tuesday_choice_candy",
+        act=ACT_1
+    ))
+
+    # =========================================================
+    # CHOICE: Speak up or stay quiet
+    # =========================================================
+
+    tree.add_node(StoryNode(
+        node_id="act1_tuesday_choice_candy",
+        node_type=NodeType.CHOICE,
+        text="",
+        choices=[
+            Choice(
+                text="Speak up about what you saw.",
+                next_node_id="act1_tuesday_candy_speak_up",
+                choice_to_record="spoke_up_red_jacket"
+            ),
+            Choice(
+                text="Stay quiet and mind your own business.",
+                next_node_id="act1_tuesday_candy_stay_quiet",
+                choice_to_record="stayed_quiet_red_jacket"
+            ),
+        ],
+        act=ACT_1
+    ))
+
+    # =========================================================
+    # BRANCH 1: Speak up → BAD ENDING
+    # =========================================================
+
+    tree.add_node(StoryNode(
+        node_id="act1_tuesday_candy_speak_up",
+        node_type=NodeType.DIALOGUE,
+        text="Hey… about that red jacket. I think I saw someone being led away yesterday near the side gate.",
+        speaker="[PLAYER]",
+        portrait=("player", "nervous"),
+        next_node_id="act1_tuesday_candy_class_reacts",
+        act=ACT_1
+    ))
+
+    tree.add_node(StoryNode(
+        node_id="act1_tuesday_candy_class_reacts",
+        node_type=NodeType.NARRATION,
+        text="The girl you heard whispering goes quiet. Her friends trade uneasy looks, while a few other students turn in their seats to listen.",
+        next_node_id="act1_tuesday_candy_elias_reassures",
+        act=ACT_1
+    ))
+
+    tree.add_node(StoryNode(
+        node_id="act1_tuesday_candy_elias_reassures",
+        node_type=NodeType.DIALOGUE,
+        text="Whoa, that sounds serious. But let's not panic, okay? If something's wrong, the school and the police will handle it.",
+        speaker="elias",
+        portrait=("elias", "happy"),
+        next_node_id="act1_tuesday_candy_elias_uses_candy",
+        act=ACT_1
+    ))
+
+    tree.add_node(StoryNode(
+        node_id="act1_tuesday_candy_elias_uses_candy",
+        node_type=NodeType.DIALOGUE,
+        text="You all look exhausted. Here—little sugar never hurt anyone. I brought candy to celebrate finishing the topic.",
+        speaker="elias",
+        portrait=("elias", "happy"),
+        next_node_id="act1_tuesday_candy_distribution",
+        act=ACT_1
+    ))
+
+    tree.add_node(StoryNode(
+        node_id="act1_tuesday_candy_distribution",
+        node_type=NodeType.NARRATION,
+        text="Dr. Elias moves between the rows with an easy smile, placing a bright, wrapped candy on each desk. The girl from before laughs it off and unwraps hers right away.",
+        next_node_id="act1_tuesday_candy_player_eats",
+        act=ACT_1
+    ))
+
+    tree.add_node(StoryNode(
+        node_id="act1_tuesday_candy_player_eats",
+        node_type=NodeType.DIALOGUE,
+        text="Guess I could use something sweet.",
+        speaker="[PLAYER]",
+        portrait=("player", "neutral"),
+        next_node_id="act1_tuesday_candy_player_feels_odd",
+        act=ACT_1
+    ))
+
+    tree.add_node(StoryNode(
+        node_id="act1_tuesday_candy_player_feels_odd",
+        node_type=NodeType.NARRATION,
+        text="The candy tastes strangely bitter at the end. A heavy fog settles behind your eyes as the bell rings.",
+        next_node_id="act1_tuesday_candy_dizzy_hallway",
+        act=ACT_1
+    ))
+
+    tree.add_node(StoryNode(
+        node_id="act1_tuesday_candy_dizzy_hallway",
+        node_type=NodeType.NARRATION,
+        text="You drift into the hallway, each step heavier than the last. Students pass by in a blur of colour and muffled voices.",
+        next_node_id="ending_bad_candy",
+        act=ACT_1
+    ))
+
+    tree.add_node(StoryNode(
+        node_id="ending_bad_candy",
+        node_type=NodeType.DIALOGUE,
+        text="You reached for answers too soon. The world tilted, the lights went out, and no one was there to see you fall.",
+        speaker="narrator",
+        portrait=("narrator", "none"),
+        next_node_id=None,
+        act=ACT_1
+    ))
+
+    # =========================================================
+    # BRANCH 2: Stay quiet → MAIN ROUTE
+    # =========================================================
+
+    tree.add_node(StoryNode(
+        node_id="act1_tuesday_candy_stay_quiet",
+        node_type=NodeType.DIALOGUE,
+        text="If I say something now and I'm wrong, I'll just sound paranoid. Maybe it's nothing.",
+        speaker="[PLAYER]",
+        portrait=("player", "nervous"),
+        next_node_id="act1_tuesday_candy_homework_check",
+        act=ACT_1
+    ))
+
+    tree.add_node(StoryNode(
+        node_id="act1_tuesday_candy_homework_check",
+        node_type=NodeType.NARRATION,
+        text="Dr. Elias strolls between the desks, glancing at open notebooks. When he reaches the girl and her group, his smile fades just a little.",
+        next_node_id="act1_tuesday_candy_elias_scolds_student",
+        act=ACT_1
+    ))
+
+    tree.add_node(StoryNode(
+        node_id="act1_tuesday_candy_elias_scolds_student",
+        node_type=NodeType.DIALOGUE,
+        text="You didn't do the homework again? Come on, you're smart. You can do better than this. See me after class, alright?",
+        speaker="elias",
+        portrait=("elias", "neutral"),
+        next_node_id="act1_tuesday_candy_elias_softens",
+        act=ACT_1
+    ))
+
+    tree.add_node(StoryNode(
+        node_id="act1_tuesday_candy_elias_softens",
+        node_type=NodeType.DIALOGUE,
+        text="Everyone else, relax. You've worked hard this week.",
+        speaker="elias",
+        portrait=("elias", "happy"),
+        next_node_id="act1_tuesday_candy_everyone_else_gets_candy",
+        act=ACT_1
+    ))
+
+    tree.add_node(StoryNode(
+        node_id="act1_tuesday_candy_everyone_else_gets_candy",
+        node_type=NodeType.NARRATION,
+        text="He pulls a small bag from his drawer and begins handing out candy down the rows. Laughter ripples through the room as wrappers crinkle. The girl without homework watches, a little embarrassed, as he skips her desk and moves on.",
+        next_node_id="act1_tuesday_after_school_walk_home_maya",
+        act=ACT_1
+    ))
+
+    tree.add_node(StoryNode(
+        node_id="act1_tuesday_after_school_walk_home_maya",
+        node_type=NodeType.NARRATION,
+        text="Classes finally end. You and Maya leave the gates together, the sky melting into shades of orange and pink.",
+        next_node_id="act1_tuesday_after_school_talk_felix",
+        act=ACT_1
+    ))
+
+    tree.add_node(StoryNode(
+        node_id="act1_tuesday_after_school_talk_felix",
+        node_type=NodeType.DIALOGUE,
+        text="So… what do you think about Felix now? He looked like he wanted to throw that kid out the window.",
+        speaker="maya",
+        portrait=("maya", "suspicious"),
+        next_node_id="act1_tuesday_after_school_player_reply_felix",
+        act=ACT_1
+    ))
+
+    tree.add_node(StoryNode(
+        node_id="act1_tuesday_after_school_player_reply_felix",
+        node_type=NodeType.DIALOGUE,
+        text="It's the same line as yesterday. Call me crazy, but I can't shake the feeling something's wrong.",
+        speaker="[PLAYER]",
+        portrait=("player", "suspicious"),
+        next_node_id="act1_tuesday_evening_bedroom_intro",
+        act=ACT_1
+    ))
+
+    # =========================================================
+    # TUESDAY EVENING
+    # =========================================================
+
+    tree.add_node(StoryNode(
+        node_id="act1_tuesday_evening_bedroom_intro",
+        node_type=NodeType.NARRATION,
+        text="Later that evening, you're back in your room, half-focused on your phone when a soft knock sounds at the door.",
+        next_node_id="act1_tuesday_evening_mom_brings_food",
+        act=ACT_1
+    ))
+
+    tree.add_node(StoryNode(
+        node_id="act1_tuesday_evening_mom_brings_food",
+        node_type=NodeType.DIALOGUE,
+        text="Here's your food. You must be starving after school.",
+        speaker="mom",
+        portrait=("mom", "happy"),
+        next_node_id="act1_tuesday_evening_player_food_reply",
+        act=ACT_1
+    ))
+
+    tree.add_node(StoryNode(
+        node_id="act1_tuesday_evening_player_food_reply",
+        node_type=NodeType.DIALOGUE,
+        text="Thanks, mom. It smells great.",
+        speaker="[PLAYER]",
+        portrait=("player", "neutral"),
+        next_node_id="act1_tuesday_evening_mom_news",
+        act=ACT_1
+    ))
+
+    tree.add_node(StoryNode(
+        node_id="act1_tuesday_evening_mom_news",
+        node_type=NodeType.DIALOGUE,
+        text="By the way… have you seen the news? There was a kidnapping of a kid from your school. Westwood School.",
+        speaker="mom",
+        portrait=("mom", "nervous"),
+        next_node_id="act1_tuesday_evening_player_reacts_news",
+        act=ACT_1
+    ))
+
+    tree.add_node(StoryNode(
+        node_id="act1_tuesday_evening_player_reacts_news",
+        node_type=NodeType.DIALOGUE,
+        text="A kidnapping? From my school? That can't be a coincidence…",
+        speaker="[PLAYER]",
+        portrait=("player", "shocked"),
+        next_node_id="act1_tuesday_night_bed_intro",
+        act=ACT_1
+    ))
+
+    # =========================================================
+    # TUESDAY NIGHT / NIGHTMARE
+    # =========================================================
+
+    tree.add_node(StoryNode(
+        node_id="act1_tuesday_night_bed_intro",
+        node_type=NodeType.NARRATION,
+        text="That night, you lie in bed staring at the ceiling. Every creak of the house sounds like a footstep in the dark.",
+        next_node_id="act1_tuesday_nightmare_start",
+        act=ACT_1
+    ))
+
+    tree.add_node(StoryNode(
+        node_id="act1_tuesday_nightmare_start",
+        node_type=NodeType.NARRATION,
+        text="Sleep finally drags you under. In your dream, the world is soaked in dark red. Voices whisper from every direction.",
+        next_node_id="act1_tuesday_nightmare_voice_line",
+        act=ACT_1
+    ))
+
+    tree.add_node(StoryNode(
+        node_id="act1_tuesday_nightmare_voice_line",
+        node_type=NodeType.DIALOGUE,
+        text="Shadows crowd around you. A distorted voice booms from nowhere: \"No distinction for you!\"",
+        speaker="narrator",
+        portrait=("narrator", "none"),
+        next_node_id="act1_end_of_act1",
+        act=ACT_1
+    ))
+
+    tree.add_node(StoryNode(
+        node_id="act1_end_of_act1",
+        node_type=NodeType.DIALOGUE,
+        text="You jolt awake, heart racing, the words still echoing in your ears.",
+        speaker="narrator",
+        portrait=("narrator", "none"),
+        next_node_id="act2_wed_morning_news_intro",
+        act=ACT_1
+    ))

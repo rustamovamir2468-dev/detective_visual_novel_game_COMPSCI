@@ -28,6 +28,12 @@ class SceneManager:
             return # Wait for the player to pick an option.
         
         next_node = self.tree.get_node(self.current_node.next_node_id)
+
+        # --- requires_flag check ---
+        if next_node is not None and getattr(next_node, 'requires_flag', None):
+            if not self.player_profile.has_flag(next_node.requires_flag):
+                next_node = self.tree.get_node("ending_bad_no_mom_help")
+
         self._load_node(next_node)
 
     def select_choice(self, choice_index): # Called when the player picks one of the choice options.
@@ -39,10 +45,16 @@ class SceneManager:
         
         chosen = self.current_node.choices[choice_index]
 
-        if chosen.choice_to_record:  # Record the choice if it needs to be remembered.
+        if chosen.choice_to_record:
             self.choice_tracker.record(chosen.choice_to_record)
 
         next_node = self.tree.get_node(chosen.next_node_id)
+
+        if next_node and next_node.required_choices:
+            for required in next_node.required_choices:
+                if not self.choice_tracker.has_made(required):
+                    return  # Player hasn't met the requirements, block silently.
+
         self._load_node(next_node) 
 
     def _load_node(self, node): # Internal method. Loads a node and handles any special logic for it.

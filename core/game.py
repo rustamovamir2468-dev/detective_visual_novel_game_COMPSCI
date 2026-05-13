@@ -23,7 +23,6 @@ from ui.dialogue_box         import DialogueBox
 from ui.choice_menu          import ChoiceMenu
 from ui.game_over            import GameOver
 from systems.story_builder   import build_story
-from scenes.act1             import build_act1
 
 # --- The main game class ---
 class Game:
@@ -40,9 +39,8 @@ class Game:
         self.palette            = PALETTE_WARM # Active palette, swap to PALETTE_COLD when needed.
 
         # --- Story ---
-        self.story_tree    = StoryTree() # Populated by story_builder once that file is written.
-        self.scene_manager = None # Created in start_game() after the player enters their name.
         self.story_tree    = build_story() # Call the function to construct the story tree from story_builder.py.
+        self.scene_manager = None # Created in start_game() after the player enters their name.
 
         # --- UI ---
         self.scene_display   = SceneDisplay(self.screen)
@@ -59,8 +57,13 @@ class Game:
 
     def start_game(self):# Called once the player has confirmed their name.
         # Creates the SceneManager, wires everything together, and kicks off Act 1.
-        self.scene_manager = SceneManager(story_tree = build_act1(), checkpoint_manager = self.checkpoint_manager, player_profile = self.player_profile)
+        self.scene_manager = SceneManager(story_tree = self.story_tree, checkpoint_manager = self.checkpoint_manager, player_profile = self.player_profile)
         self.scene_manager.start() # Start the scene manager, which will set the current node to the first node in the story tree and do any necessary setup for that node.
+        first_node = self.scene_manager.get_current_node()
+        if first_node:
+            self.dialogue_system.load_line(first_node.text)
+            self.scene_display.load_background(first_node.bg if hasattr(first_node, 'bg') else None)
+            self.scene_display.load_portrait(first_node.portrait[0] if first_node.portrait else None, first_node.portrait[1] if first_node.portrait else None)
         self.title_card.load(ACT_1, "A Normal Day")
         self.gsm.change_state(State.TITLE_CARD)
 
@@ -97,6 +100,13 @@ class Game:
                     self.player_profile.set_name(self.name_input.get_name())
                     self.start_game()
 
+            elif self.gsm.is_state(State.TITLE_CARD):
+                if event.type == pygame.MOUSEBUTTONDOWN and event.button == 1:
+                    self.gsm.change_state(State.DIALOGUE)
+                    node = self.scene_manager.get_current_node()
+                    if node:
+                        self.dialogue_system.load_line(node.text)
+
             elif self.gsm.is_state(State.DIALOGUE):
                 self._handle_dialogue_event(event)
 
@@ -110,6 +120,70 @@ class Game:
                 elif result == "quit":
                     pygame.quit()
                     sys.exit()
+
+    def _handle_dialogue_event(self, event):
+        if event.type != pygame.MOUSEBUTTONDOWN or event.button != 1:
+            return
+
+        node = self.scene_manager.get_current_node() if self.scene_manager else None
+        if node is None:
+                return
+
+        if node.is_choice_node():
+            result = self.choice_menu.handle_event(event, node.choices, self.palette)
+            if result is not None:
+                self.scene_manager.select_choice(result)
+                self._on_node_changed()  # Check for act change after a choice too
+        else:
+            if self.dialogue_system.is_finished():
+                prev_node = self.scene_manager.get_current_node()  # Remember before
+                prev_act = prev_node.act
+                self.scene_manager.advance()
+                next_node = self.scene_manager.get_current_node()  # Check after
+
+                if next_node is prev_node:
+                    self.game_over.load(ending_text = prev_node.text, can_rewind  = self.checkpoint_manager.has_checkpoint())
+                    self.gsm.change_state(State.GAME_OVER)
+                else:
+                    self._on_node_changed(prev_act)
+            else:
+                self.dialogue_system.skip()
+
+    def _on_node_changed(self, prev_act=None):
+        next_node = self.scene_manager.get_current_node()
+        if next_node is None:
+            return
+
+        # Load the new portrait and background for this node
+        self.scene_display.load_background(
+            next_node.bg if hasattr(next_node, 'bg') else None
+        )
+        self.scene_display.load_portrait(
+            next_node.portrait[0] if next_node.portrait else None,
+            next_node.portrait[1] if next_node.portrait else None
+        )
+        self.dialogue_system.load_line(next_node.text)
+
+        # If the act number changed, show the title card for the new act
+        if prev_act is not None and next_node.act != prev_act:
+            if next_node.act in ACT_TITLES:
+                self.title_card.load(next_node.act, ACT_TITLES[next_node.act])
+                self.gsm.change_state(State.TITLE_CARD)
+                # Palette swap: Acts 1-2 warm, Acts 3-4 cold
+                if next_node.act in (ACT_3, ACT_4):
+                    self.palette = PALETTE_COLD
+                else:
+                    self.palette = PALETTE_WARM
+
+    def _rewind_to_checkpoint(self):
+        if self.scene_manager is None:
+            return
+
+        self.scene_manager.rewind_to_checkpoint()
+        node = self.scene_manager.get_current_node()
+        if node:
+            self.dialogue_system.load_line(node.text)
+        self.gsm.change_state(State.DIALOGUE)
 
     def update(self): # REPLACE EACH PASS WITH THE APPROPRIATE FUNCTION CALLS TO UPDATE THE GAME STATE.
         if self.gsm.is_state(State.DIALOGUE):
@@ -139,6 +213,8 @@ class Game:
                 self.choice_menu.draw(node.choices, self.palette)
             else:
                 speaker = node.speaker if node else None
+                if speaker == "[PLAYER]":           
+                    speaker = self.player_profile.get_name()
                 self.dialogue_box.draw(self.dialogue_system, speaker, self.palette)
 
         elif self.gsm.is_state(State.PAUSED):

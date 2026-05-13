@@ -88,10 +88,17 @@ ACT_2 = "Act 2"
 ACT_3 = "Act 3"
 ACT_4 = "Act 4"
 
+ACT_TITLES = {
+    ACT_1: "A Normal Day",
+    ACT_2: "Something's Wrong",
+    ACT_3: "Closing In",
+    ACT_4: "The Truth",
+}
+
 # --- Endings ---
 ENDING_BAD_CANDY       = "ending_bad_candy"      # Act 1 Choice 1.1 death
 ENDING_BAD_CO2         = "ending_bad_co2"        # Act 2 Choice 2.1 death
-ENDING_BAD_MURDERED  = "ending_bad_murdered" # Act 3 Choice 3.1 death
+ENDING_BAD_MURDERED    = "ending_bad_murdered" # Act 3 Choice 3.1 death
 ENDING_BAD_EXPLOSION   = "ending_bad_explosion"  # Act 3 Choice 4.1 death
 ENDING_BAD_POLICE      = "ending_bad_police"     # Act 4 Choice 6.1 death
 ENDING_BAD_CHOICE5     = "ending_bad_choice5"    # Act 4 Didn't tell mother (Choice 5.2)

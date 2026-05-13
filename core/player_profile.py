@@ -7,11 +7,22 @@
 class PlayerProfile:
 
     def __init__(self):
-        self.name = "???" # Default name before the player sets it.
+        self.name = "Player" # Default until the player sets it
+        self.flags = set() # All recorded choices live here
 
     def set_name(self, name):
-        if name.strip(): # Only set it if the player actually typed something.
-            self.name = name.strip()
+        self.name = name.strip() if name.strip() else "Player"
 
     def get_name(self):
         return self.name
+
+    def record_flag(self, flag): # Call this when a choice is made
+        if flag:
+            self.flags.add(flag)
+
+    def has_flag(self, flag): # Call this to check a past choice
+        return flag in self.flags
+
+    def reset(self): # Call this on new game
+        self.flags = set()
+        self.name = "Player"
