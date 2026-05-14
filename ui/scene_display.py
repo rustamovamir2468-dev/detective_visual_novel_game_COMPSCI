@@ -43,7 +43,7 @@ class SceneDisplay:
         if portrait_path not in self.portrait_cache:
             try:
                 image = pygame.image.load(portrait_path).convert_alpha()             # convert_alpha() preserves transparency.
-                image = pygame.transform.scale(image, (PORTRAIT_WIDTH, PORTRAIT_HEIGHT))
+                image = pygame.transform.smoothscale(image, (PORTRAIT_WIDTH, PORTRAIT_HEIGHT))
                 self.portrait_cache[portrait_path] = image
             except FileNotFoundError:
                 print(f"[Missing portrait] {portrait_path}") # Terminal will tell which file is missing - 5744357
