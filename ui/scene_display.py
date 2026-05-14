@@ -46,6 +46,7 @@ class SceneDisplay:
                 image = pygame.transform.scale(image, (PORTRAIT_WIDTH, PORTRAIT_HEIGHT))
                 self.portrait_cache[portrait_path] = image
             except FileNotFoundError:
+                print(f"[Missing portrait] {portrait_path}") # Terminal will tell which file is missing - 5744357
                 self.portrait_cache[portrait_path] = None  # No asset yet, placeholder will show instead.
 
         self.current_portrait = self.portrait_cache[portrait_path]
