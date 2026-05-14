@@ -38,7 +38,7 @@ class SceneDisplay:
             self.current_portrait = None
             return
 
-        portrait_path = f"assets/portraits/{character}_{state}.png"
+        portrait_path = f"assets/images/portraits/{character}_{state}.png" # Modified for implementation of the portraits - 5744357
 
         if portrait_path not in self.portrait_cache:
             try:
