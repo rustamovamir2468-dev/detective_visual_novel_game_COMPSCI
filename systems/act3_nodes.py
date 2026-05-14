@@ -39,7 +39,7 @@ def add_act3_nodes(tree: StoryTree):
         node_type=NodeType.DIALOGUE,
         act=3,
         speaker="maya",
-        portrait="nervous",
+        portrait=("maya", "nervous"),
         text="She keeps checking her phone and staring at the hallway. Think she knows more than she's saying?",
         next_node_id="act3_fri_internal_bulletin_board"
     ))
@@ -67,7 +67,7 @@ def add_act3_nodes(tree: StoryTree):
         node_type=NodeType.DIALOGUE,
         act=3,
         speaker="maya",
-        portrait="nervous",
+        portrait=("finn", "nervous"),
         text="That's risky, detective… but you're right. We won't get answers sitting in class.",
         next_node_id="act3_fri_after_school_hannah_leaves"
     ))
@@ -106,7 +106,7 @@ def add_act3_nodes(tree: StoryTree):
         node_type=NodeType.DIALOGUE,
         act=3,
         speaker="hannah",
-        portrait="shocked",
+        portrait=("hannah", "shocked"),
         text="[PLAYER]? Maya? Why are you two following me?",
         next_node_id="act3_fri_direct_player_accuses"
     ))
@@ -134,7 +134,7 @@ def add_act3_nodes(tree: StoryTree):
         node_type=NodeType.DIALOGUE,
         act=3,
         speaker="elias",
-        portrait="suspicious",
+        portrait=("elias", "nervous"),
         text="Following teachers now? That's dangerous behavior… you never know who might feel threatened.",
         next_node_id="ending_bad_hannah_follow"
     ))
@@ -188,7 +188,7 @@ def add_act3_nodes(tree: StoryTree):
         node_type=NodeType.DIALOGUE,
         act=3,
         speaker="maya",
-        portrait="nervous",
+        portrait=("maya", "nervous"),
         text="Great. Either she drives like a ninja, or she didn't want anyone to see where she was going.",
         next_node_id="act3_fri_player_still_suspicious"
     ))
@@ -262,7 +262,7 @@ def add_act3_nodes(tree: StoryTree):
         node_type=NodeType.DIALOGUE,
         act=3,
         speaker="maya",
-        portrait="nervous",
+        portrait=("maya", "nervous"),
         text="Whoever it is, they're still out there. Let's just get through today without ending up on the news, yeah?",
         next_node_id="act3_mon_day_montage"
     ))
@@ -347,7 +347,7 @@ def add_act3_nodes(tree: StoryTree):
         node_type=NodeType.DIALOGUE,
         act=3,
         speaker="maya",
-        portrait="scared",
+        portrait=("maya", "scared"),
         text="Seriously, don't! Something's wrong. Please just listen for a second.",
         next_node_id="act3_mon_hannah_confused"
     ))
@@ -357,7 +357,7 @@ def add_act3_nodes(tree: StoryTree):
         node_type=NodeType.DIALOGUE,
         act=3,
         speaker="hannah",
-        portrait="nervous",
+        portrait=("hannah", "cold"),
         text="What are you two talking about? Is this some kind of joke?",
         next_node_id="act3_mon_player_explains_suspicion"
     ))
@@ -377,7 +377,7 @@ def add_act3_nodes(tree: StoryTree):
         node_type=NodeType.DIALOGUE,
         act=3,
         speaker="hannah",
-        portrait="suspicious",
+        portrait=("hannah", "suspicious"),
         text="You realise how wild this sounds. But fine — show me what you think is wrong before I call the principal.",
         next_node_id="act3_mon_check_car"
     ))
@@ -413,7 +413,7 @@ def add_act3_nodes(tree: StoryTree):
         node_type=NodeType.DIALOGUE,
         act=3,
         speaker="hannah",
-        portrait="scared",
+        portrait=("hannah", "shocked"),
         text="Who would do this? I knew something was wrong with how the staff meetings felt, but this —",
         next_node_id="act3_mon_hannah_reveals_investigation"
     ))
@@ -443,7 +443,7 @@ def add_act3_nodes(tree: StoryTree):
         node_type=NodeType.DIALOGUE,
         act=3,
         speaker="hannah",
-        portrait="sad",
+        portrait=("hannah", "cold"),
         text="Then our list is down to one person. But until we have proof, we can't go to the police. They'll say it's stress talking.",
         next_node_id="act3_mon_elias_watching"
     ))
