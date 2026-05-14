@@ -82,7 +82,7 @@ def add_act4_nodes(tree: StoryTree):
         node_type=NodeType.DIALOGUE,
         act=4,
         speaker="mom",
-        portrait="nervous",
+        portrait=("mom", "nervous"),
         text="That's serious. If she still doesn't answer by the time you're at school, I'm calling the police. Promise me you'll be careful and stay with teachers you trust.",
         next_node_id="act4_tue_morning_leave_house"
     ))
@@ -110,7 +110,7 @@ def add_act4_nodes(tree: StoryTree):
         node_type=NodeType.DIALOGUE,
         act=4,
         speaker="mom",
-        portrait="happy",
+        portrait=("mom", "neutral"),
         text="Have a good day, okay? Text me if you and Maya hang out after school.",
         next_node_id="act4_tue_morning_leave_house_quiet"
     ))
@@ -156,7 +156,7 @@ def add_act4_nodes(tree: StoryTree):
         node_type=NodeType.DIALOGUE,
         act=4,
         speaker="hannah",
-        portrait="nervous",
+        portrait=("hannah", "suspicious"),
         text="If any of you hear from missing classmates — or see anything strange — you come to me or the office immediately. No rumors, only facts.",
         next_node_id="act4_tue_day_montage_agitated"
     ))
@@ -186,7 +186,7 @@ def add_act4_nodes(tree: StoryTree):
         node_type=NodeType.DIALOGUE,
         act=4,
         speaker="hannah",
-        portrait="shocked",
+        portrait=("hannah", "shocked"),
         text="Both of them? Stay after school. We're not handling this alone.",
         next_node_id="act4_tue_after_school_with_hannah"
     ))
@@ -224,7 +224,7 @@ def add_act4_nodes(tree: StoryTree):
         node_type=NodeType.DIALOGUE,
         act=4,
         speaker="hannah",
-        portrait="nervous",
+        portrait=("hannah", "cold"),
         text="If that's where she is, Elias might be there too. We don't have much time. But going in alone could be a trap.",
         next_node_id="act4_tue_choice_call_police"
     ))

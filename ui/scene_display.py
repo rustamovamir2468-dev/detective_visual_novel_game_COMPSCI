@@ -62,8 +62,6 @@ class SceneDisplay:
         # --- Portrait ---
         if self.current_portrait:
             self.screen.blit(self.current_portrait, (PORTRAIT_X, PORTRAIT_Y))
-        else:
-            self._draw_portrait_placeholder(palette)  # Fallback: coloured rectangle.
 
     def _draw_portrait_placeholder(self, palette): # Draws a simple coloured rectangle where the portrait will eventually go.
         # Only shows when the actual portrait image hasn't been provided yet.
