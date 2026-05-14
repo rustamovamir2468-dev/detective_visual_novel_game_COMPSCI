@@ -171,7 +171,7 @@ def add_act1_nodes(tree: StoryTree):
         node_type=NodeType.DIALOGUE,
         text="Have a good day, sweetie. Text me if you need anything.",
         speaker="mom",
-        portrait=("mom", "happy"),
+        portrait=("mom", "neutral"),
         next_node_id="act1_tuesday_walk_maya_surprise",
         act=ACT_1
     ))
@@ -227,7 +227,7 @@ def add_act1_nodes(tree: StoryTree):
         node_type=NodeType.DIALOGUE,
         text="That's creepy. Maybe it was just detention or something? Still, red jacket… kind of stands out.",
         speaker="maya",
-        portrait=("maya", "suspicious"),
+        portrait=("maya", "neutral"),
         next_node_id="act1_tuesday_school_corridor_transition",
         act=ACT_1
     ))
@@ -362,7 +362,7 @@ def add_act1_nodes(tree: StoryTree):
         node_type=NodeType.DIALOGUE,
         text="Whoa, that sounds serious. But let's not panic, okay? If something's wrong, the school and the police will handle it.",
         speaker="elias",
-        portrait=("elias", "happy"),
+        portrait=("elias", "cold"),
         next_node_id="act1_tuesday_candy_elias_uses_candy",
         act=ACT_1
     ))
@@ -484,7 +484,7 @@ def add_act1_nodes(tree: StoryTree):
         node_type=NodeType.DIALOGUE,
         text="So… what do you think about Felix now? He looked like he wanted to throw that kid out the window.",
         speaker="maya",
-        portrait=("maya", "suspicious"),
+        portrait=("maya", "nervous"),
         next_node_id="act1_tuesday_after_school_player_reply_felix",
         act=ACT_1
     ))
