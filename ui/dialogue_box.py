@@ -53,8 +53,14 @@ class DialogueBox:
 
     def _draw_name_tag(self, speaker_name, palette): # Draws a small box above the dialogue box with the speaker's name.
         pygame.draw.rect(self.screen, palette["ui"], self.name_rect)
+
         name_surface = self.font_name.render(speaker_name, True, WHITE)
-        self.screen.blit(name_surface, (self.name_rect.x + 8, self.name_rect.y + 4))
+
+        text_rect = name_surface.get_rect(
+            center=self.name_rect.center
+        )
+
+        self.screen.blit(name_surface, text_rect)
 
     def _draw_text(self, text, palette): # Draws the dialogue text inside the box, with word wrapping.
         words   = text.split(" ") # Chops full sentences into words to handle wrapping.
