@@ -327,7 +327,7 @@ def add_act4_nodes(tree: StoryTree):
         node_type=NodeType.DIALOGUE,
         act=4,
         speaker="elias",
-        portrait="angry",
+        portrait=("elias", "angry"),
         text="Do you know what it's like to be invisible? To give everything and still be forgotten? This cup… it remembers me.",
         next_node_id="act4_tue_elias_transform"
     ))
@@ -399,7 +399,7 @@ def add_act4_nodes(tree: StoryTree):
         node_type=NodeType.DIALOGUE,
         act=4,
         speaker="hannah",
-        portrait=("hannah", "cold"),
+        portrait=("hannah", "determined"),
         text="If it has to be someone… it doesn't have to be the kids!",
         next_node_id="ending_sacrifice_hannah_narration"
     ))
