@@ -61,7 +61,14 @@ class SceneDisplay:
 
         # --- Portrait ---
         if self.current_portrait:
-            self.screen.blit(self.current_portrait, (PORTRAIT_X, PORTRAIT_Y))
+            name_box_x = DIALOGUE_BOX_PADDING
+            name_box_width = 200
+            name_box_center_x = name_box_x + name_box_width // 2 # Setting the centre of the box - 5744357
+
+            portrait_x = name_box_center_x - self.current_portrait.get_width() // 2 # Implementing the actual portrait in the centre - 5744357
+            portrait_y = PORTRAIT_Y
+
+            self.screen.blit(self.current_portrait, (portrait_x, portrait_y))            
 
     def _draw_portrait_placeholder(self, palette): # Draws a simple coloured rectangle where the portrait will eventually go.
         # Only shows when the actual portrait image hasn't been provided yet.
