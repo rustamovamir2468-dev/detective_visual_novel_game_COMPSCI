@@ -80,7 +80,7 @@ def add_act2_nodes(tree: StoryTree):
         node_type=NodeType.DIALOGUE,
         act=2,
         speaker="finn",
-        portrait="angry",
+        portrait=("finn", "angry"),
         text="Sit down and take out your notebooks. Just because the news is loud doesn't mean your brains can be quiet.",
         next_node_id="act2_wed_finn_rude_student"
     ))
@@ -98,7 +98,7 @@ def add_act2_nodes(tree: StoryTree):
         node_type=NodeType.DIALOGUE,
         act=2,
         speaker="finn",
-        portrait="angry",
+        portrait=("finn", "angry"),
         text="If you think this is a joke, mister, get out of my class. Now.",
         next_node_id="act2_wed_finn_boy_leaves"
     ))
@@ -155,7 +155,7 @@ def add_act2_nodes(tree: StoryTree):
         node_type=NodeType.DIALOGUE,
         act=2,
         speaker="finn",
-        portrait="shocked",
+        portrait=("finn", "shocked"),
         text="Are you out of your mind? I've never laid a hand on any of you.",
         next_node_id="act2_wed_elias_reassures"
     ))
@@ -165,7 +165,7 @@ def add_act2_nodes(tree: StoryTree):
         node_type=NodeType.DIALOGUE,
         act=2,
         speaker="elias",
-        portrait="nervous",
+        portrait=("elias", "nervous"),
         text="Hey, hey — let's all breathe. Accusing teachers of kidnapping is serious. Why would you even think that?",
         next_node_id="act2_wed_player_explains"
     ))
@@ -185,7 +185,7 @@ def add_act2_nodes(tree: StoryTree):
         node_type=NodeType.DIALOGUE,
         act=2,
         speaker="hannah",
-        portrait="angry",
+        portrait=("hannah", "shocked"),
         text="What is all this ruckus? Everyone, back to class. We have enough to worry about without wild rumors.",
         next_node_id="act2_wed_after_school_chem_lab_setup"
     ))
@@ -239,7 +239,7 @@ def add_act2_nodes(tree: StoryTree):
         node_type=NodeType.DIALOGUE,
         act=2,
         speaker="maya",
-        portrait="nervous",
+        portrait=("maya", "nervous"),
         text="You looked really tense in physics. Did something happen, or is it just the whole kidnapping thing?",
         next_node_id="act2_wed_player_lunch_reply"
     ))
@@ -259,7 +259,7 @@ def add_act2_nodes(tree: StoryTree):
         node_type=NodeType.DIALOGUE,
         act=2,
         speaker="maya",
-        portrait="neutral",
+        portrait=("maya", "neutral"),
         text="Maybe everyone's just stressed. Let's survive this week first, detective. Then you can solve the mystery.",
         next_node_id="act2_wed_afternoon_classes_montage"
     ))
@@ -285,7 +285,7 @@ def add_act2_nodes(tree: StoryTree):
         node_type=NodeType.DIALOGUE,
         act=2,
         speaker="maya",
-        portrait="scared",
+        portrait=("maya", "scared"),
         text="Two kids from our school gone already… Do you think it's someone here? A teacher, maybe?",
         next_node_id="act2_wed_after_school_player_reply"
     ))
@@ -341,7 +341,7 @@ def add_act2_nodes(tree: StoryTree):
         node_type=NodeType.DIALOGUE,
         act=2,
         speaker="mom",
-        portrait="scared",
+        portrait=("mom", "scared"),
         text="Another student is missing. I don't like this at all. Stay with your friends today, okay? No wandering around alone.",
         next_node_id="act2_thu_morning_player_leave"
     ))
@@ -367,7 +367,7 @@ def add_act2_nodes(tree: StoryTree):
         node_type=NodeType.DIALOGUE,
         act=2,
         speaker="maya",
-        portrait="nervous",
+        portrait=("maya", "nervous"),
         text="Hey. We need to talk. It's about that red cloth the news keeps showing.",
         next_node_id="act2_thu_morning_player_curious"
     ))
@@ -387,7 +387,7 @@ def add_act2_nodes(tree: StoryTree):
         node_type=NodeType.DIALOGUE,
         act=2,
         speaker="maya",
-        portrait="scared",
+        portrait=("maya", "scared"),
         text="I found it last night near the alley by school. I took it straight to the police. They say it might belong to the kid who disappeared.",
         next_node_id="act2_thu_morning_three_red_items"
     ))
@@ -405,7 +405,7 @@ def add_act2_nodes(tree: StoryTree):
         node_type=NodeType.DIALOGUE,
         act=2,
         speaker="maya",
-        portrait="suspicious",
+        portrait=("maya", "nervous"),
         text="There are only three teachers who always wear red: Dr. Hannah's red hijab, Dr. Elias's red scarf, and Dr. Finn's red handkerchief.",
         next_node_id="act2_thu_morning_player_notices_finn"
     ))
@@ -433,7 +433,7 @@ def add_act2_nodes(tree: StoryTree):
         node_type=NodeType.DIALOGUE,
         act=2,
         speaker="maya",
-        portrait="nervous",
+        portrait=("maya", "nervous"),
         text="Exactly. That can't be a coincidence. Look, keep this between us for now, but I don't trust him. We should watch him.",
         next_node_id="act2_thu_morning_tracking_app"
     ))
@@ -459,7 +459,7 @@ def add_act2_nodes(tree: StoryTree):
         node_type=NodeType.DIALOGUE,
         act=2,
         speaker="maya",
-        portrait="suspicious",
+        portrait=("maya", "neutral"),
         text="Okay. When Finn leaves, we follow his car. No getting too close, no doing anything stupid. We just watch.",
         next_node_id="act2_thu_after_school_wait_parking"
     ))
@@ -509,7 +509,7 @@ def add_act2_nodes(tree: StoryTree):
         node_type=NodeType.DIALOGUE,
         act=2,
         speaker="finn",
-        portrait="sad",
+        portrait=("finn", "sad"),
         text="I'm doing my best, mom. The kids hate me, the pay is awful, and the hospital still wants ten thousand. But I'll figure it out.",
         next_node_id="act2_thu_player_realisation"
     ))
@@ -529,7 +529,7 @@ def add_act2_nodes(tree: StoryTree):
         node_type=NodeType.DIALOGUE,
         act=2,
         speaker="maya",
-        portrait="sad",
+        portrait=("maya", "sad"),
         text="And the red handkerchief? He probably left it here with her. Like a reminder he'll come back.",
         next_node_id="act2_thu_finn_innocent_narration"
     ))
@@ -547,7 +547,7 @@ def add_act2_nodes(tree: StoryTree):
         node_type=NodeType.DIALOGUE,
         act=2,
         speaker="maya",
-        portrait="suspicious",
+        portrait=("maya", "neutral"),
         text="So Finn is off the list. That leaves Dr. Hannah with her red hijab… and Dr. Elias with his red scarf.",
         next_node_id="act2_thu_evening_walk_home_separate"
     ))
