@@ -21,14 +21,14 @@ Act 1:
 > fade
 > Maya surprises him on walk
 > They chat about a random talking, leading away kid red jacket topic comes up shortly
-> In physics class > Dr. Felix > angry and mean and old teacher > SAYS THE SAME LINE! "you need some disciplining" > to the same kid that gets kidnapped
+> In physics class > Dr. Finn > angry and mean and old teacher > SAYS THE SAME LINE! "you need some disciplining" > to the same kid that gets kidnapped
 > *ears prick up.jpg* > inner thoughts "wait, didn't i hear that yesterday?!"
-> Dr. Elias Chem class, very nice, "no homework today guys!" > still thinking about Felix
+> Dr. Elias Chem class, very nice, "no homework today guys!" > still thinking about Finn
 > Overhear another kid speaking about RED JACKET INCIDENT!
 	> CHOICE!!! 1. speak up about what you say > Givning out candy to everyone, poisoned by candy (but we don't realize it)
 		    2. stay queit --> Dr. Elias comes over to that kid "Why didn't you do your homework! See me after class", everyone else gets candy
 
-> Walk home with Maya sunset, talk about Felix
+> Walk home with Maya sunset, talk about Finn
 > in room, mother walks in "here is ur food" (>IF 1 IS CHOSEN > "you eat a snack that has been out for like 6 weeks and never wake up...")
 
 (if 2 is chosen, progress normally)
@@ -42,9 +42,9 @@ ACT 2:
 
 > basically kids missing (show on news)
 > school installs a security guard (choose to speak or something)
-> Dr. Felix class > another kid talks very rude > "mister, get out of my class!" > they walk outside
-	>CHOICE 2!!! 1. Confront Felix, and accuse him or kidnapping > 
-				> you go outside class, Dr. Elias is calming both of them down. You accuse! Kid and Felix think you are crazy
+> Dr. Finn class > another kid talks very rude > "mister, get out of my class!" > they walk outside
+	>CHOICE 2!!! 1. Confront Finn, and accuse him or kidnapping > 
+				> you go outside class, Dr. Elias is calming both of them down. You accuse! Kid and Finn think you are crazy
 					> Dr. Elias says "why would you think so?" > you tell them what you saw > Hina passes by "whats all this ruckus, get back to class!"
 						> Later in the day, you stay in the chem lab to do homework and die from carbon monoxide posioning cuz a bunsen burner was left on
 		     2. Do nothing > progress game
@@ -53,14 +53,14 @@ ACT 2:
 > morning news > red cloth found, another kid missing
 > Maya says she will talk to you at school
 > She tells you that she found this article of clothing, and submitted it to police at night
-> There are only 3 teachers that wear red article of clothing, Hina hijab and Elias scarf and Felix handkerchief
+> There are only 3 teachers that wear red article of clothing, Hina hijab and Elias scarf and Finn handkerchief
 > FELXI DOESNT HAVE HANDKERCHIEF TODAY!!!
-> Keep this a secret for now between us, but let's follow Felix today, because I don't trust him
+> Keep this a secret for now between us, but let's follow Finn today, because I don't trust him
 
 > Install tracking app in both phones to keep us safe
 
 > you decide to follow his car, and overhear him talking about so he's like crying hes talking to his wife, the kids hate them, hes trying to work as a teacher, hes just trying to pay for his mom in hospital 10k dollars, just an innocnet teacher trying to make a living to pay of his bills > left his handkerchief with his mom as like a keepsake.
-> Felix is actually good! 2 suspects left.
+> Finn is actually good! 2 suspects left.
 
 --- END OF ACT 2 ---
 

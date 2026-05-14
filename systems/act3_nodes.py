@@ -48,7 +48,7 @@ def add_act3_nodes(tree: StoryTree):
         node_id="act3_fri_internal_bulletin_board",
         node_type=NodeType.NARRATION,
         act=3,
-        text="In your head, the pieces from the last days slide across an invisible bulletin board — red hijab, missing kids, Felix cleared, Elias's scarf still pinned in the corner.",
+        text="In your head, the pieces from the last days slide across an invisible bulletin board — red hijab, missing kids, Finn cleared, Elias's scarf still pinned in the corner.",
         next_node_id="act3_fri_player_decides_follow"
     ))
 
@@ -424,7 +424,7 @@ def add_act3_nodes(tree: StoryTree):
         act=3,
         speaker="hina",
         portrait="nervous",
-        text="I've been trying to piece this together on my own — talking to parents, checking schedules, comparing when the kids vanished. I thought Felix might be involved at first, but the times didn't line up.",
+        text="I've been trying to piece this together on my own — talking to parents, checking schedules, comparing when the kids vanished. I thought Finn might be involved at first, but the times didn't line up.",
         next_node_id="act3_mon_player_and_hina_align"
     ))
 
@@ -434,7 +434,7 @@ def add_act3_nodes(tree: StoryTree):
         act=3,
         speaker="player",
         portrait="suspicious",
-        text="We followed Felix. He's innocent. Whoever's doing this is smarter than just yelling in class… and they like red.",
+        text="We followed Finn. He's innocent. Whoever's doing this is smarter than just yelling in class… and they like red.",
         next_node_id="act3_mon_hina_resolve"
     ))
 

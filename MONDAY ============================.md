@@ -304,11 +304,11 @@ ACT: 1
 
 "The school buildings rise into view. The morning bell shrieks, and the corridor floods with students hurrying to class."
 
-NEXT: act1\_tuesday\_physics\_felix\_intro
+NEXT: act1\_tuesday\_physics\_finn\_intro
 
 
 
-\[DIALOGUE] act1\_tuesday\_physics\_felix\_intro
+\[DIALOGUE] act1\_tuesday\_physics\_finn\_intro
 
 ACT: 1
 
@@ -316,7 +316,7 @@ SPEAKER: \[PLAYER]
 
 PORTRAIT: neutral
 
-"First up: physics with Dr. Felix. Lucky me."
+"First up: physics with Dr. Finn. Lucky me."
 
 NEXT: act1\_tuesday\_physics\_classroom\_scene
 
@@ -326,17 +326,17 @@ NEXT: act1\_tuesday\_physics\_classroom\_scene
 
 ACT: 1
 
-"You take your seat. Dr. Felix, the stern, grey‑haired teacher, scribbles equations across the board while the class half‑listens."
+"You take your seat. Dr. Finn, the stern, grey‑haired teacher, scribbles equations across the board while the class half‑listens."
 
-NEXT: act1\_tuesday\_physics\_felix\_line
+NEXT: act1\_tuesday\_physics\_finn\_line
 
 
 
-\[NARRATION] act1\_tuesday\_physics\_felix\_line
+\[NARRATION] act1\_tuesday\_physics\_finn\_line
 
 ACT: 1
 
-"A one student loudly laughed with his friends. Dr. Felix slams the chalk down and snaps, "You need some disciplining!" "
+"A one student loudly laughed with his friends. Dr. Finn slams the chalk down and snaps, "You need some disciplining!" "
 
 NEXT: act1\_tuesday\_physics\_player\_ears\_prick
 
@@ -388,7 +388,7 @@ SPEAKER: \[PLAYER]
 
 PORTRAIT: nervous
 
-"Everyone else is cheering, but I can’t stop thinking about Felix and that red jacket."
+"Everyone else is cheering, but I can’t stop thinking about Finn and that red jacket."
 
 NEXT: act1\_tuesday\_chem\_overhear\_red\_jacket
 
@@ -604,11 +604,11 @@ ACT: 1
 
 "Classes finally end. You and Maya leave the gates together, the sky melting into shades of orange and pink."
 
-NEXT: act1\_tuesday\_after\_school\_talk\_felix
+NEXT: act1\_tuesday\_after\_school\_talk\_finn
 
 
 
-\[DIALOGUE] act1\_tuesday\_after\_school\_talk\_felix
+\[DIALOGUE] act1\_tuesday\_after\_school\_talk\_finn
 
 ACT: 1
 
@@ -616,13 +616,13 @@ SPEAKER: maya
 
 PORTRAIT: suspicious
 
-"So… what do you think about Felix now? He looked like he wanted to throw that kid out the window."
+"So… what do you think about Finn now? He looked like he wanted to throw that kid out the window."
 
-NEXT: act1\_tuesday\_after\_school\_player\_reply\_felix
+NEXT: act1\_tuesday\_after\_school\_player\_reply\_finn
 
 
 
-\[DIALOGUE] act1\_tuesday\_after\_school\_player\_reply\_felix
+\[DIALOGUE] act1\_tuesday\_after\_school\_player\_reply\_finn
 
 ACT: 1
 
@@ -818,65 +818,65 @@ ACT: 2
 
 "Inside, the corridor buzzes with nervous chatter about curfews, police patrols, and missing classmates."
 
-NEXT: act2\_wed\_felix\_class\_intro
+NEXT: act2\_wed\_finn\_class\_intro
 
 
 
-\[NARRATION] act2\_wed\_felix\_class\_intro
-
-ACT: 2
-
-"By the time physics rolls around, the air in Dr. Felix’s classroom feels heavier than usual."
-
-NEXT: act2\_wed\_felix\_start\_lesson
-
-
-
-\[DIALOGUE] act2\_wed\_felix\_start\_lesson
+\[NARRATION] act2\_wed\_finn\_class\_intro
 
 ACT: 2
 
-SPEAKER: felix
+"By the time physics rolls around, the air in Dr. Finn’s classroom feels heavier than usual."
+
+NEXT: act2\_wed\_finn\_start\_lesson
+
+
+
+\[DIALOGUE] act2\_wed\_finn\_start\_lesson
+
+ACT: 2
+
+SPEAKER: finn
 
 PORTRAIT: angry
 
 "Sit down and take out your notebooks. Just because the news is loud doesn’t mean your brains can be quiet."
 
-NEXT: act2\_wed\_felix\_rude\_student
+NEXT: act2\_wed\_finn\_rude\_student
 
 
 
-\[NARRATION] act2\_wed\_felix\_rude\_student
+\[NARRATION] act2\_wed\_finn\_rude\_student
 
 ACT: 2
 
 "Halfway through the lesson, a boy at the back snickers and mutters something under his breath. A few students laugh."
 
-NEXT: act2\_wed\_felix\_throws\_out
+NEXT: act2\_wed\_finn\_throws\_out
 
 
 
-\[DIALOGUE] act2\_wed\_felix\_throws\_out
+\[DIALOGUE] act2\_wed\_finn\_throws\_out
 
 ACT: 2
 
-SPEAKER: felix
+SPEAKER: finn
 
 PORTRAIT: angry
 
 "If you think this is a joke, mister, get out of my class. Now."
 
-NEXT: act2\_wed\_felix\_boy\_leaves
+NEXT: act2\_wed\_finn\_boy\_leaves
 
 
 
-\[NARRATION] act2\_wed\_felix\_boy\_leaves
+\[NARRATION] act2\_wed\_finn\_boy\_leaves
 
 ACT: 2
 
 "The boy scoffs, shoves his chair back, and storms out into the corridor, the door slamming behind him."
 
-NEXT: act2\_wed\_choice\_confront\_felix
+NEXT: act2\_wed\_choice\_confront\_finn
 
 
 
@@ -884,39 +884,39 @@ NEXT: act2\_wed\_choice\_confront\_felix
 
 
 
-\[CHOICE] act2\_wed\_choice\_confront\_felix
+\[CHOICE] act2\_wed\_choice\_confront\_finn
 
 ACT: 2
 
 
 
-"Follow them and accuse Felix of the kidnappings." → act2\_wed\_confront\_felix \[RECORD: confronted\_felix]
+"Follow them and accuse Finn of the kidnappings." → act2\_wed\_confront\_finn \[RECORD: confronted\_finn]
 
 
 
-"Stay seated and say nothing." → act2\_wed\_do\_nothing \[RECORD: did\_nothing\_felix]
+"Stay seated and say nothing." → act2\_wed\_do\_nothing \[RECORD: did\_nothing\_finn]
 
 
 
 
 
-&#x09;	**Branch A – Confront Felix (bad ending later that day)**
+&#x09;	**Branch A – Confront Finn (bad ending later that day)**
 
-\[NARRATION] act2\_wed\_confront\_felix
+\[NARRATION] act2\_wed\_confront\_finn
 
 ACT: 2
 
 "As the rest of the class stares at their notes, you quietly slip out, heart pounding in your ears."
 
-NEXT: act2\_wed\_corridor\_felix\_elias\_scene
+NEXT: act2\_wed\_corridor\_finn\_elias\_scene
 
 
 
-\[NARRATION] act2\_wed\_corridor\_felix\_elias\_scene
+\[NARRATION] act2\_wed\_corridor\_finn\_elias\_scene
 
 ACT: 2
 
-"In the corridor, you find Dr. Felix and the boy facing each other while Dr. Elias stands between them, hands raised to calm things down."
+"In the corridor, you find Dr. Finn and the boy facing each other while Dr. Elias stands between them, hands raised to calm things down."
 
 NEXT: act2\_wed\_player\_accuses
 
@@ -932,15 +932,15 @@ PORTRAIT: suspicious
 
 "Stop pretending. I saw a teacher leading a kid away. Same red jacket, same line—"you need some disciplining." It has to be you."
 
-NEXT: act2\_wed\_felix\_reacts
+NEXT: act2\_wed\_finn\_reacts
 
 
 
-\[DIALOGUE] act2\_wed\_felix\_reacts
+\[DIALOGUE] act2\_wed\_finn\_reacts
 
 ACT: 2
 
-SPEAKER: felix
+SPEAKER: finn
 
 PORTRAIT: shocked
 
@@ -1024,17 +1024,17 @@ PORTRAIT: none
 
 ACT: 2
 
-"You grip your pen tighter and stare at the worksheet. Confronting Felix in front of everyone would only make you look crazy."
+"You grip your pen tighter and stare at the worksheet. Confronting Finn in front of everyone would only make you look crazy."
 
-NEXT: act2\_wed\_felix\_class\_resumes
+NEXT: act2\_wed\_finn\_class\_resumes
 
 
 
-\[NARRATION] act2\_wed\_felix\_class\_resumes
+\[NARRATION] act2\_wed\_finn\_class\_resumes
 
 ACT: 2
 
-"Felix returns to the board, voice colder than before. The class falls into an uneasy silence until the bell finally rings."
+"Finn returns to the board, voice colder than before. The class falls into an uneasy silence until the bell finally rings."
 
 NEXT: act2\_wed\_corridor\_after\_class
 
@@ -1072,7 +1072,7 @@ SPEAKER: \[PLAYER]
 
 PORTRAIT: nervous
 
-"It’s both. Felix keeps snapping at students, and that red jacket thing won’t leave my brain."
+"It’s both. Finn keeps snapping at students, and that red jacket thing won’t leave my brain."
 
 NEXT: act2\_wed\_maya\_deflects
 
@@ -1286,17 +1286,17 @@ SPEAKER: maya
 
 PORTRAIT: suspicious
 
-"There are only three teachers who always wear red: Dr. Hina’s red hijab, Dr. Elias’s red scarf, and Dr. Felix’s red handkerchief."
+"There are only three teachers who always wear red: Dr. Hina’s red hijab, Dr. Elias’s red scarf, and Dr. Finn’s red handkerchief."
 
-NEXT: act2\_thu\_morning\_player\_notices\_felix
+NEXT: act2\_thu\_morning\_player\_notices\_finn
 
 
 
-\[NARRATION] act2\_thu\_morning\_player\_notices\_felix
+\[NARRATION] act2\_thu\_morning\_player\_notices\_finn
 
 ACT: 2
 
-"Later, in the corridor, you spot Dr. Felix at his classroom door. Today, his usual red handkerchief is nowhere to be seen."
+"Later, in the corridor, you spot Dr. Finn at his classroom door. Today, his usual red handkerchief is nowhere to be seen."
 
 NEXT: act2\_thu\_morning\_player\_comment
 
@@ -1310,13 +1310,13 @@ SPEAKER: \[PLAYER]
 
 PORTRAIT: suspicious
 
-"Wait… Felix doesn’t have his handkerchief today."
+"Wait… Finn doesn’t have his handkerchief today."
 
-NEXT: act2\_thu\_morning\_maya\_suspects\_felix
+NEXT: act2\_thu\_morning\_maya\_suspects\_finn
 
 
 
-\[DIALOGUE] act2\_thu\_morning\_maya\_suspects\_felix
+\[DIALOGUE] act2\_thu\_morning\_maya\_suspects\_finn
 
 ACT: 2
 
@@ -1358,7 +1358,7 @@ SPEAKER: maya
 
 PORTRAIT: suspicious
 
-"Okay. When Felix leaves, we follow his car. No getting too close, no doing anything stupid. We just watch."
+"Okay. When Finn leaves, we follow his car. No getting too close, no doing anything stupid. We just watch."
 
 NEXT: act2\_thu\_after\_school\_wait\_parking
 
@@ -1378,7 +1378,7 @@ NEXT: act2\_thu\_after\_school\_follow\_car
 
 ACT: 2
 
-"When Felix’s old sedan finally rolls past, you slip into the crowd and trail a safe distance behind, eyes fixed on his rear bumper."
+"When Finn’s old sedan finally rolls past, you slip into the crowd and trail a safe distance behind, eyes fixed on his rear bumper."
 
 NEXT: act2\_thu\_drive\_outskirts
 
@@ -1398,27 +1398,27 @@ NEXT: act2\_thu\_outside\_house\_listen
 
 ACT: 2
 
-"Felix parks outside a small, tired‑looking house. You and Maya duck behind a fence as he steps out, shoulders slumped, and goes inside."
+"Finn parks outside a small, tired‑looking house. You and Maya duck behind a fence as he steps out, shoulders slumped, and goes inside."
 
-NEXT: act2\_thu\_overhear\_felix
-
-
-
-\[NARRATION] act2\_thu\_overhear\_felix
-
-ACT: 2
-
-"A cracked window is slightly open. Voices drift out—Felix’s, low and shaky, and another, older and weaker."
-
-NEXT: act2\_thu\_felix\_talking\_inside
+NEXT: act2\_thu\_overhear\_finn
 
 
 
-\[DIALOGUE] act2\_thu\_felix\_talking\_inside
+\[NARRATION] act2\_thu\_overhear\_finn
 
 ACT: 2
 
-SPEAKER: felix
+"A cracked window is slightly open. Voices drift out—Finn’s, low and shaky, and another, older and weaker."
+
+NEXT: act2\_thu\_finn\_talking\_inside
+
+
+
+\[DIALOGUE] act2\_thu\_finn\_talking\_inside
+
+ACT: 2
+
+SPEAKER: finn
 
 PORTRAIT: sad
 
@@ -1452,15 +1452,15 @@ PORTRAIT: sad
 
 "And the red handkerchief? He probably left it here with her. Like a reminder he’ll come back."
 
-NEXT: act2\_thu\_felix\_innocent\_narration
+NEXT: act2\_thu\_finn\_innocent\_narration
 
 
 
-\[NARRATION] act2\_thu\_felix\_innocent\_narration
+\[NARRATION] act2\_thu\_finn\_innocent\_narration
 
 ACT: 2
 
-"Felix’s voice cracks as he laughs weakly about homework and test scores. It doesn’t sound like the voice of a kidnapper—just a worn‑out teacher clinging to something normal."
+"Finn’s voice cracks as he laughs weakly about homework and test scores. It doesn’t sound like the voice of a kidnapper—just a worn‑out teacher clinging to something normal."
 
 NEXT: act2\_thu\_two\_suspects\_left
 
@@ -1474,7 +1474,7 @@ SPEAKER: maya
 
 PORTRAIT: suspicious
 
-"So Felix is off the list. That leaves Dr. Hina with her red hijab… and Dr. Elias with his red scarf."
+"So Finn is off the list. That leaves Dr. Hina with her red hijab… and Dr. Elias with his red scarf."
 
 NEXT: act2\_thu\_evening\_walk\_home\_separate
 
@@ -1562,7 +1562,7 @@ NEXT: act3\_fri\_internal\_bulletin\_board
 
 ACT: 3
 
-"In your head, the pieces from the last days slide across an invisible bulletin board—red hijab, missing kids, Felix cleared, Elias’s scarf still pinned in the corner."
+"In your head, the pieces from the last days slide across an invisible bulletin board—red hijab, missing kids, Finn cleared, Elias’s scarf still pinned in the corner."
 
 NEXT: act3\_fri\_player\_decides\_follow
 
@@ -2074,7 +2074,7 @@ SPEAKER: hina
 
 PORTRAIT: nervous
 
-"I’ve been trying to piece this together on my own—talking to parents, checking schedules, comparing when the kids vanished. I thought Felix might be involved at first, but the times didn’t line up."
+"I’ve been trying to piece this together on my own—talking to parents, checking schedules, comparing when the kids vanished. I thought Finn might be involved at first, but the times didn’t line up."
 
 NEXT: act3\_mon\_player\_and\_hina\_align
 
@@ -2088,7 +2088,7 @@ SPEAKER: \[PLAYER]
 
 PORTRAIT: suspicious
 
-"We followed Felix. He’s innocent. Whoever’s doing this is smarter than just yelling in class… and they like red."
+"We followed Finn. He’s innocent. Whoever’s doing this is smarter than just yelling in class… and they like red."
 
 NEXT: act3\_mon\_hina\_resolve
 

@@ -64,79 +64,79 @@ def add_act2_nodes(tree: StoryTree):
         node_type=NodeType.NARRATION,
         act=2,
         text="Inside, the corridor buzzes with nervous chatter about curfews, police patrols, and missing classmates.",
-        next_node_id="act2_wed_felix_class_intro"
+        next_node_id="act2_wed_finn_class_intro"
     ))
 
     tree.add_node(StoryNode(
-        node_id="act2_wed_felix_class_intro",
+        node_id="act2_wed_finn_class_intro",
         node_type=NodeType.NARRATION,
         act=2,
-        text="By the time physics rolls around, the air in Dr. Felix's classroom feels heavier than usual.",
-        next_node_id="act2_wed_felix_start_lesson"
+        text="By the time physics rolls around, the air in Dr. Finn's classroom feels heavier than usual.",
+        next_node_id="act2_wed_finn_start_lesson"
     ))
 
     tree.add_node(StoryNode(
-        node_id="act2_wed_felix_start_lesson",
+        node_id="act2_wed_finn_start_lesson",
         node_type=NodeType.DIALOGUE,
         act=2,
-        speaker="felix",
+        speaker="finn",
         portrait="angry",
         text="Sit down and take out your notebooks. Just because the news is loud doesn't mean your brains can be quiet.",
-        next_node_id="act2_wed_felix_rude_student"
+        next_node_id="act2_wed_finn_rude_student"
     ))
 
     tree.add_node(StoryNode(
-        node_id="act2_wed_felix_rude_student",
+        node_id="act2_wed_finn_rude_student",
         node_type=NodeType.NARRATION,
         act=2,
         text="Halfway through the lesson, a boy at the back snickers and mutters something under his breath. A few students laugh.",
-        next_node_id="act2_wed_felix_throws_out"
+        next_node_id="act2_wed_finn_throws_out"
     ))
 
     tree.add_node(StoryNode(
-        node_id="act2_wed_felix_throws_out",
+        node_id="act2_wed_finn_throws_out",
         node_type=NodeType.DIALOGUE,
         act=2,
-        speaker="felix",
+        speaker="finn",
         portrait="angry",
         text="If you think this is a joke, mister, get out of my class. Now.",
-        next_node_id="act2_wed_felix_boy_leaves"
+        next_node_id="act2_wed_finn_boy_leaves"
     ))
 
     tree.add_node(StoryNode(
-        node_id="act2_wed_felix_boy_leaves",
+        node_id="act2_wed_finn_boy_leaves",
         node_type=NodeType.NARRATION,
         act=2,
         text="The boy scoffs, shoves his chair back, and storms out into the corridor, the door slamming behind him.",
-        next_node_id="act2_wed_choice_confront_felix"
+        next_node_id="act2_wed_choice_confront_finn"
     ))
 
     tree.add_node(StoryNode(
-        node_id="act2_wed_choice_confront_felix",
+        node_id="act2_wed_choice_confront_finn",
         node_type=NodeType.CHOICE,
         act=2,
         text="What do you do?",
         choices=[
-            Choice("Follow them and accuse Felix of the kidnappings.", "act2_wed_confront_felix", choice_to_record="confronted_felix"),
-            Choice("Stay seated and say nothing.", "act2_wed_do_nothing", choice_to_record="did_nothing_felix"),
+            Choice("Follow them and accuse Finn of the kidnappings.", "act2_wed_confront_finn", choice_to_record="confronted_finn"),
+            Choice("Stay seated and say nothing.", "act2_wed_do_nothing", choice_to_record="did_nothing_finn"),
         ]
     ))
 
-    # ── BRANCH A: Confront Felix (bad ending) ──
+    # ── BRANCH A: Confront Finn (bad ending) ──
 
     tree.add_node(StoryNode(
-        node_id="act2_wed_confront_felix",
+        node_id="act2_wed_confront_finn",
         node_type=NodeType.NARRATION,
         act=2,
         text="As the rest of the class stares at their notes, you quietly slip out, heart pounding in your ears.",
-        next_node_id="act2_wed_corridor_felix_elias_scene"
+        next_node_id="act2_wed_corridor_finn_elias_scene"
     ))
 
     tree.add_node(StoryNode(
-        node_id="act2_wed_corridor_felix_elias_scene",
+        node_id="act2_wed_corridor_finn_elias_scene",
         node_type=NodeType.NARRATION,
         act=2,
-        text="In the corridor, you find Dr. Felix and the boy facing each other while Dr. Elias stands between them, hands raised to calm things down.",
+        text="In the corridor, you find Dr. Finn and the boy facing each other while Dr. Elias stands between them, hands raised to calm things down.",
         next_node_id="act2_wed_player_accuses"
     ))
 
@@ -147,14 +147,14 @@ def add_act2_nodes(tree: StoryTree):
         speaker="player",
         portrait="suspicious",
         text="Stop pretending. I saw a teacher leading a kid away. Same red jacket, same line — 'you need some disciplining.' It has to be you.",
-        next_node_id="act2_wed_felix_reacts"
+        next_node_id="act2_wed_finn_reacts"
     ))
 
     tree.add_node(StoryNode(
-        node_id="act2_wed_felix_reacts",
+        node_id="act2_wed_finn_reacts",
         node_type=NodeType.DIALOGUE,
         act=2,
-        speaker="felix",
+        speaker="finn",
         portrait="shocked",
         text="Are you out of your mind? I've never laid a hand on any of you.",
         next_node_id="act2_wed_elias_reassures"
@@ -214,15 +214,15 @@ def add_act2_nodes(tree: StoryTree):
         node_id="act2_wed_do_nothing",
         node_type=NodeType.NARRATION,
         act=2,
-        text="You grip your pen tighter and stare at the worksheet. Confronting Felix in front of everyone would only make you look crazy.",
-        next_node_id="act2_wed_felix_class_resumes"
+        text="You grip your pen tighter and stare at the worksheet. Confronting Finn in front of everyone would only make you look crazy.",
+        next_node_id="act2_wed_finn_class_resumes"
     ))
 
     tree.add_node(StoryNode(
-        node_id="act2_wed_felix_class_resumes",
+        node_id="act2_wed_finn_class_resumes",
         node_type=NodeType.NARRATION,
         act=2,
-        text="Felix returns to the board, voice colder than before. The class falls into an uneasy silence until the bell finally rings.",
+        text="Finn returns to the board, voice colder than before. The class falls into an uneasy silence until the bell finally rings.",
         next_node_id="act2_wed_corridor_after_class"
     ))
 
@@ -250,7 +250,7 @@ def add_act2_nodes(tree: StoryTree):
         act=2,
         speaker="player",
         portrait="nervous",
-        text="It's both. Felix keeps snapping at students, and that red jacket thing won't leave my brain.",
+        text="It's both. Finn keeps snapping at students, and that red jacket thing won't leave my brain.",
         next_node_id="act2_wed_maya_deflects"
     ))
 
@@ -406,15 +406,15 @@ def add_act2_nodes(tree: StoryTree):
         act=2,
         speaker="maya",
         portrait="suspicious",
-        text="There are only three teachers who always wear red: Dr. Hina's red hijab, Dr. Elias's red scarf, and Dr. Felix's red handkerchief.",
-        next_node_id="act2_thu_morning_player_notices_felix"
+        text="There are only three teachers who always wear red: Dr. Hina's red hijab, Dr. Elias's red scarf, and Dr. Finn's red handkerchief.",
+        next_node_id="act2_thu_morning_player_notices_finn"
     ))
 
     tree.add_node(StoryNode(
-        node_id="act2_thu_morning_player_notices_felix",
+        node_id="act2_thu_morning_player_notices_finn",
         node_type=NodeType.NARRATION,
         act=2,
-        text="Later, in the corridor, you spot Dr. Felix at his classroom door. Today, his usual red handkerchief is nowhere to be seen.",
+        text="Later, in the corridor, you spot Dr. Finn at his classroom door. Today, his usual red handkerchief is nowhere to be seen.",
         next_node_id="act2_thu_morning_player_comment"
     ))
 
@@ -424,12 +424,12 @@ def add_act2_nodes(tree: StoryTree):
         act=2,
         speaker="player",
         portrait="suspicious",
-        text="Wait… Felix doesn't have his handkerchief today.",
-        next_node_id="act2_thu_morning_maya_suspects_felix"
+        text="Wait… Finn doesn't have his handkerchief today.",
+        next_node_id="act2_thu_morning_maya_suspects_finn"
     ))
 
     tree.add_node(StoryNode(
-        node_id="act2_thu_morning_maya_suspects_felix",
+        node_id="act2_thu_morning_maya_suspects_finn",
         node_type=NodeType.DIALOGUE,
         act=2,
         speaker="maya",
@@ -460,7 +460,7 @@ def add_act2_nodes(tree: StoryTree):
         act=2,
         speaker="maya",
         portrait="suspicious",
-        text="Okay. When Felix leaves, we follow his car. No getting too close, no doing anything stupid. We just watch.",
+        text="Okay. When Finn leaves, we follow his car. No getting too close, no doing anything stupid. We just watch.",
         next_node_id="act2_thu_after_school_wait_parking"
     ))
 
@@ -476,7 +476,7 @@ def add_act2_nodes(tree: StoryTree):
         node_id="act2_thu_after_school_follow_car",
         node_type=NodeType.NARRATION,
         act=2,
-        text="When Felix's old sedan finally rolls past, you slip into the crowd and trail a safe distance behind, eyes fixed on his rear bumper.",
+        text="When Finn's old sedan finally rolls past, you slip into the crowd and trail a safe distance behind, eyes fixed on his rear bumper.",
         next_node_id="act2_thu_drive_outskirts"
     ))
 
@@ -492,23 +492,23 @@ def add_act2_nodes(tree: StoryTree):
         node_id="act2_thu_outside_house_listen",
         node_type=NodeType.NARRATION,
         act=2,
-        text="Felix parks outside a small, tired-looking house. You and Maya duck behind a fence as he steps out, shoulders slumped, and goes inside.",
-        next_node_id="act2_thu_overhear_felix"
+        text="Finn parks outside a small, tired-looking house. You and Maya duck behind a fence as he steps out, shoulders slumped, and goes inside.",
+        next_node_id="act2_thu_overhear_finn"
     ))
 
     tree.add_node(StoryNode(
-        node_id="act2_thu_overhear_felix",
+        node_id="act2_thu_overhear_finn",
         node_type=NodeType.NARRATION,
         act=2,
-        text="A cracked window is slightly open. Voices drift out — Felix's, low and shaky, and another, older and weaker.",
-        next_node_id="act2_thu_felix_talking_inside"
+        text="A cracked window is slightly open. Voices drift out — Finn's, low and shaky, and another, older and weaker.",
+        next_node_id="act2_thu_finn_talking_inside"
     ))
 
     tree.add_node(StoryNode(
-        node_id="act2_thu_felix_talking_inside",
+        node_id="act2_thu_finn_talking_inside",
         node_type=NodeType.DIALOGUE,
         act=2,
-        speaker="felix",
+        speaker="finn",
         portrait="sad",
         text="I'm doing my best, mom. The kids hate me, the pay is awful, and the hospital still wants ten thousand. But I'll figure it out.",
         next_node_id="act2_thu_player_realisation"
@@ -531,14 +531,14 @@ def add_act2_nodes(tree: StoryTree):
         speaker="maya",
         portrait="sad",
         text="And the red handkerchief? He probably left it here with her. Like a reminder he'll come back.",
-        next_node_id="act2_thu_felix_innocent_narration"
+        next_node_id="act2_thu_finn_innocent_narration"
     ))
 
     tree.add_node(StoryNode(
-        node_id="act2_thu_felix_innocent_narration",
+        node_id="act2_thu_finn_innocent_narration",
         node_type=NodeType.NARRATION,
         act=2,
-        text="Felix's voice cracks as he laughs weakly about homework and test scores. It doesn't sound like the voice of a kidnapper — just a worn-out teacher clinging to something normal.",
+        text="Finn's voice cracks as he laughs weakly about homework and test scores. It doesn't sound like the voice of a kidnapper — just a worn-out teacher clinging to something normal.",
         next_node_id="act2_thu_two_suspects_left"
     ))
 
@@ -548,7 +548,7 @@ def add_act2_nodes(tree: StoryTree):
         act=2,
         speaker="maya",
         portrait="suspicious",
-        text="So Felix is off the list. That leaves Dr. Hina with her red hijab… and Dr. Elias with his red scarf.",
+        text="So Finn is off the list. That leaves Dr. Hina with her red hijab… and Dr. Elias with his red scarf.",
         next_node_id="act2_thu_evening_walk_home_separate"
     ))
 
