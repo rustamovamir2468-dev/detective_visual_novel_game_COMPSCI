@@ -177,14 +177,14 @@ def add_act2_nodes(tree: StoryTree):
         speaker="player",
         portrait="nervous",
         text="I saw someone taken away near the side gate. And now kids are missing. How is that a coincidence?",
-        next_node_id="act2_wed_hina_interrupts"
+        next_node_id="act2_wed_hannah_interrupts"
     ))
 
     tree.add_node(StoryNode(
-        node_id="act2_wed_hina_interrupts",
+        node_id="act2_wed_hannah_interrupts",
         node_type=NodeType.DIALOGUE,
         act=2,
-        speaker="hina",
+        speaker="hannah",
         portrait="angry",
         text="What is all this ruckus? Everyone, back to class. We have enough to worry about without wild rumors.",
         next_node_id="act2_wed_after_school_chem_lab_setup"
@@ -406,7 +406,7 @@ def add_act2_nodes(tree: StoryTree):
         act=2,
         speaker="maya",
         portrait="suspicious",
-        text="There are only three teachers who always wear red: Dr. Hina's red hijab, Dr. Elias's red scarf, and Dr. Finn's red handkerchief.",
+        text="There are only three teachers who always wear red: Dr. Hannah's red hijab, Dr. Elias's red scarf, and Dr. Finn's red handkerchief.",
         next_node_id="act2_thu_morning_player_notices_finn"
     ))
 
@@ -548,7 +548,7 @@ def add_act2_nodes(tree: StoryTree):
         act=2,
         speaker="maya",
         portrait="suspicious",
-        text="So Finn is off the list. That leaves Dr. Hina with her red hijab… and Dr. Elias with his red scarf.",
+        text="So Finn is off the list. That leaves Dr. Hannah with her red hijab… and Dr. Elias with his red scarf.",
         next_node_id="act2_thu_evening_walk_home_separate"
     ))
 
