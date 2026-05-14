@@ -10,7 +10,7 @@ import pygame
 
 # --- Screen Settings ---
 SCREEN_WIDTH  = 960
-SCREEN_HEIGHT = 640
+SCREEN_HEIGHT = 500
 FPS           = 60
 TITLE         = "Alias"
 

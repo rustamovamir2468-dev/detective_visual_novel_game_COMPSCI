@@ -301,7 +301,7 @@ def add_act4_nodes(tree: StoryTree):
         node_type=NodeType.DIALOGUE,
         act=4,
         speaker="elias",
-        portrait="suspicious",
+        portrait=("elias", "cold"),
         text="I was wondering when you'd arrive.",
         next_node_id="act4_tue_church_interior_reveal"
     ))
@@ -345,7 +345,7 @@ def add_act4_nodes(tree: StoryTree):
         node_type=NodeType.DIALOGUE,
         act=4,
         speaker="elias",
-        portrait="demon",
+        portrait=("elias", "demon"),
         text="Every soul feeds the bargain. One more, and I go home. One more, and the rest of you walk free.",
         next_node_id="act4_tue_final_choice_setup"
     ))
@@ -399,7 +399,7 @@ def add_act4_nodes(tree: StoryTree):
         node_type=NodeType.DIALOGUE,
         act=4,
         speaker="hannah",
-        portrait="happy",
+        portrait=("hannah", "cold"),
         text="If it has to be someone… it doesn't have to be the kids!",
         next_node_id="ending_sacrifice_hannah_narration"
     ))
