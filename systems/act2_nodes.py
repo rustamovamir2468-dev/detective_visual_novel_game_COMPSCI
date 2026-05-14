@@ -406,7 +406,7 @@ def add_act2_nodes(tree: StoryTree):
         act=2,
         speaker="maya",
         portrait=("maya", "nervous"),
-        text="There are only three teachers who always wear red: Dr. Hannah's red hijab, Dr. Elias's red scarf, and Dr. Finn's red handkerchief.",
+        text="There are only three teachers who always wear red: Dr. Hannah's red beanie, Dr. Elias's red scarf, and Dr. Finn's red handkerchief.",
         next_node_id="act2_thu_morning_player_notices_finn"
     ))
 
@@ -548,7 +548,7 @@ def add_act2_nodes(tree: StoryTree):
         act=2,
         speaker="maya",
         portrait=("maya", "neutral"),
-        text="So Finn is off the list. That leaves Dr. Hannah with her red hijab… and Dr. Elias with his red scarf.",
+        text="So Finn is off the list. That leaves Dr. Hannah with her red beanie… and Dr. Elias with his red scarf.",
         next_node_id="act2_thu_evening_walk_home_separate"
     ))
 

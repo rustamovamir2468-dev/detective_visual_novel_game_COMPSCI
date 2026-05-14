@@ -53,7 +53,7 @@ ACT 2:
 > morning news > red cloth found, another kid missing
 > Maya says she will talk to you at school
 > She tells you that she found this article of clothing, and submitted it to police at night
-> There are only 3 teachers that wear red article of clothing, Hannah hijab and Elias scarf and Finn handkerchief
+> There are only 3 teachers that wear red article of clothing, Hannah beanie and Elias scarf and Finn handkerchief
 > FELXI DOESNT HAVE HANDKERCHIEF TODAY!!!
 > Keep this a secret for now between us, but let's follow Finn today, because I don't trust him
 
@@ -69,7 +69,7 @@ ACT 3:
 
 > Wednesday
 > Hannah is acting reserved (she is trying to figure out what is happening as well)
-> you become suspicious, from the last act (refer to like bulletin board in head to see evidence and match to her hijab)
+> you become suspicious, from the last act (refer to like bulletin board in head to see evidence and match to her beanie)
 > you decide to follow her
 	>CHOICE 3!!!: 1. Follow her directly
 				> Hannah telling Elias that you two are following

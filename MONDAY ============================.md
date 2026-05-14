@@ -1286,7 +1286,7 @@ SPEAKER: maya
 
 PORTRAIT: suspicious
 
-"There are only three teachers who always wear red: Dr. Hannah’s red hijab, Dr. Elias’s red scarf, and Dr. Finn’s red handkerchief."
+"There are only three teachers who always wear red: Dr. Hannah’s red beanie, Dr. Elias’s red scarf, and Dr. Finn’s red handkerchief."
 
 NEXT: act2\_thu\_morning\_player\_notices\_finn
 
@@ -1474,7 +1474,7 @@ SPEAKER: maya
 
 PORTRAIT: suspicious
 
-"So Finn is off the list. That leaves Dr. Hannah with her red hijab… and Dr. Elias with his red scarf."
+"So Finn is off the list. That leaves Dr. Hannah with her red beanie… and Dr. Elias with his red scarf."
 
 NEXT: act2\_thu\_evening\_walk\_home\_separate
 
@@ -1562,7 +1562,7 @@ NEXT: act3\_fri\_internal\_bulletin\_board
 
 ACT: 3
 
-"In your head, the pieces from the last days slide across an invisible bulletin board—red hijab, missing kids, Finn cleared, Elias’s scarf still pinned in the corner."
+"In your head, the pieces from the last days slide across an invisible bulletin board—red beanie, missing kids, Finn cleared, Elias’s scarf still pinned in the corner."
 
 NEXT: act3\_fri\_player\_decides\_follow
 
@@ -1826,7 +1826,7 @@ NEXT: act3\_mon\_morning\_corridor
 
 ACT: 3
 
-"In the corridor, teachers talk in low voices, and students move in tight groups. Dr. Hannah passes by with her red hijab wrapped neatly, offering a tired smile."
+"In the corridor, teachers talk in low voices, and students move in tight groups. Dr. Hannah passes by with her red beanie wrapped neatly, offering a tired smile."
 
 NEXT: act3\_mon\_morning\_player\_suspicion
 

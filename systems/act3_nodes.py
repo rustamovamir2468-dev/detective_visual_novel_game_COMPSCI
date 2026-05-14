@@ -48,7 +48,7 @@ def add_act3_nodes(tree: StoryTree):
         node_id="act3_fri_internal_bulletin_board",
         node_type=NodeType.NARRATION,
         act=3,
-        text="In your head, the pieces from the last days slide across an invisible bulletin board — red hijab, missing kids, Finn cleared, Elias's scarf still pinned in the corner.",
+        text="In your head, the pieces from the last days slide across an invisible bulletin board — red beanie, missing kids, Finn cleared, Elias's scarf still pinned in the corner.",
         next_node_id="act3_fri_player_decides_follow"
     ))
 
@@ -243,7 +243,7 @@ def add_act3_nodes(tree: StoryTree):
         node_id="act3_mon_morning_corridor",
         node_type=NodeType.NARRATION,
         act=3,
-        text="In the corridor, teachers talk in low voices, and students move in tight groups. Dr. Hannah passes by with her red hijab wrapped neatly, offering a tired smile.",
+        text="In the corridor, teachers talk in low voices, and students move in tight groups. Dr. Hannah passes by with her red beanie wrapped neatly, offering a tired smile.",
         next_node_id="act3_mon_morning_player_suspicion"
     ))
 
