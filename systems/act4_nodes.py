@@ -270,10 +270,8 @@ def add_act4_nodes(tree: StoryTree):
 
     tree.add_node(StoryNode(
         node_id="ending_bad_police_explosion",
-        node_type=NodeType.DIALOGUE,
+        node_type=NodeType.NARRATION,
         act=4,
-        speaker="narrator",
-        portrait="none",
         text="Elias had planned for heroes. The explosion tore through the church and the road alike, swallowing police, teachers, and students in one blinding wave.",
         next_node_id=None
     ))
@@ -444,10 +442,8 @@ def add_act4_nodes(tree: StoryTree):
 
     tree.add_node(StoryNode(
         node_id="ending_true_final",
-        node_type=NodeType.DIALOGUE,
+        node_type=NodeType.NARRATION,
         act=4,
-        speaker="narrator",
-        portrait="none",
         text="Just as Elias closes in, sirens wail outside. Police flood the church, and under your shout to \"shoot the cup\", bullets shatter the cursed relic. The demon howls, the red in his eyes burning out as he collapses for the last time.",
         next_node_id="act4_credits_or_return_menu",
         requires_flag="told_mom_about_maya"
@@ -457,10 +453,8 @@ def add_act4_nodes(tree: StoryTree):
 
     tree.add_node(StoryNode(
         node_id="ending_bad_no_mom_help",
-        node_type=NodeType.DIALOGUE,
+        node_type=NodeType.NARRATION,
         act=4,
-        speaker="narrator",
-        portrait="none",
         text="No help ever comes. Your legs give out before your courage does, and the last thing you see is the cup's red glow closing in. Somewhere far away, the world keeps turning, never knowing how close it came.",
         next_node_id=None
     ))

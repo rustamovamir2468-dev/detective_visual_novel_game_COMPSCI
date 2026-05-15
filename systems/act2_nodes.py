@@ -200,10 +200,8 @@ def add_act2_nodes(tree: StoryTree):
 
     tree.add_node(StoryNode(
         node_id="ending_bad_chem_lab",
-        node_type=NodeType.DIALOGUE,
+        node_type=NodeType.NARRATION,
         act=2,
-        speaker="narrator",
-        portrait="none",
         text="The quiet room grows hazy. A faint hiss whispers from a forgotten burner. By the time you notice the smell, it's already too late.",
         next_node_id=None
     ))
@@ -562,10 +560,8 @@ def add_act2_nodes(tree: StoryTree):
 
     tree.add_node(StoryNode(
         node_id="act2_end_of_act2",
-        node_type=NodeType.DIALOGUE,
+        node_type=NodeType.NARRATION,
         act=2,
-        speaker="narrator",
-        portrait="none",
         text="You say goodbye to Maya at the corner, minds racing with new questions and fewer suspects than before.",
         next_node_id=None
     ))

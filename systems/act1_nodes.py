@@ -413,10 +413,8 @@ def add_act1_nodes(tree: StoryTree):
 
     tree.add_node(StoryNode(
         node_id="ending_bad_candy",
-        node_type=NodeType.DIALOGUE,
+        node_type=NodeType.NARRATION,
         text="You reached for answers too soon. The world tilted, the lights went out, and no one was there to see you fall.",
-        speaker="narrator",
-        portrait=("narrator", "none"),
         next_node_id=None,
         act=ACT_1
     ))
@@ -573,20 +571,16 @@ def add_act1_nodes(tree: StoryTree):
 
     tree.add_node(StoryNode(
         node_id="act1_tuesday_nightmare_voice_line",
-        node_type=NodeType.DIALOGUE,
+        node_type=NodeType.NARRATION,
         text="Shadows crowd around you. A distorted voice booms from nowhere: \"No distinction for you!\"",
-        speaker="narrator",
-        portrait=("narrator", "none"),
         next_node_id="act1_end_of_act1",
         act=ACT_1
     ))
 
     tree.add_node(StoryNode(
         node_id="act1_end_of_act1",
-        node_type=NodeType.DIALOGUE,
+        node_type=NodeType.NARRATION,
         text="You jolt awake, heart racing, the words still echoing in your ears.",
-        speaker="narrator",
-        portrait=("narrator", "none"),
         next_node_id="act2_wed_morning_news_intro",
         act=ACT_1
     ))

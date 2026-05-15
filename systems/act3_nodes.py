@@ -141,10 +141,8 @@ def add_act3_nodes(tree: StoryTree):
 
     tree.add_node(StoryNode(
         node_id="ending_bad_hannah_follow",
-        node_type=NodeType.DIALOGUE,
+        node_type=NodeType.NARRATION,
         act=3,
-        speaker="narrator",
-        portrait="none",
         text="The parking lot lights flickered on as the world dimmed. You were right about danger — just wrong about who it was aimed at.",
         next_node_id=None
     ))
@@ -322,10 +320,8 @@ def add_act3_nodes(tree: StoryTree):
 
     tree.add_node(StoryNode(
         node_id="ending_bad_car_explosion",
-        node_type=NodeType.DIALOGUE,
+        node_type=NodeType.NARRATION,
         act=3,
-        speaker="narrator",
-        portrait="none",
         text="The engine roared once, then the world shattered into light and sound. In a single flash, the parking lot, the car, and every doubt you held vanished together.",
         next_node_id=None
     ))
@@ -466,10 +462,8 @@ def add_act3_nodes(tree: StoryTree):
 
     tree.add_node(StoryNode(
         node_id="act3_end_of_act3",
-        node_type=NodeType.DIALOGUE,
+        node_type=NodeType.NARRATION,
         act=3,
-        speaker="narrator",
-        portrait="none",
         text="That night, the school's shadows feel longer in your memory. You're no longer just suspicious students — Hannah is on your side now, and all eyes are turning toward Elias.",
         next_node_id=None
     ))
