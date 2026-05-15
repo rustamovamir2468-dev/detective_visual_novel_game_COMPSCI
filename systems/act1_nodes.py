@@ -110,6 +110,8 @@ def add_act1_nodes(tree: StoryTree):
         act=ACT_1
     ))
 
+    # HERE, THE DRAGGING SCENE WITH THE RED HOOD KID SHOULD HAPPEN, WITHOUT THE DIALOGUE BOX BELOW - 5744357
+
     tree.add_node(StoryNode(
         node_id="act1_school_cs_strange_line",
         node_type=NodeType.NARRATION,
@@ -253,10 +255,13 @@ def add_act1_nodes(tree: StoryTree):
     tree.add_node(StoryNode(
         node_id="act1_tuesday_physics_classroom_scene",
         node_type=NodeType.NARRATION,
-        text="You take your seat. Dr. Finn, the stern, grey-haired teacher, scribbles equations across the board while the class half-listens.",
+        text="You take your seat. Dr. Finn, the stern-looking teacher, scribbles equations across the board while the class half-listens.",
         next_node_id="act1_tuesday_physics_finn_line",
         act=ACT_1
     ))
+
+    # HERE, SHOW A PICTURE OF 2 KIDS LAUGHING IN THE CLASS, WITHOUT THE DIALOGUE BOX - 5744357
+
 
     tree.add_node(StoryNode(
         node_id="act1_tuesday_physics_finn_line",
@@ -265,6 +270,8 @@ def add_act1_nodes(tree: StoryTree):
         next_node_id="act1_tuesday_physics_player_ears_prick",
         act=ACT_1
     ))
+
+    # RIGHT AFTER, SHOW A PICTURE OF FELIX POINTING AT THE KIDS, WITHOUT THE DIALOGUE BOX - 5744357
 
     tree.add_node(StoryNode(
         node_id="act1_tuesday_physics_player_ears_prick",
