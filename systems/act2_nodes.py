@@ -563,5 +563,5 @@ def add_act2_nodes(tree: StoryTree):
         node_type=NodeType.NARRATION,
         act=2,
         text="You say goodbye to Maya at the corner, minds racing with new questions and fewer suspects than before.",
-        next_node_id=None
+        next_node_id="act3_fri_morning_school_intro"
     ))

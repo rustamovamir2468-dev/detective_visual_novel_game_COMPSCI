@@ -169,7 +169,7 @@ def add_act4_nodes(tree: StoryTree):
         next_node_id="act4_tue_afternoon_tell_hannah"
     ))
 
-    # ── AFTERNOON: TELL HINA ───────────────────────────────────────────────
+    # ── AFTERNOON: TELL H ───────────────────────────────────────────────
 
     tree.add_node(StoryNode(
         node_id="act4_tue_afternoon_tell_hannah",
@@ -387,7 +387,7 @@ def add_act4_nodes(tree: StoryTree):
         node_type=NodeType.NARRATION,
         act=4,
         text="The cup's surface splits into a spiral of red as the air rushes out of your lungs. Elias is dragged screaming into the dark, and when the light fades, the chains are empty and the kids are free.",
-        next_node_id="act4_credits_or_return_menu"
+        next_node_id=None
     ))
 
     # ── ENDING 2: Sacrifice Hannah (Bad Ending) ──────────────────────────────
@@ -465,6 +465,6 @@ def add_act4_nodes(tree: StoryTree):
         node_id="act4_credits_or_return_menu",
         node_type=NodeType.NARRATION,
         act=4,
-        text="The church falls silent. Somewhere behind you, Maya breathes out a shaky laugh. It's over.",
+        text="The church falls silent. Somewhere behind you, Maya breathes out a shaky breath. It's over.",
         next_node_id=None
     ))
