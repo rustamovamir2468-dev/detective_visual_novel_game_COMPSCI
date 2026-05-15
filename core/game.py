@@ -15,7 +15,7 @@ from core.player_profile     import PlayerProfile
 from core.save_system        import CheckpointManager
 from core.scene_manager      import SceneManager
 from systems.dialogue_system import DialogueSystem
-from systems.story_tree      import StoryTree
+from systems.story_tree      import NodeType, StoryTree
 from ui.pause_menu           import PauseMenu
 from ui.main_menu            import MainMenu
 from ui.name_input           import NameInput
@@ -260,7 +260,8 @@ class Game:
 
                 if speaker == "narrator" or speaker == "none":
                     speaker = None
-                self.dialogue_box.draw(self.dialogue_system, speaker, self.palette)
+                is_narration = (node.node_type == NodeType.NARRATION or(node.node_type == NodeType.DIALOGUE and node.speaker == "narrator")) if node else False
+                self.dialogue_box.draw(self.dialogue_system, speaker, self.palette, italic=is_narration)
 
         elif self.gsm.is_state(State.PAUSED):
             self.pause_menu.draw(self.palette)

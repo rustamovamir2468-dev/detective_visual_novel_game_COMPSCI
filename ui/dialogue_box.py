@@ -12,8 +12,7 @@ class DialogueBox:
     def __init__(self, screen):
         self.screen      = screen
         self.font_name   = pygame.font.SysFont("Arial", FONT_SIZE_MEDIUM)  # Font for the speaker name.
-        self.font_text = pygame.font.SysFont("Arial", FONT_SIZE_MEDIUM)
-        self.font_text_italic = pygame.font.SysFont("Arial", FONT_SIZE_MEDIUM, italic=True)   # Font for the dialogue text.
+        self.font_text = pygame.font.SysFont("Arial", FONT_SIZE_SMALL)
         self.font_arrow  = pygame.font.SysFont("Arial", FONT_SIZE_MEDIUM)  # Font for the continue arrow.
         self.font_text_italic = pygame.font.SysFont("Arial", FONT_SIZE_SMALL, italic=True)  # Italic font for narration.
 
@@ -42,10 +41,11 @@ class DialogueBox:
             self.arrow_timer   = 0
             self.arrow_visible = not self.arrow_visible  # Toggle visibility.
 
-    def draw(self, dialogue_system, speaker_name, palette): # Draws the full dialogue box for the current frame.
+    def draw(self, dialogue_system, speaker_name, palette, italic=False): # Draws the full dialogue box for the current frame.
     # dialogue_system — the DialogueSystem object with the current text.
     # speaker_name    — the character's display name, or None for narration.
     # palette         — either PALETTE_WARM or PALETTE_COLD from settings.
+    # italic          — whether the text should be italicized (for narration).
 
         self._draw_box(palette)
 
@@ -57,7 +57,7 @@ class DialogueBox:
 
         # self._draw_text should be outside of the if loop - text must be shown even if there's no "speaker" in the node - 5744357
 
-        self._draw_text(dialogue_system.get_displayed_text(), palette, speaker_name)
+        self._draw_text(dialogue_system.get_displayed_text(), palette, narration=italic) # Get the current text from the dialogue system and draw it, with narration flag - 5744357
 
         if dialogue_system.is_finished(): # Only show the arrow when typing is done.
             self._draw_arrow(palette)
@@ -111,7 +111,7 @@ class DialogueBox:
         current = ""
 
     # Narration uses the full box width; dialogue leaves space for the portrait on the left.
-        if speaker_name:
+        if not narration:
             max_width = SCREEN_WIDTH - (DIALOGUE_BOX_PADDING * 2) - PORTRAIT_WIDTH + 200
         else:
             max_width = SCREEN_WIDTH - (DIALOGUE_BOX_PADDING * 4)  # Full width minus generous padding for narration.
@@ -127,16 +127,16 @@ class DialogueBox:
 
         total_text_height = len(lines) * (FONT_SIZE_SMALL + 6)  # Total height of all lines combined.
 
-        for i, line in enumerate(lines): # Enumerate gives us index and line for each line of text, so we can draw them with the correct vertical spacing.
+        for i, line in enumerate(lines):
             text_surface = font.render(line, True, palette["text"])
-            if speaker_name:
-                # Dialogue: left-aligned with portrait offset, starts near the top of the box.
-                x = PORTRAIT_WIDTH + DIALOGUE_BOX_PADDING - 200
-                y = DIALOGUE_BOX_Y + DIALOGUE_BOX_PADDING + (i * (FONT_SIZE_SMALL + 6))
-            else:
-                # Narration: each line centred horizontally, all lines centred vertically in the box.
+            if narration:
+                # Narration: centred horizontally, centred vertically in the box
                 x = (SCREEN_WIDTH - text_surface.get_width()) // 2
                 y = DIALOGUE_BOX_Y + (DIALOGUE_BOX_HEIGHT - total_text_height) // 2 + (i * (FONT_SIZE_SMALL + 6))
+            else:
+                # Dialogue: left-aligned with portrait offset
+                x = PORTRAIT_WIDTH + DIALOGUE_BOX_PADDING - 200
+                y = DIALOGUE_BOX_Y + DIALOGUE_BOX_PADDING + (i * (FONT_SIZE_SMALL + 6))
             self.screen.blit(text_surface, (x, y))
 
     def _draw_arrow(self, palette): # Draws a blinking "▼" arrow in the bottom right to signal the player can continue.
