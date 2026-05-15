@@ -12,7 +12,8 @@ class DialogueBox:
     def __init__(self, screen):
         self.screen      = screen
         self.font_name   = pygame.font.SysFont("Arial", FONT_SIZE_MEDIUM)  # Font for the speaker name.
-        self.font_text   = pygame.font.SysFont("Arial", FONT_SIZE_SMALL)   # Font for the dialogue text.
+        self.font_text   = pygame.font.SysFont("Arial", FONT_SIZE_SMALL)
+        self.font_text_italic = pygame.font.SysFont("Arial", FONT_SIZE_SMALL, italic=True)   # Font for the dialogue text.
         self.font_arrow  = pygame.font.SysFont("Arial", FONT_SIZE_MEDIUM)  # Font for the continue arrow.
 
         # --- The main dialogue box rectangle ---
@@ -41,8 +42,17 @@ class DialogueBox:
 
         if speaker_name: # Only draw the name tag if there is a speaker.
             self._draw_name_tag(speaker_name, palette)
+            
+        is_narration = speaker_name is None # Add a special occasion where a node doesn't have a speaker - 5744357
 
-        self._draw_text(dialogue_system.get_displayed_text(), palette) # This line should be outside of the loop - text must be shown even if there's no "speaker" in the node - 5744357
+
+        # self._draw_text should be outside of the if loop - text must be shown even if there's no "speaker" in the node - 5744357
+
+        self._draw_text(
+            dialogue_system.get_displayed_text(),
+            palette,
+            narration=is_narration
+        ) 
 
         if dialogue_system.is_finished(): # Only show the arrow when typing is done.
             self._draw_arrow(palette)
@@ -63,7 +73,9 @@ class DialogueBox:
 
         self.screen.blit(name_surface, text_rect)
 
-    def _draw_text(self, text, palette): # Draws the dialogue text inside the box, with word wrapping.
+    def _draw_text(self, text, palette, narration=False): # Draws the dialogue text inside the box, with word wrapping, added narration=False case - 5744357
+        font = self.font_text_italic if narration else self.font_text # Font type for specific text types - different for narrator - 5744357
+
         words   = text.split(" ") # Chops full sentences into words to handle wrapping.
         lines   = []
         current = ""
@@ -72,7 +84,7 @@ class DialogueBox:
 
         for word in words:
             test_line = current + word + " "
-            if self.font_text.size(test_line)[0] <= max_width:
+            if font.size(test_line)[0] <= max_width:
                 current = test_line
             else:
                 lines.append(current)  # This line is full, start a new one.
@@ -80,7 +92,7 @@ class DialogueBox:
         lines.append(current)  # Add the last remaining line.
 
         for i, line in enumerate(lines): # Enumerate gives us index and line for each line of text, so we can draw them with the correct vertical spacing.
-            text_surface = self.font_text.render(line, True, palette["text"])
+            text_surface = font.render(line, True, palette["text"])
             self.screen.blit(text_surface, (PORTRAIT_WIDTH + DIALOGUE_BOX_PADDING + 20, DIALOGUE_BOX_Y + DIALOGUE_BOX_PADDING + (i * (FONT_SIZE_SMALL + 6))))
 
     def _draw_arrow(self, palette): # Draws a blinking "▼" arrow in the bottom right to signal the player can continue.
