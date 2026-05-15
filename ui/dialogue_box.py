@@ -12,8 +12,8 @@ class DialogueBox:
     def __init__(self, screen):
         self.screen      = screen
         self.font_name   = pygame.font.SysFont("Arial", FONT_SIZE_MEDIUM)  # Font for the speaker name.
-        self.font_text   = pygame.font.SysFont("Arial", FONT_SIZE_SMALL)
-        self.font_text_italic = pygame.font.SysFont("Arial", FONT_SIZE_SMALL, italic=True)   # Font for the dialogue text.
+        self.font_text = pygame.font.SysFont("Arial", FONT_SIZE_MEDIUM)
+        self.font_text_italic = pygame.font.SysFont("Arial", FONT_SIZE_MEDIUM, italic=True)   # Font for the dialogue text.
         self.font_arrow  = pygame.font.SysFont("Arial", FONT_SIZE_MEDIUM)  # Font for the continue arrow.
 
         # The main dialogue box rectangle - adjust box width and prepare it to be centered in the bottom part of the screen
@@ -106,7 +106,7 @@ class DialogueBox:
             self.screen.blit(
                 text_surface,
                 (self.box_rect.x + DIALOGUE_BOX_PADDING,
-                self.box_rect.y + DIALOGUE_BOX_PADDING + (i * (FONT_SIZE_SMALL + 6)))
+                self.box_rect.y + DIALOGUE_BOX_PADDING + (i * (FONT_SIZE_MEDIUM + 6)))
             )
 
     def _draw_arrow(self, palette): # Draws a blinking "▼" arrow in the bottom right to signal the player can continue.
