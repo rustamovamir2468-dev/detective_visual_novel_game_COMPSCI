@@ -236,14 +236,14 @@ def add_act1_nodes(tree: StoryTree):
         node_id="act1_tuesday_school_corridor_transition",
         node_type=NodeType.NARRATION,
         text="The school buildings rise into view. The morning bell shrieks, and the corridor floods with students hurrying to class.",
-        next_node_id="act1_tuesday_physics_felix_intro",
+        next_node_id="act1_tuesday_physics_finn_intro",
         act=ACT_1
     ))
 
     tree.add_node(StoryNode(
-        node_id="act1_tuesday_physics_felix_intro",
+        node_id="act1_tuesday_physics_finn_intro",
         node_type=NodeType.DIALOGUE,
-        text="First up: physics with Dr. Felix. Lucky me.",
+        text="First up: physics with Dr. Finn. Lucky me.",
         speaker="[PLAYER]",
         portrait=("player", "neutral"),
         next_node_id="act1_tuesday_physics_classroom_scene",
@@ -253,15 +253,15 @@ def add_act1_nodes(tree: StoryTree):
     tree.add_node(StoryNode(
         node_id="act1_tuesday_physics_classroom_scene",
         node_type=NodeType.NARRATION,
-        text="You take your seat. Dr. Felix, the stern, grey-haired teacher, scribbles equations across the board while the class half-listens.",
-        next_node_id="act1_tuesday_physics_felix_line",
+        text="You take your seat. Dr. Finn, the stern, grey-haired teacher, scribbles equations across the board while the class half-listens.",
+        next_node_id="act1_tuesday_physics_finn_line",
         act=ACT_1
     ))
 
     tree.add_node(StoryNode(
-        node_id="act1_tuesday_physics_felix_line",
+        node_id="act1_tuesday_physics_finn_line",
         node_type=NodeType.NARRATION,
-        text="A student loudly laughed with his friends. Dr. Felix slams the chalk down and snaps, \"You need some disciplining!\"",
+        text="A student loudly laughed with his friends. Dr. Finn slams the chalk down and snaps, \"You need some disciplining!\"",
         next_node_id="act1_tuesday_physics_player_ears_prick",
         act=ACT_1
     ))
@@ -297,7 +297,7 @@ def add_act1_nodes(tree: StoryTree):
     tree.add_node(StoryNode(
         node_id="act1_tuesday_chem_player_still_thinking",
         node_type=NodeType.DIALOGUE,
-        text="Everyone else is cheering, but I can't stop thinking about Felix and that red jacket.",
+        text="Everyone else is cheering, but I can't stop thinking about Dr. Finn and that red jacket.",
         speaker="[PLAYER]",
         portrait=("player", "nervous"),
         next_node_id="act1_tuesday_chem_overhear_red_jacket",
@@ -475,22 +475,22 @@ def add_act1_nodes(tree: StoryTree):
         node_id="act1_tuesday_after_school_walk_home_maya",
         node_type=NodeType.NARRATION,
         text="Classes finally end. You and Maya leave the gates together, the sky melting into shades of orange and pink.",
-        next_node_id="act1_tuesday_after_school_talk_felix",
+        next_node_id="act1_tuesday_after_school_talk_finn",
         act=ACT_1
     ))
 
     tree.add_node(StoryNode(
-        node_id="act1_tuesday_after_school_talk_felix",
+        node_id="act1_tuesday_after_school_talk_finn",
         node_type=NodeType.DIALOGUE,
-        text="So… what do you think about Felix now? He looked like he wanted to throw that kid out the window.",
+        text="So… what do you think about Dr. Finn now? He looked like he wanted to throw that kid out the window.",
         speaker="maya",
         portrait=("maya", "suspicious"),
-        next_node_id="act1_tuesday_after_school_player_reply_felix",
+        next_node_id="act1_tuesday_after_school_player_reply_finn",
         act=ACT_1
     ))
 
     tree.add_node(StoryNode(
-        node_id="act1_tuesday_after_school_player_reply_felix",
+        node_id="act1_tuesday_after_school_player_reply_finn",
         node_type=NodeType.DIALOGUE,
         text="It's the same line as yesterday. Call me crazy, but I can't shake the feeling something's wrong.",
         speaker="[PLAYER]",

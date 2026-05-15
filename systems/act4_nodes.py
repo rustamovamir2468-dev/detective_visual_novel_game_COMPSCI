@@ -148,14 +148,14 @@ def add_act4_nodes(tree: StoryTree):
         speaker="player",
         portrait="suspicious",
         text="Perfect. The one person we were starting to suspect just… doesn't show up.",
-        next_node_id="act4_tue_morning_hina_short_scene"
+        next_node_id="act4_tue_morning_hannah_short_scene"
     ))
 
     tree.add_node(StoryNode(
-        node_id="act4_tue_morning_hina_short_scene",
+        node_id="act4_tue_morning_hannah_short_scene",
         node_type=NodeType.DIALOGUE,
         act=4,
-        speaker="hina",
+        speaker="hannah",
         portrait="nervous",
         text="If any of you hear from missing classmates — or see anything strange — you come to me or the office immediately. No rumors, only facts.",
         next_node_id="act4_tue_day_montage_agitated"
@@ -166,38 +166,38 @@ def add_act4_nodes(tree: StoryTree):
         node_type=NodeType.NARRATION,
         act=4,
         text="The rest of the day blurs into restless lessons and unanswered questions. Every time your phone buzzes, you hope it's Maya. It never is.",
-        next_node_id="act4_tue_afternoon_tell_hina"
+        next_node_id="act4_tue_afternoon_tell_hannah"
     ))
 
-    # ── AFTERNOON: TELL HINA ───────────────────────────────────────────────
+    # ── AFTERNOON: TELL H ───────────────────────────────────────────────
 
     tree.add_node(StoryNode(
-        node_id="act4_tue_afternoon_tell_hina",
+        node_id="act4_tue_afternoon_tell_hannah",
         node_type=NodeType.DIALOGUE,
         act=4,
         speaker="player",
         portrait="scared",
-        text="Dr. Hina, I need to talk to you. Maya's missing… and so is Dr. Elias.",
-        next_node_id="act4_tue_afternoon_hina_reacts"
+        text="Dr. Hannah, I need to talk to you. Maya's missing… and so is Dr. Elias.",
+        next_node_id="act4_tue_afternoon_hannah_reacts"
     ))
 
     tree.add_node(StoryNode(
-        node_id="act4_tue_afternoon_hina_reacts",
+        node_id="act4_tue_afternoon_hannah_reacts",
         node_type=NodeType.DIALOGUE,
         act=4,
-        speaker="hina",
+        speaker="hannah",
         portrait="shocked",
         text="Both of them? Stay after school. We're not handling this alone.",
-        next_node_id="act4_tue_after_school_with_hina"
+        next_node_id="act4_tue_after_school_with_hannah"
     ))
 
     # ── AFTER SCHOOL: TRACKING PING ───────────────────────────────────────
 
     tree.add_node(StoryNode(
-        node_id="act4_tue_after_school_with_hina",
+        node_id="act4_tue_after_school_with_hannah",
         node_type=NodeType.NARRATION,
         act=4,
-        text="After the final bell, the two of you — Hina and you — sit in her empty classroom, the space where Maya should be felt more than seen.",
+        text="After the final bell, the two of you — Dr. Hannah and you — sit in her empty classroom, the space where Maya should be felt more than seen.",
         next_node_id="act4_tue_after_school_tracking_ping"
     ))
 
@@ -205,7 +205,7 @@ def add_act4_nodes(tree: StoryTree):
         node_id="act4_tue_after_school_tracking_ping",
         node_type=NodeType.NARRATION,
         act=4,
-        text="As you sit in Hina's classroom, your phone vibrates. The tracking app flickers — Maya's icon suddenly lights up, far outside town, then holds steady.",
+        text="As you sit in Dr. Hannah's classroom, your phone vibrates. The tracking app flickers — Maya's icon suddenly lights up, far outside town, then holds steady.",
         next_node_id="act4_tue_after_school_old_church_reveal"
     ))
 
@@ -216,14 +216,14 @@ def add_act4_nodes(tree: StoryTree):
         speaker="player",
         portrait="shocked",
         text="The signal's back… It's coming from some abandoned spot past the fields. Looks like — an old church?",
-        next_node_id="act4_tue_after_school_hina_decision"
+        next_node_id="act4_tue_after_school_hannah_decision"
     ))
 
     tree.add_node(StoryNode(
-        node_id="act4_tue_after_school_hina_decision",
+        node_id="act4_tue_after_school_hannah_decision",
         node_type=NodeType.DIALOGUE,
         act=4,
-        speaker="hina",
+        speaker="hannah",
         portrait="nervous",
         text="If that's where she is, Elias might be there too. We don't have much time. But going in alone could be a trap.",
         next_node_id="act4_tue_choice_call_police"
@@ -238,7 +238,7 @@ def add_act4_nodes(tree: StoryTree):
         text="Maya's signal is holding. You have to decide — now.",
         choices=[
             Choice("Call the police and wait for backup.", "act4_tue_call_police", choice_to_record="called_police_church"),
-            Choice("Go with Hina alone to the church.", "act4_tue_go_with_hina", choice_to_record="went_with_hina_alone"),
+            Choice("Go with Dr. Hannah alone to the church.", "act4_tue_go_with_hannah", choice_to_record="went_with_hannah_alone"),
         ]
     ))
 
@@ -248,7 +248,7 @@ def add_act4_nodes(tree: StoryTree):
         node_id="act4_tue_call_police",
         node_type=NodeType.NARRATION,
         act=4,
-        text="Hina dials emergency services with shaking hands while you read the coordinates off your phone. Within minutes, sirens growl in the distance.",
+        text="Dr. Hannah dials emergency services with shaking hands while you read the coordinates off your phone. Within minutes, sirens growl in the distance.",
         next_node_id="act4_tue_police_arrive"
     ))
 
@@ -256,7 +256,7 @@ def add_act4_nodes(tree: StoryTree):
         node_id="act4_tue_police_arrive",
         node_type=NodeType.NARRATION,
         act=4,
-        text="Police cars and a small tactical van line the dirt road leading to the abandoned church. Officers fan out, guns raised, as you and Hina are held back behind the cars.",
+        text="Police cars and a small tactical van line the dirt road leading to the abandoned church. Officers fan out, guns raised, as you and Dr. Hannah are held back behind the cars.",
         next_node_id="act4_tue_elias_trap_revealed"
     ))
 
@@ -278,13 +278,13 @@ def add_act4_nodes(tree: StoryTree):
         next_node_id=None
     ))
 
-    # ── BRANCH B: Go with Hina alone (main route to 3 finales) ────────────
+    # ── BRANCH B: Go with Dr. Hannah alone (main route to 3 finales) ────────────
 
     tree.add_node(StoryNode(
-        node_id="act4_tue_go_with_hina",
+        node_id="act4_tue_go_with_hannah",
         node_type=NodeType.NARRATION,
         act=4,
-        text="You and Hina share a look, then slip out the side door before anyone can stop you. The last bell's echo fades behind you as you head for the edge of town.",
+        text="You and Dr. Hannah share a look, then slip out the side door before anyone can stop you. The last bell's echo fades behind you as you head for the edge of town.",
         next_node_id="act4_tue_church_approach"
     ))
 
@@ -354,7 +354,7 @@ def add_act4_nodes(tree: StoryTree):
         node_id="act4_tue_final_choice_setup",
         node_type=NodeType.NARRATION,
         act=4,
-        text="Hina steps in front of you, shielding you with one arm. Maya's muffled shout echoes from above as the cup's glow pulses brighter.",
+        text="Dr. Hannah steps in front of you, shielding you with one arm. Maya's muffled shout echoes from above as the cup's glow pulses brighter.",
         next_node_id="act4_tue_final_choice"
     ))
 
@@ -367,7 +367,7 @@ def add_act4_nodes(tree: StoryTree):
         text="The cup glows. Elias waits. One soul to end this.",
         choices=[
             Choice("Offer yourself to save everyone else.", "ending_sacrifice_self"),
-            Choice("Push Hina forward to save yourself and Maya.", "ending_sacrifice_hina"),
+            Choice("Let Dr. Hannah forward to save you and Maya.", "ending_sacrifice_hannah"),
             Choice("Refuse to choose and stall for time.", "act4_tue_stall_for_time"),
         ]
     ))
@@ -389,26 +389,26 @@ def add_act4_nodes(tree: StoryTree):
         node_type=NodeType.NARRATION,
         act=4,
         text="The cup's surface splits into a spiral of red as the air rushes out of your lungs. Elias is dragged screaming into the dark, and when the light fades, the chains are empty and the kids are free.",
-        next_node_id="act4_credits_or_return_menu"
+        next_node_id=None
     ))
 
-    # ── ENDING 2: Sacrifice Hina (Bad Ending) ──────────────────────────────
+    # ── ENDING 2: Sacrifice Dr. Hannah (Bad Ending) ──────────────────────────────
 
     tree.add_node(StoryNode(
-        node_id="ending_sacrifice_hina",
+        node_id="ending_sacrifice_hannah",
         node_type=NodeType.DIALOGUE,
         act=4,
-        speaker="hina",
+        speaker="hannah",
         portrait="happy",
         text="If it has to be someone… it doesn't have to be the kids!",
-        next_node_id="ending_sacrifice_hina_narration"
+        next_node_id="ending_sacrifice_hannah_narration"
     ))
 
     tree.add_node(StoryNode(
-        node_id="ending_sacrifice_hina_narration",
+        node_id="ending_sacrifice_hannah_narration",
         node_type=NodeType.NARRATION,
         act=4,
-        text="Hina's eyes stay calm as Elias drags her toward the altar. The cup swallows her valiant expression, and the demon vanishes with her, leaving you, Maya, and the rescued kids to face a future built on the choice you made.",
+        text="Dr. Hannah's eyes stay calm as Elias drags her toward the altar. The cup swallows her valiant expression, and the demon vanishes with her, leaving you, Maya, and the rescued kids to face a future built on the choice you made.",
         next_node_id="act4_credits_or_return_menu"
     ))
 
@@ -428,7 +428,7 @@ def add_act4_nodes(tree: StoryTree):
         node_id="act4_tue_stall_chase",
         node_type=NodeType.NARRATION,
         act=4,
-        text="Elias snarls and hurls the cup aside as he lunges from the altar. Candles topple, chains rattle, and the kids scream as you and Hina run between the pews.",
+        text="Elias snarls and hurls the cup aside as he lunges from the altar. Candles topple, chains rattle, and the kids scream as you and Dr. Hannah run between the pews.",
         next_node_id="act4_tue_true_ending_branch"
     ))
 
@@ -471,6 +471,6 @@ def add_act4_nodes(tree: StoryTree):
         node_id="act4_credits_or_return_menu",
         node_type=NodeType.NARRATION,
         act=4,
-        text="The church falls silent. Somewhere behind you, Maya breathes out a shaky laugh. It's over.",
+        text="The church falls silent. Somewhere behind you, Maya breathes out a shaky breath. It's over.",
         next_node_id=None
     ))

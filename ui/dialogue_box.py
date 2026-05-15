@@ -14,12 +14,13 @@ class DialogueBox:
         self.font_name   = pygame.font.SysFont("Arial", FONT_SIZE_MEDIUM)  # Font for the speaker name.
         self.font_text   = pygame.font.SysFont("Arial", FONT_SIZE_SMALL)   # Font for the dialogue text.
         self.font_arrow  = pygame.font.SysFont("Arial", FONT_SIZE_MEDIUM)  # Font for the continue arrow.
+        self.font_text_italic = pygame.font.SysFont("Arial", FONT_SIZE_SMALL, italic=True)  # Italic font for narration.
 
         # --- The main dialogue box rectangle ---
         self.box_rect = pygame.Rect(0, DIALOGUE_BOX_Y, SCREEN_WIDTH, DIALOGUE_BOX_HEIGHT)
 
         # --- Name tag rectangle, sits just above the dialogue box ---
-        self.name_rect = pygame.Rect(DIALOGUE_BOX_PADDING, DIALOGUE_BOX_Y - 36, 120, 32)
+        self.name_rect = pygame.Rect(DIALOGUE_BOX_PADDING, DIALOGUE_BOX_Y - 36, 130, 32)
 
         # --- Arrow blinking variables ---
         self.arrow_visible  = True # Controls blinking of the continue arrow.
@@ -52,11 +53,15 @@ class DialogueBox:
         pygame.draw.rect(self.screen, palette["ui"], self.box_rect, 2)  # 2px border.
 
     def _draw_name_tag(self, speaker_name, palette): # Draws a small box above the dialogue box with the speaker's name.
+        name_surface = self.font_name.render(speaker_name.title(), True, WHITE)
+        self.name_rect.width = name_surface.get_width() + 16  # Dynamic width to fit name.
         pygame.draw.rect(self.screen, palette["ui"], self.name_rect)
-        name_surface = self.font_name.render(speaker_name, True, WHITE)
-        self.screen.blit(name_surface, (self.name_rect.x + 8, self.name_rect.y - 1))
+        x = self.name_rect.centerx - name_surface.get_width() // 2   # Centred horizontally
+        y = self.name_rect.centery - name_surface.get_height() // 2  # Centred vertically
+        self.screen.blit(name_surface, (x, y))
 
     def _draw_text(self, text, palette, speaker_name=None): # Draws the dialogue text inside the box, with word wrapping.
+        font    = self.font_text if speaker_name else self.font_text_italic  # Italic for narration, regular for dialogue.
         words   = text.split(" ") # Chops full sentences into words to handle wrapping.
         lines   = []
         current = ""
@@ -69,7 +74,7 @@ class DialogueBox:
 
         for word in words:
             test_line = current + word + " "
-            if self.font_text.size(test_line)[0] <= max_width:
+            if font.size(test_line)[0] <= max_width:
                 current = test_line
             else:
                 lines.append(current)  # This line is full, start a new one.
@@ -79,7 +84,7 @@ class DialogueBox:
         total_text_height = len(lines) * (FONT_SIZE_SMALL + 6)  # Total height of all lines combined.
 
         for i, line in enumerate(lines): # Enumerate gives us index and line for each line of text, so we can draw them with the correct vertical spacing.
-            text_surface = self.font_text.render(line, True, palette["text"])
+            text_surface = font.render(line, True, palette["text"])
             if speaker_name:
                 # Dialogue: left-aligned with portrait offset, starts near the top of the box.
                 x = PORTRAIT_WIDTH + DIALOGUE_BOX_PADDING - 200

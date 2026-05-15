@@ -9,8 +9,8 @@
 import pygame
 
 # --- Screen Settings ---
-SCREEN_WIDTH  = 960
-SCREEN_HEIGHT = 640
+SCREEN_WIDTH  = 860
+SCREEN_HEIGHT = 500
 FPS           = 60
 TITLE         = "Alias"
 
@@ -25,6 +25,7 @@ UI_BLUE       = (100, 180, 255)
 UI_BLUE_DARK  = (50,  120, 200)
 ACCENT_YELLOW = (255, 220, 50)
 ACCENT_RED    = (220, 60, 60)
+ACCENT_GREEN  = (60, 220, 60)
 
 # --- Dialogue Box Colours ---
 DIALOGUE_BG   = (245, 245, 220)
@@ -48,10 +49,10 @@ PALETTE_COLD = {
 }
 
 # --- Font Sizes ---
-FONT_SIZE_SMALL  = 16
-FONT_SIZE_MEDIUM = 22
-FONT_SIZE_LARGE  = 32
-FONT_SIZE_TITLE  = 52
+FONT_SIZE_SMALL  = 28 # For dialogue text.
+FONT_SIZE_MEDIUM = 32 # For speaker names and UI text.
+FONT_SIZE_LARGE  = 42 # For act titles and important labels.
+FONT_SIZE_TITLE  = 52 # For the "BAD ENDING" title in the game over screen.
 
 # --- Dialogue Box Layout ---
 DIALOGUE_BOX_HEIGHT  = 160
@@ -69,13 +70,13 @@ CHAR_PLAYER   = "player"      # Name set by player at start.
 CHAR_MAYA     = "maya"
 CHAR_MOTHER   = "mother"
 CHAR_ELIAS    = "elias"       # Main villain.
-CHAR_FELIX    = "felix"       # Red herring suspect.
-CHAR_HINA     = "hina"        # Ally, also a suspect briefly.
+CHAR_FINN     = "finn"       # Red herring suspect.
+CHAR_HANNAH   = "hannah"        # Ally, also a suspect briefly.
 CHAR_NARRATOR = None          # No name tag, no portrait.
 
 # --- Minor NPCs --- (ADD MORE AS NEEDED, THESE ARE JUST EXAMPLES).
 CHAR_BOY1         = "boy1"         # Red jacket kid (kidnapped).
-CHAR_BOY2         = "boy2"         # Rude kid in Felix's class.
+CHAR_BOY2         = "boy2"         # Rude kid in Finn's class.
 CHAR_SECURITY     = "security"     # School security guard in Act 2.
 CHAR_NEWS_ANCHOR  = "news_anchor"  # Voice on TV news segments.
 
@@ -83,16 +84,16 @@ CHAR_NEWS_ANCHOR  = "news_anchor"  # Voice on TV news segments.
 PORTRAIT_STATES = ["neutral", "happy", "nervous", "shocked", "sad", "angry", "scared", "suspicious", "demon"]
 
 # --- Acts ---
-ACT_1 = "Act 1"
-ACT_2 = "Act 2"
-ACT_3 = "Act 3"
-ACT_4 = "Act 4"
+ACT_1 = 1
+ACT_2 = 2
+ACT_3 = 3
+ACT_4 = 4
 
 ACT_TITLES = {
-    ACT_1: "A Normal Day",
-    ACT_2: "Something's Wrong",
-    ACT_3: "Closing In",
-    ACT_4: "The Truth",
+    1: "A Normal Day",
+    2: "Something's Wrong",
+    3: "Closing In",
+    4: "The Truth",
 }
 
 # --- Endings ---
@@ -102,8 +103,8 @@ ENDING_BAD_MURDERED    = "ending_bad_murdered" # Act 3 Choice 3.1 death
 ENDING_BAD_EXPLOSION   = "ending_bad_explosion"  # Act 3 Choice 4.1 death
 ENDING_BAD_POLICE      = "ending_bad_police"     # Act 4 Choice 6.1 death
 ENDING_BAD_CHOICE5     = "ending_bad_choice5"    # Act 4 Didn't tell mother (Choice 5.2)
-ENDING_SACRIFICE_SELF  = "ending_sacrifice_self"
-ENDING_SACRIFICE_HINA  = "ending_sacrifice_hina"
+ENDING_SACRIFICE_SELF  = "sacrifice_you"
+ENDING_SACRIFICE_HANNAH  = "sacrifice_hannah"
 ENDING_TRUE_FINAL      = "ending_true_final"   # Mother called police
 ENDING_BAD_NO_MOM_HELP = "ending_bad_no_mom_help"  # Act 4 stall route, didn't tell mom
 

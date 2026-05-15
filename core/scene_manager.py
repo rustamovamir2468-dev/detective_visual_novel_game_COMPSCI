@@ -29,9 +29,9 @@ class SceneManager:
         
         next_node = self.tree.get_node(self.current_node.next_node_id)
 
-        # --- requires_flag check ---
+        # --- Requires_flag check ---
         if next_node is not None and getattr(next_node, 'requires_flag', None):
-            if not self.player_profile.has_flag(next_node.requires_flag):
+            if not self.choice_tracker.has_made(next_node.requires_flag):
                 next_node = self.tree.get_node("ending_bad_no_mom_help")
 
         self._load_node(next_node)

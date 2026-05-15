@@ -18,6 +18,7 @@ class GameOver:
         self.font_title   = pygame.font.SysFont("Arial", FONT_SIZE_LARGE)
         self.font_text    = pygame.font.SysFont("Arial", FONT_SIZE_MEDIUM)
         self.font_button  = pygame.font.SysFont("Arial", FONT_SIZE_MEDIUM)
+        self.text_italic = pygame.font.SysFont("Arial", FONT_SIZE_MEDIUM, italic=True)
 
         self.ending_text  = "" # Narrative text for this bad ending.
         self.can_rewind   = False # Whether a checkpoint exists to go back to.
@@ -27,15 +28,16 @@ class GameOver:
         self.button_height = 50
         self.button_gap    = 20
 
-    def load(self, ending_text, can_rewind=True): # Call this before switching to GAME_OVER state.
-        self.ending_text = ending_text
-        self.can_rewind  = can_rewind
-        self.hovered     = None
+    def load(self, ending_text, can_rewind=True, ending_type="bad"): # ending_type: "bad", "sacrifice_you", "sacrifice_hannah", "good"
+        self.ending_text  = ending_text
+        self.can_rewind   = can_rewind
+        self.ending_type  = ending_type
+        self.hovered      = None
 
     def _get_buttons(self):
         buttons = []
         if self.can_rewind:
-            buttons.append(("Try Again", "rewind"))
+            buttons.append(("Replay Choice?", "rewind"))
         buttons.append(("Quit", "quit"))
         return buttons
 
@@ -64,11 +66,17 @@ class GameOver:
     def draw(self, palette):
         self.screen.fill(palette["bg"])
 
-        # --- "BAD ENDING" title in red ---
-        title = self.font_title.render("BAD ENDING", True, ACCENT_RED)
+        # --- Ending title, colour depends on ending type ---
+        titles = {
+            "bad":              ("BAD ENDING",             ACCENT_RED),
+            "sacrifice_you":    ("SACRIFICE ENDING: YOU",  ACCENT_RED),
+            "sacrifice_hannah": ("SACRIFICE ENDING: HANNAH", ACCENT_RED),
+            "good":             ("GOOD ENDING",            ACCENT_GREEN), 
+        }
+        title_text, title_colour = titles.get(self.ending_type, ("BAD ENDING", ACCENT_RED))
+        title = self.font_title.render(title_text, True, title_colour)
         self.screen.blit(title, ((SCREEN_WIDTH - title.get_width()) // 2, 80))
 
-        # --- Ending description, word-wrapped ---
         self._draw_wrapped(self.ending_text, palette)
 
         # --- Buttons ---
@@ -82,6 +90,7 @@ class GameOver:
             self.screen.blit(text, (rect.centerx - text.get_width()  // 2, rect.centery - text.get_height() // 2))
 
     def _draw_wrapped(self, text, palette):
+        font     = self.text_italic
         words    = text.split(" ")
         lines    = []
         current  = ""
@@ -89,7 +98,7 @@ class GameOver:
 
         for word in words:
             test = current + word + " "
-            if self.font_text.size(test)[0] <= max_w:
+            if font.size(test)[0] <= max_w:
                 current = test
             else:
                 lines.append(current)
@@ -98,5 +107,5 @@ class GameOver:
 
         start_y = 160
         for i, line in enumerate(lines):
-            surf = self.font_text.render(line, True, palette["text"])
+            surf = font.render(line, True, palette["text"])
             self.screen.blit(surf, ((SCREEN_WIDTH - surf.get_width()) // 2, start_y + i * (FONT_SIZE_MEDIUM + 8)))
