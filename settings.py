@@ -56,7 +56,7 @@ FONT_SIZE_TITLE  = 52
 # --- Dialogue Box Layout ---
 DIALOGUE_BOX_HEIGHT  = 160
 DIALOGUE_BOX_PADDING = 20
-DIALOGUE_BOX_Y       = SCREEN_HEIGHT - DIALOGUE_BOX_HEIGHT
+DIALOGUE_BOX_Y       = SCREEN_HEIGHT - DIALOGUE_BOX_HEIGHT - 20 # (Update) - Raise the dialogue box a bit from the bottom with the "-20" - 5744357
 
 # --- Portrait Layout ---
 PORTRAIT_WIDTH  = 300
