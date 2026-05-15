@@ -20,6 +20,10 @@ class ChoiceMenu:
         self.button_height = 70
         self.button_gap    = 16   # Vertical space between each button.
 
+        # Initialise the clicking sound effect in the choice menu file - 5744357
+        self.click_sfx = pygame.mixer.Sound(CLICK_SFX_PATH)
+        self.click_sfx.set_volume(0.35)
+
     def draw(self, choices, palette): # Draws one button per choice, centred on screen.
             # choices — the list of Choice objects from the current story node.
             # palette — either PALETTE_WARM or PALETTE_COLD from settings.
@@ -48,6 +52,7 @@ class ChoiceMenu:
             for i in range(len(choices)):
                 rect = self._get_rect(i, start_y)
                 if rect.collidepoint(event.pos):
+                    self.click_sfx.play() # Play clicking sound effect - 5744357
                     return i  # Return the index of the clicked choice.
 
         return None  # Nothing was clicked.

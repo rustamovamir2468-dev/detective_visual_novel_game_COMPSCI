@@ -30,6 +30,7 @@ from systems.story_builder   import build_story
 class Game:
     def __init__(self):
         pygame.init()
+        pygame.mixer.init() # Initialise audio in the loop of the game - 5744357
         self.screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
         pygame.display.set_caption(TITLE)
         self.clock  = pygame.time.Clock()

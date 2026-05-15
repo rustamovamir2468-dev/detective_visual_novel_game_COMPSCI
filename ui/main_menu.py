@@ -22,6 +22,10 @@ class MainMenu:
         self.button_height = 55
         self.button_rect   = pygame.Rect((SCREEN_WIDTH  - self.button_width)  // 2, (SCREEN_HEIGHT // 2) + 40, self.button_width, self.button_height)
 
+        # Initialise click sound effect for main menu
+        self.click_sfx = pygame.mixer.Sound(CLICK_SFX_PATH) 
+        self.click_sfx.set_volume(0.35)
+
     def draw(self, palette): # Draws the background, title and start button.
         self.screen.fill(palette["bg"])
         self._draw_title(palette)
@@ -35,6 +39,7 @@ class MainMenu:
 
         if event.type == pygame.MOUSEBUTTONDOWN and event.button == 1:
             if self.button_rect.collidepoint(event.pos):
+                self.click_sfx.play() # Play the click sound effect
                 gsm.change_state(State.NAME_INPUT)  # Move to name input before the game starts.
 
     def _draw_title(self, palette): # Draws the game title "ALIAS" centred near the top of the screen.

@@ -113,4 +113,4 @@ TRANSITION_SPEED = 5
 
 # --- Sound Effects Paths ---
 # Click sound effect
-CLICK_SFX_PATH = "assets_temporary_copy/audio/sfx/click_sfx.mp3"
+CLICK_SFX_PATH = "assets/audio/sfx/click_sfx.mp3"

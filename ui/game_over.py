@@ -28,6 +28,10 @@ class GameOver:
         self.button_height = 50
         self.button_gap    = 20
 
+        # Initlialise the sound effect sound in game over menu
+        self.click_sfx = pygame.mixer.Sound(CLICK_SFX_PATH)
+        self.click_sfx.set_volume(0.35)
+
     def load(self, ending_text, can_rewind=True, ending_type="bad"): # ending_type: "bad", "sacrifice_you", "sacrifice_hannah", "good"
         self.ending_text  = ending_text
         self.can_rewind   = can_rewind
@@ -59,6 +63,7 @@ class GameOver:
         if event.type == pygame.MOUSEBUTTONDOWN and event.button == 1:
             for i, (_, action) in enumerate(buttons):
                 if self._get_rect(i, len(buttons)).collidepoint(event.pos):
+                    self.click_sfx.play() # Play the clicking sound effect - 5744357
                     return action
 
         return None

@@ -24,6 +24,10 @@ class PauseMenu:
         # --- The two buttons: 0 = Resume, 1 = Quit ---
         self.options = ["Resume", "Quit"]
 
+        # Add sound effect of clicking for the pause menu - 5744357
+        self.click_sfx = pygame.mixer.Sound(CLICK_SFX_PATH)
+        self.click_sfx.set_volume(0.35)
+
     def draw(self, palette): # Draws the semi-transparent overlay and the menu buttons.
         self._draw_overlay()
         self._draw_title(palette)
@@ -42,6 +46,10 @@ class PauseMenu:
         if event.type == pygame.MOUSEBUTTONDOWN and event.button == 1:
             for i in range(len(self.options)):
                 if self._get_rect(i).collidepoint(event.pos):
+                    
+                    # Play clicking sound
+                    self.click_sfx.play()
+                    
                     if i == 0:              # Resume button.
                         gsm.revert()        # Revert goes back to whatever state we paused from.
                     elif i == 1:            # Quit button.
