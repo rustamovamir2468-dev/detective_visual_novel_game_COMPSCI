@@ -73,8 +73,13 @@ class DialogueBox:
             pygame.SRCALPHA
         )
 
-        # Create a transparent tone of value = 180 - 5744357
-        dialogue_surface.fill((240, 235, 220, 180))
+        # Create a transparent tone of value = 180, and make it a rectangle with curved border - 5744357
+        pygame.draw.rect(
+            dialogue_surface,
+            (240, 235, 220, 180),
+            dialogue_surface.get_rect(),
+            border_radius=20
+        )
 
         # Put the transparent box into the dialogue box, matching the same coordinates - 5744357
         self.screen.blit(
@@ -87,7 +92,8 @@ class DialogueBox:
             self.screen,
             palette["ui"],
             self.box_rect,
-            2
+            width=2,
+            border_radius=20
         )
 
     def _draw_name_tag(self, speaker_name, palette): # Draws a small box above the dialogue box with the speaker's name.
