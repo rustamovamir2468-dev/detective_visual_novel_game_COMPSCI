@@ -95,7 +95,7 @@ def add_act1_nodes(tree: StoryTree):
     tree.add_node(StoryNode(
         node_id="act1_school_cs_player_thought",
         node_type=NodeType.DIALOGUE,
-        text="I love this class. but as a final period, it always drags.",
+        text="I love this class, but as a final period, it always drags.",
         speaker="[PLAYER]",
         portrait=("player", "happy"),
         next_node_id="act1_school_cs_look_out_window",
