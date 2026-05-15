@@ -49,7 +49,7 @@ PALETTE_COLD = {
 }
 
 # --- Font Sizes ---
-FONT_SIZE_SMALL  = 28 # For dialogue text.
+FONT_SIZE_SMALL  = 25 # For dialogue text.
 FONT_SIZE_MEDIUM = 32 # For speaker names and UI text.
 FONT_SIZE_LARGE  = 42 # For act titles and important labels.
 FONT_SIZE_TITLE  = 52 # For the "BAD ENDING" title in the game over screen.

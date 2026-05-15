@@ -123,6 +123,14 @@ class Game:
             elif self.gsm.is_state(State.DIALOGUE):
                 self._handle_dialogue_event(event)
 
+            elif self.gsm.is_state(State.CUTSCENE):
+                is_click  = event.type == pygame.MOUSEBUTTONDOWN and event.button == 1
+                is_space  = event.type == pygame.KEYDOWN and event.key == pygame.K_SPACE
+                is_enter  = event.type == pygame.KEYDOWN and event.key == pygame.K_RETURN
+                if is_click or is_space or is_enter:
+                    self.scene_manager.advance()
+                    self._on_node_changed()
+
             elif self.gsm.is_state(State.PAUSED):
                 self.pause_menu.handle_event(event, self.gsm)
 
@@ -174,6 +182,9 @@ class Game:
         next_node = self.scene_manager.get_current_node()
         if next_node is None:
             return
+        
+        if next_node.node_type == NodeType.CUTSCENE:
+            self.gsm.change_state(State.CUTSCENE)
         
         nid = next_node.node_id
         print("NODE:", repr(nid), "| pending_ending_type:", self.pending_ending_type)
@@ -274,7 +285,7 @@ class Game:
             self.title_card.draw(self.palette)
 
         elif self.gsm.is_state(State.CUTSCENE):
-            self._draw_placeholder("CUTSCENE")
+            self.scene_display.draw(self.palette)
 
         pygame.display.flip() # Update the full screen with this frame, because we are using double buffering (the default in Pygame).
 
