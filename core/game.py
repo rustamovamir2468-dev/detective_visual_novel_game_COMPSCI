@@ -150,7 +150,7 @@ class Game:
                 if next_node is None or next_node is prev_node:
                     self.game_over.load(
                         ending_text = prev_node.text,
-                        can_rewind  = self.checkpoint_manager.has_checkpoint() and self.pending_ending_type != "good",
+                        can_rewind = (self.checkpoint_manager.has_checkpoint() and self.pending_ending_type == "bad"),
                         ending_type = self.pending_ending_type
                     )
                     self.gsm.change_state(State.GAME_OVER)
