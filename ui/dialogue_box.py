@@ -42,7 +42,7 @@ class DialogueBox:
         if speaker_name: # Only draw the name tag if there is a speaker.
             self._draw_name_tag(speaker_name, palette)
 
-            self._draw_text(dialogue_system.get_displayed_text(), palette)
+        self._draw_text(dialogue_system.get_displayed_text(), palette) # This line should be outside of the loop - text must be shown even if there's no "speaker" in the node - 5744357
 
         if dialogue_system.is_finished(): # Only show the arrow when typing is done.
             self._draw_arrow(palette)
