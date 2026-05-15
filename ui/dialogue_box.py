@@ -65,9 +65,30 @@ class DialogueBox:
         if dialogue_system.is_finished(): # Only show the arrow when typing is done.
             self._draw_arrow(palette)
 
-    def _draw_box(self, palette):  # Draws the main dialogue box background.
-        pygame.draw.rect(self.screen, palette["dialogue_bg"], self.box_rect)
-        pygame.draw.rect(self.screen, palette["ui"], self.box_rect, 2)  # 2px border.
+    def _draw_box(self, palette): # Draws the  dialogue box with a half-transparent background - 5744357
+        
+        # Create a transparent surface of the same size as the dialogue box - 5744357
+        dialogue_surface = pygame.Surface(
+            (self.box_rect.width, self.box_rect.height),
+            pygame.SRCALPHA
+        )
+
+        # Create a transparent tone of value = 180 - 5744357
+        dialogue_surface.fill((240, 235, 220, 180))
+
+        # Put the transparent box into the dialogue box, matching the same coordinates - 5744357
+        self.screen.blit(
+            dialogue_surface,
+            (self.box_rect.x, self.box_rect.y)
+        )
+
+        # Create a border and put it on top of the transparent box and dialogue box - 5744357
+        pygame.draw.rect(
+            self.screen,
+            palette["ui"],
+            self.box_rect,
+            2
+        )
 
     def _draw_name_tag(self, speaker_name, palette): # Draws a small box above the dialogue box with the speaker's name.
         pygame.draw.rect(self.screen, palette["ui"], self.name_rect)
