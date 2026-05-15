@@ -16,8 +16,8 @@ class ChoiceMenu:
         self.hovered     = None  # Index of the button the mouse is currently over.
 
         # --- Button dimensions ---
-        self.button_width  = 500
-        self.button_height = 50
+        self.button_width  = 800
+        self.button_height = 70
         self.button_gap    = 16   # Vertical space between each button.
 
     def draw(self, choices, palette): # Draws one button per choice, centred on screen.

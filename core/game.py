@@ -5,6 +5,8 @@
 # Opens the window, runs the loop, and coordinates between the different systems.
 # ====================================================
 
+from pydoc import text
+
 import pygame
 import sys # Only needed for sys,exit() to close the game when the player clicks the X button on the window.
 from settings                import * # Import all the constants from settings.py.
@@ -52,6 +54,7 @@ class Game:
         self.name_input      = NameInput(self.screen)
         self.title_card      = TitleCard(self.screen)
         self.game_over       = GameOver(self.screen)
+        self.pending_ending_type = "bad"
 
         self.running = True
 
@@ -64,8 +67,11 @@ class Game:
             self.dialogue_system.load_line(first_node.text)
             self.scene_display.load_background(first_node.bg if hasattr(first_node, 'bg') else None)
             self.scene_display.load_portrait(first_node.portrait[0] if first_node.portrait else None, first_node.portrait[1] if first_node.portrait else None)
-        self.title_card.load(ACT_1, "A Normal Day")
+        self.title_card.load(f"Act {ACT_1}", "A Normal Day")
         self.gsm.change_state(State.TITLE_CARD)
+        text = first_node.text.replace("[PLAYER]", self.player_profile.get_name())
+        self.dialogue_system.load_line(text)
+
 
     
 
@@ -151,8 +157,12 @@ class Game:
                 self.scene_manager.advance()
                 next_node = self.scene_manager.get_current_node()  # Check after
 
-                if next_node is prev_node:
-                    self.game_over.load(ending_text = prev_node.text, can_rewind  = self.checkpoint_manager.has_checkpoint())
+                if next_node is None or next_node is prev_node:
+                    self.game_over.load(
+                        ending_text = prev_node.text,
+                        can_rewind = (self.checkpoint_manager.has_checkpoint() and self.pending_ending_type == "bad"),
+                        ending_type = self.pending_ending_type
+                    )
                     self.gsm.change_state(State.GAME_OVER)
                 else:
                     self._on_node_changed(prev_act)
@@ -163,6 +173,20 @@ class Game:
         next_node = self.scene_manager.get_current_node()
         if next_node is None:
             return
+        
+        nid = next_node.node_id
+        print("NODE:", repr(nid), "| pending_ending_type:", self.pending_ending_type)
+        
+        # Track ending type as we pass through ending nodes
+        nid = next_node.node_id
+        if nid == ENDING_TRUE_FINAL:
+            self.pending_ending_type = "good"
+        elif nid in ("ending_sacrifice_self", "ending_sacrifice_self_narration"):
+            self.pending_ending_type = "sacrifice_you"
+        elif nid in ("ending_sacrifice_hannah", "ending_sacrifice_hannah_narration"):
+            self.pending_ending_type = "sacrifice_hannah"
+        elif nid.startswith("ending_bad"):
+            self.pending_ending_type = "bad"
 
         # Load the new portrait and background for this node
         self.scene_display.load_background(
@@ -172,12 +196,11 @@ class Game:
             next_node.portrait[0] if next_node.portrait else None,
             next_node.portrait[1] if next_node.portrait else None
         )
-        self.dialogue_system.load_line(next_node.text)
 
         # If the act number changed, show the title card for the new act
         if prev_act is not None and next_node.act != prev_act:
             if next_node.act in ACT_TITLES:
-                self.title_card.load(next_node.act, ACT_TITLES[next_node.act])
+                self.title_card.load(f"Act {next_node.act}", ACT_TITLES[next_node.act])
                 self.gsm.change_state(State.TITLE_CARD)
                 # Palette swap: Acts 1-2 warm, Acts 3-4 cold
                 if next_node.act in (ACT_3, ACT_4):
@@ -185,15 +208,24 @@ class Game:
                 else:
                     self.palette = PALETTE_WARM
 
+        # Replace [PLAYER] in the text before loading it
+        text = next_node.text.replace("[PLAYER]", self.player_profile.get_name())
+        self.dialogue_system.load_line(text)  # ← use substituted text, not next_node.text directly
+
     def _rewind_to_checkpoint(self):
         if self.scene_manager is None:
             return
+        
+        self.pending_ending_type = "bad"
 
         self.scene_manager.rewind_to_checkpoint()
         node = self.scene_manager.get_current_node()
         if node:
-            self.dialogue_system.load_line(node.text)
+            pass
         self.gsm.change_state(State.DIALOGUE)
+
+        text = node.text.replace("[PLAYER]", self.player_profile.get_name())
+        self.dialogue_system.load_line(text)
 
     def update(self): # REPLACE EACH PASS WITH THE APPROPRIATE FUNCTION CALLS TO UPDATE THE GAME STATE.
         if self.gsm.is_state(State.DIALOGUE):
@@ -223,8 +255,11 @@ class Game:
                 self.choice_menu.draw(node.choices, self.palette)
             else:
                 speaker = node.speaker if node else None
-                if speaker == "[PLAYER]":           
+                if speaker == "[PLAYER]" or speaker == "player":           
                     speaker = self.player_profile.get_name()
+
+                if speaker == "narrator" or speaker == "none":
+                    speaker = None
                 self.dialogue_box.draw(self.dialogue_system, speaker, self.palette)
 
         elif self.gsm.is_state(State.PAUSED):

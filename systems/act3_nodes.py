@@ -464,6 +464,8 @@ def add_act3_nodes(tree: StoryTree):
         node_id="act3_end_of_act3",
         node_type=NodeType.NARRATION,
         act=3,
+        speaker="narrator",
+        portrait="none",
         text="That night, the school's shadows feel longer in your memory. You're no longer just suspicious students — Hannah is on your side now, and all eyes are turning toward Elias.",
-        next_node_id=None
+        next_node_id="act4_tue_morning_walkie_intro"
     ))
