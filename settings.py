@@ -110,3 +110,7 @@ ENDING_BAD_NO_MOM_HELP = "ending_bad_no_mom_help"  # Act 4 stall route, didn't t
 
 # --- Transitions ---
 TRANSITION_SPEED = 5
+
+# --- Sound Effects Paths ---
+# Click sound effect
+CLICK_SFX_PATH = "assets_temporary_copy/audio/sfx/click_sfx.mp3"
