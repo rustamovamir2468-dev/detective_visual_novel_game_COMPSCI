@@ -4,6 +4,7 @@
 # Sits between game.py and the story tree.
 # Loads nodes one at a time, advances the story forward, handles choices, and triggers checkpoints before choice nodes.
 # ====================================================
+import random
 
 from systems.choice_tracker import ChoiceTracker
 
@@ -62,6 +63,7 @@ class SceneManager:
             return
         
         if node.is_choice_node(): # Before loading a choice node, save a checkpoint so the player can rewind.
+            random.shuffle(node.choices)
             self.checkpoint.save_checkpoint(current_node_id = node.node_id, choices_made = self.choice_tracker.get_all(), player_name = self.player_profile.get_name())
 
         self.current_node = node
