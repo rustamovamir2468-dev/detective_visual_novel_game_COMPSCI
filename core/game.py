@@ -107,7 +107,13 @@ class Game:
                     self.start_game()
 
             elif self.gsm.is_state(State.TITLE_CARD):
-                if event.type == pygame.MOUSEBUTTONDOWN and event.button == 1:
+                if (
+                    (event.type == pygame.MOUSEBUTTONDOWN and event.button == 1)
+                    or 
+                    (event.type == pygame.KEYDOWN and event.key == pygame.K_SPACE) # Allow spacebar to progress through the title card - 5744357
+                    or
+                    (event.type == pygame.KEYDOWN and event.key == pygame.K_RETURN) # Allow return button to progress through the title card - 5744357
+                ):
                     self.gsm.change_state(State.DIALOGUE)
                     node = self.scene_manager.get_current_node()
                     if node:
@@ -128,7 +134,11 @@ class Game:
                     sys.exit()
 
     def _handle_dialogue_event(self, event):
-        if event.type != pygame.MOUSEBUTTONDOWN or event.button != 1:
+        is_left_click = event.type == pygame.MOUSEBUTTONDOWN and event.button == 1
+        is_spacebar = event.type == pygame.KEYDOWN and event.key == pygame.K_SPACE # Allow spacebar to progress through the dialogues - 5744357
+        is_enter = event.type == pygame.KEYDOWN and event.key == pygame.K_RETURN # Allow return button to progress through the dialogues - 5744357
+
+        if not (is_left_click or is_spacebar or is_enter):
             return
 
         node = self.scene_manager.get_current_node() if self.scene_manager else None

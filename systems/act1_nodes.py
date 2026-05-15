@@ -95,7 +95,7 @@ def add_act1_nodes(tree: StoryTree):
     tree.add_node(StoryNode(
         node_id="act1_school_cs_player_thought",
         node_type=NodeType.DIALOGUE,
-        text="I love this class. but as a final period, it always drags.",
+        text="I love this class, but as a final period, it always drags.",
         speaker="[PLAYER]",
         portrait=("player", "happy"),
         next_node_id="act1_school_cs_look_out_window",
@@ -109,6 +109,8 @@ def add_act1_nodes(tree: StoryTree):
         next_node_id="act1_school_cs_strange_line",
         act=ACT_1
     ))
+
+    # HERE, THE DRAGGING SCENE WITH THE RED HOOD KID SHOULD HAPPEN, WITHOUT THE DIALOGUE BOX BELOW - 5744357
 
     tree.add_node(StoryNode(
         node_id="act1_school_cs_strange_line",
@@ -171,7 +173,7 @@ def add_act1_nodes(tree: StoryTree):
         node_type=NodeType.DIALOGUE,
         text="Have a good day, sweetie. Text me if you need anything.",
         speaker="mom",
-        portrait=("mom", "happy"),
+        portrait=("mom", "neutral"),
         next_node_id="act1_tuesday_walk_maya_surprise",
         act=ACT_1
     ))
@@ -227,7 +229,7 @@ def add_act1_nodes(tree: StoryTree):
         node_type=NodeType.DIALOGUE,
         text="That's creepy. Maybe it was just detention or something? Still, red jacket… kind of stands out.",
         speaker="maya",
-        portrait=("maya", "suspicious"),
+        portrait=("maya", "neutral"),
         next_node_id="act1_tuesday_school_corridor_transition",
         act=ACT_1
     ))
@@ -253,10 +255,13 @@ def add_act1_nodes(tree: StoryTree):
     tree.add_node(StoryNode(
         node_id="act1_tuesday_physics_classroom_scene",
         node_type=NodeType.NARRATION,
-        text="You take your seat. Dr. Finn, the stern, grey-haired teacher, scribbles equations across the board while the class half-listens.",
+        text="You take your seat. Dr. Finn, the stern-looking teacher, scribbles equations across the board while the class half-listens.",
         next_node_id="act1_tuesday_physics_finn_line",
         act=ACT_1
     ))
+
+    # HERE, SHOW A PICTURE OF 2 KIDS LAUGHING IN THE CLASS, WITHOUT THE DIALOGUE BOX - 5744357
+
 
     tree.add_node(StoryNode(
         node_id="act1_tuesday_physics_finn_line",
@@ -265,6 +270,8 @@ def add_act1_nodes(tree: StoryTree):
         next_node_id="act1_tuesday_physics_player_ears_prick",
         act=ACT_1
     ))
+
+    # RIGHT AFTER, SHOW A PICTURE OF FELIX POINTING AT THE KIDS, WITHOUT THE DIALOGUE BOX - 5744357
 
     tree.add_node(StoryNode(
         node_id="act1_tuesday_physics_player_ears_prick",
@@ -297,7 +304,7 @@ def add_act1_nodes(tree: StoryTree):
     tree.add_node(StoryNode(
         node_id="act1_tuesday_chem_player_still_thinking",
         node_type=NodeType.DIALOGUE,
-        text="Everyone else is cheering, but I can't stop thinking about Dr. Finn and that red jacket.",
+        text="Everyone else is cheering, but I can't stop thinking about Finn and that red jacket.",
         speaker="[PLAYER]",
         portrait=("player", "nervous"),
         next_node_id="act1_tuesday_chem_overhear_red_jacket",
@@ -362,7 +369,7 @@ def add_act1_nodes(tree: StoryTree):
         node_type=NodeType.DIALOGUE,
         text="Whoa, that sounds serious. But let's not panic, okay? If something's wrong, the school and the police will handle it.",
         speaker="elias",
-        portrait=("elias", "happy"),
+        portrait=("elias", "cold"),
         next_node_id="act1_tuesday_candy_elias_uses_candy",
         act=ACT_1
     ))
@@ -413,10 +420,8 @@ def add_act1_nodes(tree: StoryTree):
 
     tree.add_node(StoryNode(
         node_id="ending_bad_candy",
-        node_type=NodeType.DIALOGUE,
+        node_type=NodeType.NARRATION,
         text="You reached for answers too soon. The world tilted, the lights went out, and no one was there to see you fall.",
-        speaker="narrator",
-        portrait=("narrator", "none"),
         next_node_id=None,
         act=ACT_1
     ))
@@ -482,9 +487,9 @@ def add_act1_nodes(tree: StoryTree):
     tree.add_node(StoryNode(
         node_id="act1_tuesday_after_school_talk_finn",
         node_type=NodeType.DIALOGUE,
-        text="So… what do you think about Dr. Finn now? He looked like he wanted to throw that kid out the window.",
+        text="So… what do you think about Finn now? He looked like he wanted to throw that kid out the window.",
         speaker="maya",
-        portrait=("maya", "suspicious"),
+        portrait=("maya", "nervous"),
         next_node_id="act1_tuesday_after_school_player_reply_finn",
         act=ACT_1
     ))
@@ -573,20 +578,16 @@ def add_act1_nodes(tree: StoryTree):
 
     tree.add_node(StoryNode(
         node_id="act1_tuesday_nightmare_voice_line",
-        node_type=NodeType.DIALOGUE,
+        node_type=NodeType.NARRATION,
         text="Shadows crowd around you. A distorted voice booms from nowhere: \"No distinction for you!\"",
-        speaker="narrator",
-        portrait=("narrator", "none"),
         next_node_id="act1_end_of_act1",
         act=ACT_1
     ))
 
     tree.add_node(StoryNode(
         node_id="act1_end_of_act1",
-        node_type=NodeType.DIALOGUE,
+        node_type=NodeType.NARRATION,
         text="You jolt awake, heart racing, the words still echoing in your ears.",
-        speaker="narrator",
-        portrait=("narrator", "none"),
         next_node_id="act2_wed_morning_news_intro",
         act=ACT_1
     ))

@@ -30,7 +30,7 @@ def add_act3_nodes(tree: StoryTree):
         act=3,
         speaker="player",
         portrait="suspicious",
-        text="Dr. Hannah's acting weird today… almost like she's hiding something.",
+        text="Hannah's acting weird today… almost like she's hiding something.",
         next_node_id="act3_fri_maya_whispers"
     ))
 
@@ -39,7 +39,7 @@ def add_act3_nodes(tree: StoryTree):
         node_type=NodeType.DIALOGUE,
         act=3,
         speaker="maya",
-        portrait="nervous",
+        portrait=("maya", "nervous"),
         text="She keeps checking her phone and staring at the hallway. Think she knows more than she's saying?",
         next_node_id="act3_fri_internal_bulletin_board"
     ))
@@ -48,7 +48,7 @@ def add_act3_nodes(tree: StoryTree):
         node_id="act3_fri_internal_bulletin_board",
         node_type=NodeType.NARRATION,
         act=3,
-        text="In your head, the pieces from the last days slide across an invisible bulletin board — red hijab, missing kids, Dr. Finn cleared, Elias's scarf still pinned in the corner.",
+        text="In your head, the pieces from the last days slide across an invisible bulletin board — red beanie, missing kids, Finn cleared, Elias's scarf still pinned in the corner.",
         next_node_id="act3_fri_player_decides_follow"
     ))
 
@@ -67,7 +67,7 @@ def add_act3_nodes(tree: StoryTree):
         node_type=NodeType.DIALOGUE,
         act=3,
         speaker="maya",
-        portrait="nervous",
+        portrait=("finn", "nervous"),
         text="That's risky, detective… but you're right. We won't get answers sitting in class.",
         next_node_id="act3_fri_after_school_hannah_leaves"
     ))
@@ -86,8 +86,8 @@ def add_act3_nodes(tree: StoryTree):
         act=3,
         text="How do you follow her?",
         choices=[
-            Choice("Follow Dr. Hannah directly.", "act3_fri_follow_direct", choice_to_record="followed_hannah_direct"),
-            Choice("Follow Dr. Hannah from a distance.", "act3_fri_follow_discreet", choice_to_record="followed_hannah_discreet"),
+            Choice("Follow Hannah directly.", "act3_fri_follow_direct", choice_to_record="followed_hannah_direct"),
+            Choice("Follow Hannah from a distance.", "act3_fri_follow_discreet", choice_to_record="followed_hannah_discreet"),
         ]
     ))
 
@@ -97,7 +97,7 @@ def add_act3_nodes(tree: StoryTree):
         node_id="act3_fri_follow_direct",
         node_type=NodeType.NARRATION,
         act=3,
-        text="You stride straight toward Dr. Hannah's car before Maya can stop you, footsteps loud on the pavement.",
+        text="You stride straight toward Hannah's car before Maya can stop you, footsteps loud on the pavement.",
         next_node_id="act3_fri_direct_hannah_confronted"
     ))
 
@@ -106,7 +106,7 @@ def add_act3_nodes(tree: StoryTree):
         node_type=NodeType.DIALOGUE,
         act=3,
         speaker="hannah",
-        portrait="shocked",
+        portrait=("hannah", "shocked"),
         text="[PLAYER]? Maya? Why are you two following me?",
         next_node_id="act3_fri_direct_player_accuses"
     ))
@@ -125,7 +125,7 @@ def add_act3_nodes(tree: StoryTree):
         node_id="act3_fri_direct_elias_appears",
         node_type=NodeType.NARRATION,
         act=3,
-        text="Before Dr. Hannah can answer, a shadow falls across the car. Dr. Elias steps out from behind a nearby pillar, expression unreadable.",
+        text="Before Hannah can answer, a shadow falls across the car. Dr. Elias steps out from behind a nearby pillar, expression unreadable.",
         next_node_id="act3_fri_direct_elias_comment"
     ))
 
@@ -134,17 +134,15 @@ def add_act3_nodes(tree: StoryTree):
         node_type=NodeType.DIALOGUE,
         act=3,
         speaker="elias",
-        portrait="suspicious",
+        portrait=("elias", "nervous"),
         text="Following teachers now? That's dangerous behavior… you never know who might feel threatened.",
         next_node_id="ending_bad_hannah_follow"
     ))
 
     tree.add_node(StoryNode(
         node_id="ending_bad_hannah_follow",
-        node_type=NodeType.DIALOGUE,
+        node_type=NodeType.NARRATION,
         act=3,
-        speaker="narrator",
-        portrait="none",
         text="The parking lot lights flickered on as the world dimmed. You were right about danger — just wrong about who it was aimed at.",
         next_node_id=None
     ))
@@ -155,7 +153,7 @@ def add_act3_nodes(tree: StoryTree):
         node_id="act3_fri_follow_discreet",
         node_type=NodeType.NARRATION,
         act=3,
-        text="You tug Maya back behind a row of parked cars, keeping just enough distance that Dr. Hannah can't see you in her mirrors.",
+        text="You tug Maya back behind a row of parked cars, keeping just enough distance that Hannah can't see you in her mirrors.",
         next_node_id="act3_fri_follow_drive"
     ))
 
@@ -163,7 +161,7 @@ def add_act3_nodes(tree: StoryTree):
         node_id="act3_fri_follow_drive",
         node_type=NodeType.NARRATION,
         act=3,
-        text="Dr. Hannah's car slips out of the lot and into late-afternoon traffic. You and Maya trail from a distance, turning whenever her indicator flashes.",
+        text="Hannah's car slips out of the lot and into late-afternoon traffic. You and Maya trail from a distance, turning whenever her indicator flashes.",
         next_node_id="act3_fri_follow_weird_turn"
     ))
 
@@ -188,7 +186,7 @@ def add_act3_nodes(tree: StoryTree):
         node_type=NodeType.DIALOGUE,
         act=3,
         speaker="maya",
-        portrait="nervous",
+        portrait=("maya", "nervous"),
         text="Great. Either she drives like a ninja, or she didn't want anyone to see where she was going.",
         next_node_id="act3_fri_player_still_suspicious"
     ))
@@ -243,7 +241,7 @@ def add_act3_nodes(tree: StoryTree):
         node_id="act3_mon_morning_corridor",
         node_type=NodeType.NARRATION,
         act=3,
-        text="In the corridor, teachers talk in low voices, and students move in tight groups. Dr. Hannah passes by with her red hijab wrapped neatly, offering a tired smile.",
+        text="In the corridor, teachers talk in low voices, and students move in tight groups. Dr. Hannah passes by with her red beanie wrapped neatly, offering a tired smile.",
         next_node_id="act3_mon_morning_player_suspicion"
     ))
 
@@ -262,7 +260,7 @@ def add_act3_nodes(tree: StoryTree):
         node_type=NodeType.DIALOGUE,
         act=3,
         speaker="maya",
-        portrait="nervous",
+        portrait=("maya", "nervous"),
         text="Whoever it is, they're still out there. Let's just get through today without ending up on the news, yeah?",
         next_node_id="act3_mon_day_montage"
     ))
@@ -271,7 +269,7 @@ def add_act3_nodes(tree: StoryTree):
         node_id="act3_mon_day_montage",
         node_type=NodeType.NARRATION,
         act=3,
-        text="The school day crawls past — lessons, roll calls, teachers pretending nothing is wrong. Every time you spot Dr. Hannah or Elias, your brain adds another pin to the mental bulletin board.",
+        text="The school day crawls past — lessons, roll calls, teachers pretending nothing is wrong. Every time you spot Hannah or Elias, your brain adds another pin to the mental bulletin board.",
         next_node_id="act3_mon_after_school_parking_intro"
     ))
 
@@ -295,14 +293,14 @@ def add_act3_nodes(tree: StoryTree):
         node_id="act3_mon_choice_confront_hannah",
         node_type=NodeType.CHOICE,
         act=3,
-        text="Dr. Hannah reaches for her keys.",
+        text="Hannah reaches for her keys.",
         choices=[
-            Choice("Say nothing and let Dr. Hannah start the car.", "act3_mon_no_confront_hannah", choice_to_record="didnt_warn_hannah"),
-            Choice("Run over and warn Dr. Hannah about the car.", "act3_mon_confront_hannah", choice_to_record="warned_hannah"),
+            Choice("Say nothing and let Hannah start the car.", "act3_mon_no_confront_hannah", choice_to_record="didnt_warn_hannah"),
+            Choice("Run over and warn Hannah about the car.", "act3_mon_confront_hannah", choice_to_record="warned_hannah"),
         ]
     ))
 
-    # ── BRANCH A: Do not warn Dr. Hannah (bad ending) ──
+    # ── BRANCH A: Do not warn Hannah (bad ending) ──
 
     tree.add_node(StoryNode(
         node_id="act3_mon_no_confront_hannah",
@@ -316,21 +314,19 @@ def add_act3_nodes(tree: StoryTree):
         node_id="act3_mon_no_confront_car_starts",
         node_type=NodeType.NARRATION,
         act=3,
-        text="Dr. Hannah unlocks the car, tosses her bag onto the passenger seat, and turns the key in the ignition.",
+        text="Hannah unlocks the car, tosses her bag onto the passenger seat, and turns the key in the ignition.",
         next_node_id="ending_bad_car_explosion"
     ))
 
     tree.add_node(StoryNode(
         node_id="ending_bad_car_explosion",
-        node_type=NodeType.DIALOGUE,
+        node_type=NodeType.NARRATION,
         act=3,
-        speaker="narrator",
-        portrait="none",
         text="The engine roared once, then the world shattered into light and sound. In a single flash, the parking lot, the car, and every doubt you held vanished together.",
         next_node_id=None
     ))
 
-    # ── BRANCH B: Warn Dr. Hannah (main route, Dr. Hannah becomes ally) ──
+    # ── BRANCH B: Warn Hannah (main route, Hannah becomes ally) ──
 
     tree.add_node(StoryNode(
         node_id="act3_mon_confront_hannah",
@@ -338,7 +334,7 @@ def add_act3_nodes(tree: StoryTree):
         act=3,
         speaker="player",
         portrait="scared",
-        text="Dr. Hannah! Wait — don't start the car!",
+        text="Hannah! Wait — don't start the car!",
         next_node_id="act3_mon_confront_maya_backs_up"
     ))
 
@@ -347,7 +343,7 @@ def add_act3_nodes(tree: StoryTree):
         node_type=NodeType.DIALOGUE,
         act=3,
         speaker="maya",
-        portrait="scared",
+        portrait=("maya", "scared"),
         text="Seriously, don't! Something's wrong. Please just listen for a second.",
         next_node_id="act3_mon_hannah_confused"
     ))
@@ -357,7 +353,7 @@ def add_act3_nodes(tree: StoryTree):
         node_type=NodeType.DIALOGUE,
         act=3,
         speaker="hannah",
-        portrait="nervous",
+        portrait=("hannah", "cold"),
         text="What are you two talking about? Is this some kind of joke?",
         next_node_id="act3_mon_player_explains_suspicion"
     ))
@@ -377,7 +373,7 @@ def add_act3_nodes(tree: StoryTree):
         node_type=NodeType.DIALOGUE,
         act=3,
         speaker="hannah",
-        portrait="suspicious",
+        portrait=("hannah", "suspicious"),
         text="You realise how wild this sounds. But fine — show me what you think is wrong before I call the principal.",
         next_node_id="act3_mon_check_car"
     ))
@@ -413,7 +409,7 @@ def add_act3_nodes(tree: StoryTree):
         node_type=NodeType.DIALOGUE,
         act=3,
         speaker="hannah",
-        portrait="scared",
+        portrait=("hannah", "shocked"),
         text="Who would do this? I knew something was wrong with how the staff meetings felt, but this —",
         next_node_id="act3_mon_hannah_reveals_investigation"
     ))
@@ -424,7 +420,7 @@ def add_act3_nodes(tree: StoryTree):
         act=3,
         speaker="hannah",
         portrait="nervous",
-        text="I've been trying to piece this together on my own — talking to parents, checking schedules, comparing when the kids vanished. I thought Dr. Finn might be involved at first, but the times didn't line up.",
+        text="I've been trying to piece this together on my own — talking to parents, checking schedules, comparing when the kids vanished. I thought Finn might be involved at first, but the times didn't line up.",
         next_node_id="act3_mon_player_and_hannah_align"
     ))
 
@@ -434,7 +430,7 @@ def add_act3_nodes(tree: StoryTree):
         act=3,
         speaker="player",
         portrait="suspicious",
-        text="We followed Dr. Finn. He's innocent. Whoever's doing this is smarter than just yelling in class… and they like red.",
+        text="We followed Finn. He's innocent. Whoever's doing this is smarter than just yelling in class… and they like red.",
         next_node_id="act3_mon_hannah_resolve"
     ))
 
@@ -443,7 +439,7 @@ def add_act3_nodes(tree: StoryTree):
         node_type=NodeType.DIALOGUE,
         act=3,
         speaker="hannah",
-        portrait="sad",
+        portrait=("hannah", "cold"),
         text="Then our list is down to one person. But until we have proof, we can't go to the police. They'll say it's stress talking.",
         next_node_id="act3_mon_elias_watching"
     ))
@@ -460,16 +456,16 @@ def add_act3_nodes(tree: StoryTree):
         node_id="act3_mon_evening_part_ways",
         node_type=NodeType.NARRATION,
         act=3,
-        text="Dr. Hannah locks her car and agrees to call someone to safely remove the device. You and Maya head home, the weight of what you almost walked away from pressing on your shoulders.",
+        text="Hannah locks her car and agrees to call someone to safely remove the device. You and Maya head home, the weight of what you almost walked away from pressing on your shoulders.",
         next_node_id="act3_end_of_act3"
     ))
 
     tree.add_node(StoryNode(
         node_id="act3_end_of_act3",
-        node_type=NodeType.DIALOGUE,
+        node_type=NodeType.NARRATION,
         act=3,
         speaker="narrator",
         portrait="none",
-        text="That night, the school's shadows feel longer in your memory. You're no longer just suspicious students — Dr. Hannah is on your side now, and all eyes are turning toward Elias.",
+        text="That night, the school's shadows feel longer in your memory. You're no longer just suspicious students — Hannah is on your side now, and all eyes are turning toward Elias.",
         next_node_id="act4_tue_morning_walkie_intro"
     ))

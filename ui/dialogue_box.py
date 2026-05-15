@@ -12,15 +12,24 @@ class DialogueBox:
     def __init__(self, screen):
         self.screen      = screen
         self.font_name   = pygame.font.SysFont("Arial", FONT_SIZE_MEDIUM)  # Font for the speaker name.
-        self.font_text   = pygame.font.SysFont("Arial", FONT_SIZE_SMALL)   # Font for the dialogue text.
+        self.font_text = pygame.font.SysFont("Arial", FONT_SIZE_MEDIUM)
+        self.font_text_italic = pygame.font.SysFont("Arial", FONT_SIZE_MEDIUM, italic=True)   # Font for the dialogue text.
         self.font_arrow  = pygame.font.SysFont("Arial", FONT_SIZE_MEDIUM)  # Font for the continue arrow.
         self.font_text_italic = pygame.font.SysFont("Arial", FONT_SIZE_SMALL, italic=True)  # Italic font for narration.
 
-        # --- The main dialogue box rectangle ---
-        self.box_rect = pygame.Rect(0, DIALOGUE_BOX_Y, SCREEN_WIDTH, DIALOGUE_BOX_HEIGHT)
+        # The main dialogue box rectangle - adjust box width and prepare it to be centered in the bottom part of the screen
+        self.box_width = 760
+        self.box_x = (SCREEN_WIDTH - self.box_width) // 2
 
-        # --- Name tag rectangle, sits just above the dialogue box ---
-        self.name_rect = pygame.Rect(DIALOGUE_BOX_PADDING, DIALOGUE_BOX_Y - 36, 130, 32)
+        self.box_rect = pygame.Rect(
+            self.box_x,
+            DIALOGUE_BOX_Y,
+            self.box_width,
+            DIALOGUE_BOX_HEIGHT
+        )
+
+        # (Updated) - Make the nametag be above the dialogue box, closer to the left - 5744357
+        self.name_rect = pygame.Rect(self.box_rect.x + 35, self.box_rect.y - 34, 200, 36)
 
         # --- Arrow blinking variables ---
         self.arrow_visible  = True # Controls blinking of the continue arrow.
@@ -42,26 +51,61 @@ class DialogueBox:
 
         if speaker_name: # Only draw the name tag if there is a speaker.
             self._draw_name_tag(speaker_name, palette)
+            
+        is_narration = speaker_name is None # Add a special occasion where a node doesn't have a speaker - 5744357
+
+
+        # self._draw_text should be outside of the if loop - text must be shown even if there's no "speaker" in the node - 5744357
 
         self._draw_text(dialogue_system.get_displayed_text(), palette, speaker_name)
 
         if dialogue_system.is_finished(): # Only show the arrow when typing is done.
             self._draw_arrow(palette)
 
-    def _draw_box(self, palette):  # Draws the main dialogue box background.
-        pygame.draw.rect(self.screen, palette["dialogue_bg"], self.box_rect)
-        pygame.draw.rect(self.screen, palette["ui"], self.box_rect, 2)  # 2px border.
+    def _draw_box(self, palette): # Draws the  dialogue box with a half-transparent background - 5744357
+        
+        # Create a transparent surface of the same size as the dialogue box - 5744357
+        dialogue_surface = pygame.Surface(
+            (self.box_rect.width, self.box_rect.height),
+            pygame.SRCALPHA
+        )
+
+        # Create a transparent tone of value = 180, and make it a rectangle with curved border - 5744357
+        pygame.draw.rect(
+            dialogue_surface,
+            (240, 235, 220, 180),
+            dialogue_surface.get_rect(),
+            border_radius=20
+        )
+
+        # Put the transparent box into the dialogue box, matching the same coordinates - 5744357
+        self.screen.blit(
+            dialogue_surface,
+            (self.box_rect.x, self.box_rect.y)
+        )
+
+        # Create a border and put it on top of the transparent box and dialogue box - 5744357
+        pygame.draw.rect(
+            self.screen,
+            palette["ui"],
+            self.box_rect,
+            width=2,
+            border_radius=20
+        )
 
     def _draw_name_tag(self, speaker_name, palette): # Draws a small box above the dialogue box with the speaker's name.
-        name_surface = self.font_name.render(speaker_name.title(), True, WHITE)
-        self.name_rect.width = name_surface.get_width() + 16  # Dynamic width to fit name.
-        pygame.draw.rect(self.screen, palette["ui"], self.name_rect)
-        x = self.name_rect.centerx - name_surface.get_width() // 2   # Centred horizontally
-        y = self.name_rect.centery - name_surface.get_height() // 2  # Centred vertically
-        self.screen.blit(name_surface, (x, y))
+        pygame.draw.rect(self.screen, palette["ui"], self.name_rect, border_top_left_radius=10, border_top_right_radius=10)
 
-    def _draw_text(self, text, palette, speaker_name=None): # Draws the dialogue text inside the box, with word wrapping.
-        font    = self.font_text if speaker_name else self.font_text_italic  # Italic for narration, regular for dialogue.
+        display_name = speaker_name.capitalize()
+        name_surface = self.font_name.render(display_name, True, WHITE)
+
+        text_rect = name_surface.get_rect(center=self.name_rect.center)
+
+        self.screen.blit(name_surface, text_rect)
+
+    def _draw_text(self, text, palette, narration=False): # Draws the dialogue text inside the box, with word wrapping, added narration=False case - 5744357
+        font = self.font_text_italic if narration else self.font_text # Font type for specific text types - different for narrator - 5744357
+
         words   = text.split(" ") # Chops full sentences into words to handle wrapping.
         lines   = []
         current = ""
@@ -98,7 +142,15 @@ class DialogueBox:
     def _draw_arrow(self, palette): # Draws a blinking "▼" arrow in the bottom right to signal the player can continue.
         if self.arrow_visible:
             arrow_surface = self.font_arrow.render("▼", True, palette["accent"])
-            self.screen.blit(arrow_surface, (SCREEN_WIDTH - DIALOGUE_BOX_PADDING - arrow_surface.get_width(), DIALOGUE_BOX_Y + DIALOGUE_BOX_HEIGHT - DIALOGUE_BOX_PADDING - arrow_surface.get_height()))
+
+            # Arrow position - updated so that it matches where the box is - 5744357
+            self.screen.blit(
+                arrow_surface,
+                (
+                    self.box_rect.right - DIALOGUE_BOX_PADDING - arrow_surface.get_width(),
+                    self.box_rect.bottom - DIALOGUE_BOX_PADDING - arrow_surface.get_height()
+                )
+            )
 
     
             

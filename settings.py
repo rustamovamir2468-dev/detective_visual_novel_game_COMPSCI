@@ -9,7 +9,7 @@
 import pygame
 
 # --- Screen Settings ---
-SCREEN_WIDTH  = 860
+SCREEN_WIDTH  = 960
 SCREEN_HEIGHT = 500
 FPS           = 60
 TITLE         = "Alias"
@@ -57,13 +57,13 @@ FONT_SIZE_TITLE  = 52 # For the "BAD ENDING" title in the game over screen.
 # --- Dialogue Box Layout ---
 DIALOGUE_BOX_HEIGHT  = 160
 DIALOGUE_BOX_PADDING = 20
-DIALOGUE_BOX_Y       = SCREEN_HEIGHT - DIALOGUE_BOX_HEIGHT
+DIALOGUE_BOX_Y       = SCREEN_HEIGHT - DIALOGUE_BOX_HEIGHT - 20 # (Update) - Raise the dialogue box a bit from the bottom with the "-20" - 5744357
 
 # --- Portrait Layout ---
-PORTRAIT_WIDTH  = 200
-PORTRAIT_HEIGHT = 300
+PORTRAIT_WIDTH  = 300
+PORTRAIT_HEIGHT = 450
 PORTRAIT_X      = 60
-PORTRAIT_Y      = SCREEN_HEIGHT - DIALOGUE_BOX_HEIGHT - PORTRAIT_HEIGHT - 10
+PORTRAIT_Y      = SCREEN_HEIGHT - PORTRAIT_HEIGHT
 
 # --- Characters ---
 CHAR_PLAYER   = "player"      # Name set by player at start.
@@ -81,7 +81,7 @@ CHAR_SECURITY     = "security"     # School security guard in Act 2.
 CHAR_NEWS_ANCHOR  = "news_anchor"  # Voice on TV news segments.
 
 # --- Portrait States --- (Emotions that the characters can display, make sure to have corresponding images for each state in the assets folder).
-PORTRAIT_STATES = ["neutral", "happy", "nervous", "shocked", "sad", "angry", "scared", "suspicious", "demon"]
+PORTRAIT_STATES = ["neutral", "happy", "nervous", "shocked", "sad", "angry", "scared", "suspicious", "demon", "determined", "cold", "reveal"]
 
 # --- Acts ---
 ACT_1 = 1

@@ -38,14 +38,15 @@ class SceneDisplay:
             self.current_portrait = None
             return
 
-        portrait_path = f"assets/portraits/{character}_{state}.png"
+        portrait_path = f"assets/images/portraits/{character}_{state}.png" # Modified for implementation of the portraits - 5744357
 
         if portrait_path not in self.portrait_cache:
             try:
                 image = pygame.image.load(portrait_path).convert_alpha()             # convert_alpha() preserves transparency.
-                image = pygame.transform.scale(image, (PORTRAIT_WIDTH, PORTRAIT_HEIGHT))
+                image = pygame.transform.smoothscale(image, (PORTRAIT_WIDTH, PORTRAIT_HEIGHT))
                 self.portrait_cache[portrait_path] = image
             except FileNotFoundError:
+                print(f"[Missing portrait] {portrait_path}") # Terminal will tell which file is missing - 5744357
                 self.portrait_cache[portrait_path] = None  # No asset yet, placeholder will show instead.
 
         self.current_portrait = self.portrait_cache[portrait_path]
@@ -60,9 +61,14 @@ class SceneDisplay:
 
         # --- Portrait ---
         if self.current_portrait:
-            self.screen.blit(self.current_portrait, (PORTRAIT_X, PORTRAIT_Y))
-        else:
-            self._draw_portrait_placeholder(palette)  # Fallback: coloured rectangle.
+            name_box_x = DIALOGUE_BOX_PADDING
+            name_box_width = 200
+            name_box_center_x = name_box_x + name_box_width // 2 # Setting the centre of the box - 5744357
+
+            portrait_x = name_box_center_x - self.current_portrait.get_width() // 2 # Implementing the actual portrait in the centre - 5744357
+            portrait_y = PORTRAIT_Y
+
+            self.screen.blit(self.current_portrait, (portrait_x, portrait_y))            
 
     def _draw_portrait_placeholder(self, palette): # Draws a simple coloured rectangle where the portrait will eventually go.
         # Only shows when the actual portrait image hasn't been provided yet.

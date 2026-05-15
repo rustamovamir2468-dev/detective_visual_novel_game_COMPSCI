@@ -304,11 +304,11 @@ ACT: 1
 
 "The school buildings rise into view. The morning bell shrieks, and the corridor floods with students hurrying to class."
 
-NEXT: act1\_tuesday\_physics\_felix\_intro
+NEXT: act1\_tuesday\_physics\_finn\_intro
 
 
 
-\[DIALOGUE] act1\_tuesday\_physics\_felix\_intro
+\[DIALOGUE] act1\_tuesday\_physics\_finn\_intro
 
 ACT: 1
 
@@ -316,7 +316,7 @@ SPEAKER: \[PLAYER]
 
 PORTRAIT: neutral
 
-"First up: physics with Dr. Felix. Lucky me."
+"First up: physics with Dr. Finn. Lucky me."
 
 NEXT: act1\_tuesday\_physics\_classroom\_scene
 
@@ -326,17 +326,17 @@ NEXT: act1\_tuesday\_physics\_classroom\_scene
 
 ACT: 1
 
-"You take your seat. Dr. Felix, the stern, grey‑haired teacher, scribbles equations across the board while the class half‑listens."
+"You take your seat. Dr. Finn, the stern, grey‑haired teacher, scribbles equations across the board while the class half‑listens."
 
-NEXT: act1\_tuesday\_physics\_felix\_line
+NEXT: act1\_tuesday\_physics\_finn\_line
 
 
 
-\[NARRATION] act1\_tuesday\_physics\_felix\_line
+\[NARRATION] act1\_tuesday\_physics\_finn\_line
 
 ACT: 1
 
-"A one student loudly laughed with his friends. Dr. Felix slams the chalk down and snaps, "You need some disciplining!" "
+"A one student loudly laughed with his friends. Dr. Finn slams the chalk down and snaps, "You need some disciplining!" "
 
 NEXT: act1\_tuesday\_physics\_player\_ears\_prick
 
@@ -388,7 +388,7 @@ SPEAKER: \[PLAYER]
 
 PORTRAIT: nervous
 
-"Everyone else is cheering, but I can’t stop thinking about Felix and that red jacket."
+"Everyone else is cheering, but I can’t stop thinking about Finn and that red jacket."
 
 NEXT: act1\_tuesday\_chem\_overhear\_red\_jacket
 
@@ -604,11 +604,11 @@ ACT: 1
 
 "Classes finally end. You and Maya leave the gates together, the sky melting into shades of orange and pink."
 
-NEXT: act1\_tuesday\_after\_school\_talk\_felix
+NEXT: act1\_tuesday\_after\_school\_talk\_finn
 
 
 
-\[DIALOGUE] act1\_tuesday\_after\_school\_talk\_felix
+\[DIALOGUE] act1\_tuesday\_after\_school\_talk\_finn
 
 ACT: 1
 
@@ -616,13 +616,13 @@ SPEAKER: maya
 
 PORTRAIT: suspicious
 
-"So… what do you think about Felix now? He looked like he wanted to throw that kid out the window."
+"So… what do you think about Finn now? He looked like he wanted to throw that kid out the window."
 
-NEXT: act1\_tuesday\_after\_school\_player\_reply\_felix
+NEXT: act1\_tuesday\_after\_school\_player\_reply\_finn
 
 
 
-\[DIALOGUE] act1\_tuesday\_after\_school\_player\_reply\_felix
+\[DIALOGUE] act1\_tuesday\_after\_school\_player\_reply\_finn
 
 ACT: 1
 
@@ -818,65 +818,65 @@ ACT: 2
 
 "Inside, the corridor buzzes with nervous chatter about curfews, police patrols, and missing classmates."
 
-NEXT: act2\_wed\_felix\_class\_intro
+NEXT: act2\_wed\_finn\_class\_intro
 
 
 
-\[NARRATION] act2\_wed\_felix\_class\_intro
-
-ACT: 2
-
-"By the time physics rolls around, the air in Dr. Felix’s classroom feels heavier than usual."
-
-NEXT: act2\_wed\_felix\_start\_lesson
-
-
-
-\[DIALOGUE] act2\_wed\_felix\_start\_lesson
+\[NARRATION] act2\_wed\_finn\_class\_intro
 
 ACT: 2
 
-SPEAKER: felix
+"By the time physics rolls around, the air in Dr. Finn’s classroom feels heavier than usual."
+
+NEXT: act2\_wed\_finn\_start\_lesson
+
+
+
+\[DIALOGUE] act2\_wed\_finn\_start\_lesson
+
+ACT: 2
+
+SPEAKER: finn
 
 PORTRAIT: angry
 
 "Sit down and take out your notebooks. Just because the news is loud doesn’t mean your brains can be quiet."
 
-NEXT: act2\_wed\_felix\_rude\_student
+NEXT: act2\_wed\_finn\_rude\_student
 
 
 
-\[NARRATION] act2\_wed\_felix\_rude\_student
+\[NARRATION] act2\_wed\_finn\_rude\_student
 
 ACT: 2
 
 "Halfway through the lesson, a boy at the back snickers and mutters something under his breath. A few students laugh."
 
-NEXT: act2\_wed\_felix\_throws\_out
+NEXT: act2\_wed\_finn\_throws\_out
 
 
 
-\[DIALOGUE] act2\_wed\_felix\_throws\_out
+\[DIALOGUE] act2\_wed\_finn\_throws\_out
 
 ACT: 2
 
-SPEAKER: felix
+SPEAKER: finn
 
 PORTRAIT: angry
 
 "If you think this is a joke, mister, get out of my class. Now."
 
-NEXT: act2\_wed\_felix\_boy\_leaves
+NEXT: act2\_wed\_finn\_boy\_leaves
 
 
 
-\[NARRATION] act2\_wed\_felix\_boy\_leaves
+\[NARRATION] act2\_wed\_finn\_boy\_leaves
 
 ACT: 2
 
 "The boy scoffs, shoves his chair back, and storms out into the corridor, the door slamming behind him."
 
-NEXT: act2\_wed\_choice\_confront\_felix
+NEXT: act2\_wed\_choice\_confront\_finn
 
 
 
@@ -884,39 +884,39 @@ NEXT: act2\_wed\_choice\_confront\_felix
 
 
 
-\[CHOICE] act2\_wed\_choice\_confront\_felix
+\[CHOICE] act2\_wed\_choice\_confront\_finn
 
 ACT: 2
 
 
 
-"Follow them and accuse Felix of the kidnappings." → act2\_wed\_confront\_felix \[RECORD: confronted\_felix]
+"Follow them and accuse Finn of the kidnappings." → act2\_wed\_confront\_finn \[RECORD: confronted\_finn]
 
 
 
-"Stay seated and say nothing." → act2\_wed\_do\_nothing \[RECORD: did\_nothing\_felix]
+"Stay seated and say nothing." → act2\_wed\_do\_nothing \[RECORD: did\_nothing\_finn]
 
 
 
 
 
-&#x09;	**Branch A – Confront Felix (bad ending later that day)**
+&#x09;	**Branch A – Confront Finn (bad ending later that day)**
 
-\[NARRATION] act2\_wed\_confront\_felix
+\[NARRATION] act2\_wed\_confront\_finn
 
 ACT: 2
 
 "As the rest of the class stares at their notes, you quietly slip out, heart pounding in your ears."
 
-NEXT: act2\_wed\_corridor\_felix\_elias\_scene
+NEXT: act2\_wed\_corridor\_finn\_elias\_scene
 
 
 
-\[NARRATION] act2\_wed\_corridor\_felix\_elias\_scene
+\[NARRATION] act2\_wed\_corridor\_finn\_elias\_scene
 
 ACT: 2
 
-"In the corridor, you find Dr. Felix and the boy facing each other while Dr. Elias stands between them, hands raised to calm things down."
+"In the corridor, you find Dr. Finn and the boy facing each other while Dr. Elias stands between them, hands raised to calm things down."
 
 NEXT: act2\_wed\_player\_accuses
 
@@ -932,15 +932,15 @@ PORTRAIT: suspicious
 
 "Stop pretending. I saw a teacher leading a kid away. Same red jacket, same line—"you need some disciplining." It has to be you."
 
-NEXT: act2\_wed\_felix\_reacts
+NEXT: act2\_wed\_finn\_reacts
 
 
 
-\[DIALOGUE] act2\_wed\_felix\_reacts
+\[DIALOGUE] act2\_wed\_finn\_reacts
 
 ACT: 2
 
-SPEAKER: felix
+SPEAKER: finn
 
 PORTRAIT: shocked
 
@@ -974,15 +974,15 @@ PORTRAIT: nervous
 
 "I saw someone taken away near the side gate. And now kids are missing. How is that a coincidence?"
 
-NEXT: act2\_wed\_hina\_interrupts
+NEXT: act2\_wed\_hannah\_interrupts
 
 
 
-\[DIALOGUE] act2\_wed\_hina\_interrupts
+\[DIALOGUE] act2\_wed\_hannah\_interrupts
 
 ACT: 2
 
-SPEAKER: hina
+SPEAKER: hannah
 
 PORTRAIT: angry
 
@@ -1024,17 +1024,17 @@ PORTRAIT: none
 
 ACT: 2
 
-"You grip your pen tighter and stare at the worksheet. Confronting Felix in front of everyone would only make you look crazy."
+"You grip your pen tighter and stare at the worksheet. Confronting Finn in front of everyone would only make you look crazy."
 
-NEXT: act2\_wed\_felix\_class\_resumes
+NEXT: act2\_wed\_finn\_class\_resumes
 
 
 
-\[NARRATION] act2\_wed\_felix\_class\_resumes
+\[NARRATION] act2\_wed\_finn\_class\_resumes
 
 ACT: 2
 
-"Felix returns to the board, voice colder than before. The class falls into an uneasy silence until the bell finally rings."
+"Finn returns to the board, voice colder than before. The class falls into an uneasy silence until the bell finally rings."
 
 NEXT: act2\_wed\_corridor\_after\_class
 
@@ -1072,7 +1072,7 @@ SPEAKER: \[PLAYER]
 
 PORTRAIT: nervous
 
-"It’s both. Felix keeps snapping at students, and that red jacket thing won’t leave my brain."
+"It’s both. Finn keeps snapping at students, and that red jacket thing won’t leave my brain."
 
 NEXT: act2\_wed\_maya\_deflects
 
@@ -1286,17 +1286,17 @@ SPEAKER: maya
 
 PORTRAIT: suspicious
 
-"There are only three teachers who always wear red: Dr. Hina’s red hijab, Dr. Elias’s red scarf, and Dr. Felix’s red handkerchief."
+"There are only three teachers who always wear red: Dr. Hannah’s red beanie, Dr. Elias’s red scarf, and Dr. Finn’s red handkerchief."
 
-NEXT: act2\_thu\_morning\_player\_notices\_felix
+NEXT: act2\_thu\_morning\_player\_notices\_finn
 
 
 
-\[NARRATION] act2\_thu\_morning\_player\_notices\_felix
+\[NARRATION] act2\_thu\_morning\_player\_notices\_finn
 
 ACT: 2
 
-"Later, in the corridor, you spot Dr. Felix at his classroom door. Today, his usual red handkerchief is nowhere to be seen."
+"Later, in the corridor, you spot Dr. Finn at his classroom door. Today, his usual red handkerchief is nowhere to be seen."
 
 NEXT: act2\_thu\_morning\_player\_comment
 
@@ -1310,13 +1310,13 @@ SPEAKER: \[PLAYER]
 
 PORTRAIT: suspicious
 
-"Wait… Felix doesn’t have his handkerchief today."
+"Wait… Finn doesn’t have his handkerchief today."
 
-NEXT: act2\_thu\_morning\_maya\_suspects\_felix
+NEXT: act2\_thu\_morning\_maya\_suspects\_finn
 
 
 
-\[DIALOGUE] act2\_thu\_morning\_maya\_suspects\_felix
+\[DIALOGUE] act2\_thu\_morning\_maya\_suspects\_finn
 
 ACT: 2
 
@@ -1358,7 +1358,7 @@ SPEAKER: maya
 
 PORTRAIT: suspicious
 
-"Okay. When Felix leaves, we follow his car. No getting too close, no doing anything stupid. We just watch."
+"Okay. When Finn leaves, we follow his car. No getting too close, no doing anything stupid. We just watch."
 
 NEXT: act2\_thu\_after\_school\_wait\_parking
 
@@ -1378,7 +1378,7 @@ NEXT: act2\_thu\_after\_school\_follow\_car
 
 ACT: 2
 
-"When Felix’s old sedan finally rolls past, you slip into the crowd and trail a safe distance behind, eyes fixed on his rear bumper."
+"When Finn’s old sedan finally rolls past, you slip into the crowd and trail a safe distance behind, eyes fixed on his rear bumper."
 
 NEXT: act2\_thu\_drive\_outskirts
 
@@ -1398,27 +1398,27 @@ NEXT: act2\_thu\_outside\_house\_listen
 
 ACT: 2
 
-"Felix parks outside a small, tired‑looking house. You and Maya duck behind a fence as he steps out, shoulders slumped, and goes inside."
+"Finn parks outside a small, tired‑looking house. You and Maya duck behind a fence as he steps out, shoulders slumped, and goes inside."
 
-NEXT: act2\_thu\_overhear\_felix
-
-
-
-\[NARRATION] act2\_thu\_overhear\_felix
-
-ACT: 2
-
-"A cracked window is slightly open. Voices drift out—Felix’s, low and shaky, and another, older and weaker."
-
-NEXT: act2\_thu\_felix\_talking\_inside
+NEXT: act2\_thu\_overhear\_finn
 
 
 
-\[DIALOGUE] act2\_thu\_felix\_talking\_inside
+\[NARRATION] act2\_thu\_overhear\_finn
 
 ACT: 2
 
-SPEAKER: felix
+"A cracked window is slightly open. Voices drift out—Finn’s, low and shaky, and another, older and weaker."
+
+NEXT: act2\_thu\_finn\_talking\_inside
+
+
+
+\[DIALOGUE] act2\_thu\_finn\_talking\_inside
+
+ACT: 2
+
+SPEAKER: finn
 
 PORTRAIT: sad
 
@@ -1452,15 +1452,15 @@ PORTRAIT: sad
 
 "And the red handkerchief? He probably left it here with her. Like a reminder he’ll come back."
 
-NEXT: act2\_thu\_felix\_innocent\_narration
+NEXT: act2\_thu\_finn\_innocent\_narration
 
 
 
-\[NARRATION] act2\_thu\_felix\_innocent\_narration
+\[NARRATION] act2\_thu\_finn\_innocent\_narration
 
 ACT: 2
 
-"Felix’s voice cracks as he laughs weakly about homework and test scores. It doesn’t sound like the voice of a kidnapper—just a worn‑out teacher clinging to something normal."
+"Finn’s voice cracks as he laughs weakly about homework and test scores. It doesn’t sound like the voice of a kidnapper—just a worn‑out teacher clinging to something normal."
 
 NEXT: act2\_thu\_two\_suspects\_left
 
@@ -1474,7 +1474,7 @@ SPEAKER: maya
 
 PORTRAIT: suspicious
 
-"So Felix is off the list. That leaves Dr. Hina with her red hijab… and Dr. Elias with his red scarf."
+"So Finn is off the list. That leaves Dr. Hannah with her red beanie… and Dr. Elias with his red scarf."
 
 NEXT: act2\_thu\_evening\_walk\_home\_separate
 
@@ -1516,21 +1516,21 @@ ACT: 3
 
 "By Friday morning, the halls feel thinner, like the school itself is holding its breath."
 
-NEXT: act3\_fri\_morning\_hina\_reserved
+NEXT: act3\_fri\_morning\_hannah\_reserved
 
 
 
-\[NARRATION] act3\_fri\_morning\_hina\_reserved
+\[NARRATION] act3\_fri\_morning\_hannah\_reserved
 
 ACT: 3
 
-"In computer science, Dr. Hina moves through the lesson with less of her usual energy, eyes flicking to the door and windows more than the code on the board."
+"In computer science, Dr. Hannah moves through the lesson with less of her usual energy, eyes flicking to the door and windows more than the code on the board."
 
-NEXT: act3\_fri\_player\_notices\_hina
+NEXT: act3\_fri\_player\_notices\_hannah
 
 
 
-\[DIALOGUE] act3\_fri\_player\_notices\_hina
+\[DIALOGUE] act3\_fri\_player\_notices\_hannah
 
 ACT: 3
 
@@ -1538,7 +1538,7 @@ SPEAKER: \[PLAYER]
 
 PORTRAIT: suspicious
 
-"Hina’s acting weird today… almost like she’s hiding something."
+"Hannah’s acting weird today… almost like she’s hiding something."
 
 NEXT: act3\_fri\_maya\_whispers
 
@@ -1562,7 +1562,7 @@ NEXT: act3\_fri\_internal\_bulletin\_board
 
 ACT: 3
 
-"In your head, the pieces from the last days slide across an invisible bulletin board—red hijab, missing kids, Felix cleared, Elias’s scarf still pinned in the corner."
+"In your head, the pieces from the last days slide across an invisible bulletin board—red beanie, missing kids, Finn cleared, Elias’s scarf still pinned in the corner."
 
 NEXT: act3\_fri\_player\_decides\_follow
 
@@ -1592,15 +1592,15 @@ PORTRAIT: nervous
 
 "That’s risky, detective… but you’re right. We won’t get answers sitting in class."
 
-NEXT: act3\_fri\_after\_school\_hina\_leaves
+NEXT: act3\_fri\_after\_school\_hannah\_leaves
 
 
 
-\[NARRATION] act3\_fri\_after\_school\_hina\_leaves
+\[NARRATION] act3\_fri\_after\_school\_hannah\_leaves
 
 ACT: 3
 
-"After the final bell, you and Maya hang back near the staff parking lot. Dr. Hina eventually appears with her bag, heading toward her car."
+"After the final bell, you and Maya hang back near the staff parking lot. Dr. Hannah eventually appears with her bag, heading toward her car."
 
 NEXT: act3\_fri\_choice\_follow\_style
 
@@ -1618,11 +1618,11 @@ ACT: 3
 
 
 
-"Follow Hina directly." → act3\_fri\_follow\_direct \[RECORD: followed\_hina\_direct]
+"Follow Hannah directly." → act3\_fri\_follow\_direct \[RECORD: followed\_hannah\_direct]
 
 
 
-"Follow Hina from a distance." → act3\_fri\_follow\_discreet \[RECORD: followed\_hina\_discreet]
+"Follow Hannah from a distance." → act3\_fri\_follow\_discreet \[RECORD: followed\_hannah\_discreet]
 
 
 
@@ -1634,17 +1634,17 @@ ACT: 3
 
 ACT: 3
 
-"You stride straight toward Hina’s car before Maya can stop you, footsteps loud on the pavement."
+"You stride straight toward Hannah’s car before Maya can stop you, footsteps loud on the pavement."
 
-NEXT: act3\_fri\_direct\_hina\_confronted
+NEXT: act3\_fri\_direct\_hannah\_confronted
 
 
 
-\[DIALOGUE] act3\_fri\_direct\_hina\_confronted
+\[DIALOGUE] act3\_fri\_direct\_hannah\_confronted
 
 ACT: 3
 
-SPEAKER: hina
+SPEAKER: hannah
 
 PORTRAIT: shocked
 
@@ -1672,7 +1672,7 @@ NEXT: act3\_fri\_direct\_elias\_appears
 
 ACT: 3
 
-"Before Hina can answer, a shadow falls across the car. Dr. Elias steps out from behind a nearby pillar, expression unreadable."
+"Before Hannah can answer, a shadow falls across the car. Dr. Elias steps out from behind a nearby pillar, expression unreadable."
 
 NEXT: act3\_fri\_direct\_elias\_comment
 
@@ -1688,11 +1688,11 @@ PORTRAIT: suspicious
 
 "Following teachers now? That’s dangerous behavior… you never know who might feel threatened."
 
-NEXT: ending\_bad\_hina\_follow
+NEXT: ending\_bad\_hannah\_follow
 
 
 
-\[DIALOGUE] ending\_bad\_hina\_follow
+\[DIALOGUE] ending\_bad\_hannah\_follow
 
 ACT: 3
 
@@ -1712,7 +1712,7 @@ PORTRAIT: none
 
 ACT: 3
 
-"You tug Maya back behind a row of parked cars, keeping just enough distance that Hina can’t see you in her mirrors."
+"You tug Maya back behind a row of parked cars, keeping just enough distance that Hannah can’t see you in her mirrors."
 
 NEXT: act3\_fri\_follow\_drive
 
@@ -1722,7 +1722,7 @@ NEXT: act3\_fri\_follow\_drive
 
 ACT: 3
 
-"Hina’s car slips out of the lot and into late‑afternoon traffic. You and Maya trail from a distance, turning whenever her indicator flashes."
+"Hannah’s car slips out of the lot and into late‑afternoon traffic. You and Maya trail from a distance, turning whenever her indicator flashes."
 
 NEXT: act3\_fri\_follow\_weird\_turn
 
@@ -1826,7 +1826,7 @@ NEXT: act3\_mon\_morning\_corridor
 
 ACT: 3
 
-"In the corridor, teachers talk in low voices, and students move in tight groups. Dr. Hina passes by with her red hijab wrapped neatly, offering a tired smile."
+"In the corridor, teachers talk in low voices, and students move in tight groups. Dr. Hannah passes by with her red beanie wrapped neatly, offering a tired smile."
 
 NEXT: act3\_mon\_morning\_player\_suspicion
 
@@ -1864,7 +1864,7 @@ NEXT: act3\_mon\_day\_montage
 
 ACT: 3
 
-"The school day crawls past—lessons, roll calls, teachers pretending nothing is wrong. Every time you spot Hina or Elias, your brain adds another pin to the mental bulletin board."
+"The school day crawls past—lessons, roll calls, teachers pretending nothing is wrong. Every time you spot Hannah or Elias, your brain adds another pin to the mental bulletin board."
 
 NEXT: act3\_mon\_after\_school\_parking\_intro
 
@@ -1876,43 +1876,43 @@ ACT: 3
 
 "After the final bell, you and Maya drift toward the staff parking lot. The sky is dimming, and most students have already gone home."
 
-NEXT: act3\_mon\_after\_school\_hina\_heading\_to\_car
+NEXT: act3\_mon\_after\_school\_hannah\_heading\_to\_car
 
 
 
-\[NARRATION] act3\_mon\_after\_school\_hina\_heading\_to\_car
-
-ACT: 3
-
-"Dr. Hina crosses the lot with her bag over her shoulder, heading for her small car parked near the end of the row."
-
-NEXT: act3\_mon\_choice\_confront\_hina
-
-
-
-
-
-
-
-\[CHOICE] act3\_mon\_choice\_confront\_hina
+\[NARRATION] act3\_mon\_after\_school\_hannah\_heading\_to\_car
 
 ACT: 3
 
+"Dr. Hannah crosses the lot with her bag over her shoulder, heading for her small car parked near the end of the row."
 
-
-"Say nothing and let Hina start the car." → act3\_mon\_no\_confront\_hina \[RECORD: didnt\_warn\_hina]
-
-
-
-"Run over and warn Hina about the car." → act3\_mon\_confront\_hina \[RECORD: warned\_hina]
+NEXT: act3\_mon\_choice\_confront\_hannah
 
 
 
 
 
-&#x09;	**Branch A – Do not confront Hina (explosion bad ending)**
 
-\[NARRATION] act3\_mon\_no\_confront\_hina
+
+\[CHOICE] act3\_mon\_choice\_confront\_hannah
+
+ACT: 3
+
+
+
+"Say nothing and let Hannah start the car." → act3\_mon\_no\_confront\_hannah \[RECORD: didnt\_warn\_hannah]
+
+
+
+"Run over and warn Hannah about the car." → act3\_mon\_confront\_hannah \[RECORD: warned\_hannah]
+
+
+
+
+
+&#x09;	**Branch A – Do not confront Hannah (explosion bad ending)**
+
+\[NARRATION] act3\_mon\_no\_confront\_hannah
 
 ACT: 3
 
@@ -1926,7 +1926,7 @@ NEXT: act3\_mon\_no\_confront\_car\_starts
 
 ACT: 3
 
-"Hina unlocks the car, tosses her bag onto the passenger seat, and turns the key in the ignition."
+"Hannah unlocks the car, tosses her bag onto the passenger seat, and turns the key in the ignition."
 
 NEXT: ending\_bad\_car\_explosion
 
@@ -1946,9 +1946,9 @@ PORTRAIT: none
 
 
 
-&#x09;**Branch B – Confront Hina (she’s revealed as ally, bomb discovered)**
+&#x09;**Branch B – Confront Hannah (she’s revealed as ally, bomb discovered)**
 
-\[DIALOGUE] act3\_mon\_confront\_hina
+\[DIALOGUE] act3\_mon\_confront\_hannah
 
 ACT: 3
 
@@ -1956,7 +1956,7 @@ SPEAKER: \[PLAYER]
 
 PORTRAIT: scared
 
-"Hina! Wait—don’t start the car!"
+"Hannah! Wait—don’t start the car!"
 
 NEXT: act3\_mon\_confront\_maya\_backs\_up
 
@@ -1972,15 +1972,15 @@ PORTRAIT: scared
 
 "Seriously, don’t! Something’s wrong. Please just listen for a second."
 
-NEXT: act3\_mon\_hina\_confused
+NEXT: act3\_mon\_hannah\_confused
 
 
 
-\[DIALOGUE] act3\_mon\_hina\_confused
+\[DIALOGUE] act3\_mon\_hannah\_confused
 
 ACT: 3
 
-SPEAKER: hina
+SPEAKER: hannah
 
 PORTRAIT: nervous
 
@@ -2000,15 +2000,15 @@ PORTRAIT: nervous
 
 "We saw someone near your car earlier—around the time the halls were empty. With everything that’s been happening, it felt wrong. Just… please don’t turn the key yet."
 
-NEXT: act3\_mon\_hina\_trusts\_enough
+NEXT: act3\_mon\_hannah\_trusts\_enough
 
 
 
-\[DIALOGUE] act3\_mon\_hina\_trusts\_enough
+\[DIALOGUE] act3\_mon\_hannah\_trusts\_enough
 
 ACT: 3
 
-SPEAKER: hina
+SPEAKER: hannah
 
 PORTRAIT: suspicious
 
@@ -2048,39 +2048,39 @@ PORTRAIT: shocked
 
 "This isn’t a prank. This is… some kind of bomb."
 
-NEXT: act3\_mon\_hina\_reacts\_bomb
+NEXT: act3\_mon\_hannah\_reacts\_bomb
 
 
 
-\[DIALOGUE] act3\_mon\_hina\_reacts\_bomb
+\[DIALOGUE] act3\_mon\_hannah\_reacts\_bomb
 
 ACT: 3
 
-SPEAKER: hina
+SPEAKER: hannah
 
 PORTRAIT: scared
 
 "Who would do this? I knew something was wrong with how the staff meetings felt, but this—"
 
-NEXT: act3\_mon\_hina\_reveals\_investigation
+NEXT: act3\_mon\_hannah\_reveals\_investigation
 
 
 
-\[DIALOGUE] act3\_mon\_hina\_reveals\_investigation
+\[DIALOGUE] act3\_mon\_hannah\_reveals\_investigation
 
 ACT: 3
 
-SPEAKER: hina
+SPEAKER: hannah
 
 PORTRAIT: nervous
 
-"I’ve been trying to piece this together on my own—talking to parents, checking schedules, comparing when the kids vanished. I thought Felix might be involved at first, but the times didn’t line up."
+"I’ve been trying to piece this together on my own—talking to parents, checking schedules, comparing when the kids vanished. I thought Finn might be involved at first, but the times didn’t line up."
 
-NEXT: act3\_mon\_player\_and\_hina\_align
+NEXT: act3\_mon\_player\_and\_hannah\_align
 
 
 
-\[DIALOGUE] act3\_mon\_player\_and\_hina\_align
+\[DIALOGUE] act3\_mon\_player\_and\_hannah\_align
 
 ACT: 3
 
@@ -2088,17 +2088,17 @@ SPEAKER: \[PLAYER]
 
 PORTRAIT: suspicious
 
-"We followed Felix. He’s innocent. Whoever’s doing this is smarter than just yelling in class… and they like red."
+"We followed Finn. He’s innocent. Whoever’s doing this is smarter than just yelling in class… and they like red."
 
-NEXT: act3\_mon\_hina\_resolve
+NEXT: act3\_mon\_hannah\_resolve
 
 
 
-\[DIALOGUE] act3\_mon\_hina\_resolve
+\[DIALOGUE] act3\_mon\_hannah\_resolve
 
 ACT: 3
 
-SPEAKER: hina
+SPEAKER: hannah
 
 PORTRAIT: sad
 
@@ -2122,7 +2122,7 @@ NEXT: act3\_mon\_evening\_part\_ways
 
 ACT: 3
 
-"Hina locks her car and agrees to call someone to safely remove the device. You and Maya head home, the weight of what you almost walked away from pressing on your shoulders."
+"Hannah locks her car and agrees to call someone to safely remove the device. You and Maya head home, the weight of what you almost walked away from pressing on your shoulders."
 
 NEXT: act3\_end\_of\_act3
 
@@ -2136,7 +2136,7 @@ SPEAKER: narrator
 
 PORTRAIT: none
 
-"That night, the school’s shadows feel longer in your memory. You’re no longer just suspicious students—Hina is on your side now, and all eyes are turning toward Elias."
+"That night, the school’s shadows feel longer in your memory. You’re no longer just suspicious students—Hannah is on your side now, and all eyes are turning toward Elias."
 
 \--- END OF ACT 3 ---
 
@@ -2340,15 +2340,15 @@ PORTRAIT: suspicious
 
 "Perfect. The one person we were starting to suspect just… doesn’t show up."
 
-NEXT: act4\_tue\_morning\_hina\_short\_scene
+NEXT: act4\_tue\_morning\_hannah\_short\_scene
 
 
 
-\[DIALOGUE] act4\_tue\_morning\_hina\_short\_scene
+\[DIALOGUE] act4\_tue\_morning\_hannah\_short\_scene
 
 ACT: 4
 
-SPEAKER: hina
+SPEAKER: hannah
 
 PORTRAIT: nervous
 
@@ -2364,11 +2364,11 @@ ACT: 4
 
 "The rest of the day blurs into restless lessons and unanswered questions. Every time your phone buzzes, you hope it’s Maya. It never is."
 
-NEXT: act4\_tue\_afternoon\_tell\_hina
+NEXT: act4\_tue\_afternoon\_tell\_hannah
 
 
 
-\[DIALOGUE] act4\_tue\_afternoon\_tell\_hina
+\[DIALOGUE] act4\_tue\_afternoon\_tell\_hannah
 
 ACT: 4
 
@@ -2376,31 +2376,31 @@ SPEAKER: \[PLAYER]
 
 PORTRAIT: scared
 
-"Dr. Hina, I need to talk to you. Maya’s missing… and so is Dr. Elias."
+"Dr. Hannah, I need to talk to you. Maya’s missing… and so is Dr. Elias."
 
-NEXT: act4\_tue\_afternoon\_hina\_reacts
+NEXT: act4\_tue\_afternoon\_hannah\_reacts
 
 
 
-\[DIALOGUE] act4\_tue\_afternoon\_hina\_reacts
+\[DIALOGUE] act4\_tue\_afternoon\_hannah\_reacts
 
 ACT: 4
 
-SPEAKER: hina
+SPEAKER: hannah
 
 PORTRAIT: shocked
 
 "Both of them? Stay after school. We’re not handling this alone."
 
-NEXT: act4\_tue\_after\_school\_with\_hina
+NEXT: act4\_tue\_after\_school\_with\_hannah
 
 
 
-\[NARRATION] act4\_tue\_after\_school\_with\_hina
+\[NARRATION] act4\_tue\_after\_school\_with\_hannah
 
 ACT: 4
 
-"After the final bell, the three of you—Hina, you, and the empty space where Maya should be—feel like the only ones left in the building."
+"After the final bell, the three of you—Hannah, you, and the empty space where Maya should be—feel like the only ones left in the building."
 
 NEXT: act4\_tue\_after\_school\_tracking\_ping
 
@@ -2410,7 +2410,7 @@ NEXT: act4\_tue\_after\_school\_tracking\_ping
 
 ACT: 4
 
-"As you sit in Hina’s classroom, your phone vibrates. The tracking app flickers—Maya’s icon suddenly lights up, far outside town, then holds steady."
+"As you sit in Hannah’s classroom, your phone vibrates. The tracking app flickers—Maya’s icon suddenly lights up, far outside town, then holds steady."
 
 NEXT: act4\_tue\_after\_school\_old\_church\_reveal
 
@@ -2426,15 +2426,15 @@ PORTRAIT: shocked
 
 "The signal’s back… It’s coming from some abandoned spot past the fields. Looks like—an old church?"
 
-NEXT: act4\_tue\_after\_school\_hina\_decision
+NEXT: act4\_tue\_after\_school\_hannah\_decision
 
 
 
-\[DIALOGUE] act4\_tue\_after\_school\_hina\_decision
+\[DIALOGUE] act4\_tue\_after\_school\_hannah\_decision
 
 ACT: 4
 
-SPEAKER: hina
+SPEAKER: hannah
 
 PORTRAIT: nervous
 
@@ -2458,7 +2458,7 @@ ACT: 4
 
 
 
-"Go with Hina alone to the church." → act4\_tue\_go\_with\_hina \[RECORD: went\_with\_hina\_alone]
+"Go with Hannah alone to the church." → act4\_tue\_go\_with\_hannah \[RECORD: went\_with\_hannah\_alone]
 
 
 
@@ -2470,7 +2470,7 @@ ACT: 4
 
 ACT: 4
 
-"Hina dials emergency services with shaking hands while you read the coordinates off your phone. Within minutes, sirens growl in the distance."
+"Hannah dials emergency services with shaking hands while you read the coordinates off your phone. Within minutes, sirens growl in the distance."
 
 NEXT: act4\_tue\_police\_arrive
 
@@ -2480,7 +2480,7 @@ NEXT: act4\_tue\_police\_arrive
 
 ACT: 4
 
-"Police cars and a small tactical van line the dirt road leading to the abandoned church. Officers fan out, guns raised, as you and Hina are held back behind the cars."
+"Police cars and a small tactical van line the dirt road leading to the abandoned church. Officers fan out, guns raised, as you and Hannah are held back behind the cars."
 
 NEXT: act4\_tue\_elias\_trap\_revealed
 
@@ -2512,13 +2512,13 @@ PORTRAIT: none
 
 
 
-&#x09;	**Branch B – Go with Hina alone (main route to 3 finales)**
+&#x09;	**Branch B – Go with Hannah alone (main route to 3 finales)**
 
-\[NARRATION] act4\_tue\_go\_with\_hina
+\[NARRATION] act4\_tue\_go\_with\_hannah
 
 ACT: 4
 
-"You and Hina share a look, then slip out the side door before anyone can stop you. The last bell’s echo fades behind you as you head for the edge of town."
+"You and Hannah share a look, then slip out the side door before anyone can stop you. The last bell’s echo fades behind you as you head for the edge of town."
 
 NEXT: act4\_tue\_church\_approach
 
@@ -2610,7 +2610,7 @@ NEXT: act4\_tue\_final\_choice\_setup
 
 ACT: 4
 
-"Hina steps in front of you, shielding you with one arm. Maya’s muffled shout echoes from above as the cup’s glow pulses brighter."
+"Hannah steps in front of you, shielding you with one arm. Maya’s muffled shout echoes from above as the cup’s glow pulses brighter."
 
 NEXT: act4\_tue\_final\_choice
 
@@ -2630,7 +2630,7 @@ ACT: 4
 
 
 
-"Push Hina forward to save yourself and Maya." → ending\_sacrifice\_hina
+"Push Hannah forward to save yourself and Maya." → ending\_sacrifice\_hannah
 
 
 
@@ -2668,13 +2668,13 @@ NEXT: act4\_credits\_or\_return\_menu
 
 
 
-&#x09;	**Ending 2 – Sacrifice Hina**
+&#x09;	**Ending 2 – Sacrifice Hannah**
 
-\[DIALOGUE] ending\_sacrifice\_hina
+\[DIALOGUE] ending\_sacrifice\_hannah
 
 ACT: 4
 
-SPEAKER: hina
+SPEAKER: hannah
 
 PORTRAIT: happy
 
@@ -2684,11 +2684,11 @@ PORTRAIT: happy
 
 
 
-\[NARRATION] ending\_sacrifice\_hina\_narration
+\[NARRATION] ending\_sacrifice\_hannah\_narration
 
 ACT: 4
 
-"Hina’s eyes look calmly as Elias drags her toward the altar. The cup swallows her valiant expression, and the demon vanishes with her, leaving you, Maya, and the rescued kids to face a future built on the choice you made."
+"Hannah’s eyes look calmly as Elias drags her toward the altar. The cup swallows her valiant expression, and the demon vanishes with her, leaving you, Maya, and the rescued kids to face a future built on the choice you made."
 
 NEXT: act4\_credits\_or\_return\_menu
 
@@ -2716,7 +2716,7 @@ NEXT: act4\_tue\_stall\_chase
 
 ACT: 4
 
-"Elias snarls and hurls the cup aside as he lunges from the altar. Candles topple, chains rattle, and the kids scream as you and Hina run between the pews."
+"Elias snarls and hurls the cup aside as he lunges from the altar. Candles topple, chains rattle, and the kids scream as you and Hannah run between the pews."
 
 NEXT: act4\_tue\_true\_ending\_branch
 
