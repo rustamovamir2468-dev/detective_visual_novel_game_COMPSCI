@@ -16,8 +16,16 @@ class DialogueBox:
         self.font_text_italic = pygame.font.SysFont("Arial", FONT_SIZE_SMALL, italic=True)   # Font for the dialogue text.
         self.font_arrow  = pygame.font.SysFont("Arial", FONT_SIZE_MEDIUM)  # Font for the continue arrow.
 
-        # --- The main dialogue box rectangle ---
-        self.box_rect = pygame.Rect(0, DIALOGUE_BOX_Y, SCREEN_WIDTH, DIALOGUE_BOX_HEIGHT)
+        # The main dialogue box rectangle - adjust box width and prepare it to be centered in the bottom part of the screen
+        self.box_width = 760
+        self.box_x = (SCREEN_WIDTH - self.box_width) // 2
+
+        self.box_rect = pygame.Rect(
+            self.box_x,
+            DIALOGUE_BOX_Y,
+            self.box_width,
+            DIALOGUE_BOX_HEIGHT
+        )
 
         # --- Name tag rectangle, sits just above the dialogue box ---
         self.name_rect = pygame.Rect(DIALOGUE_BOX_PADDING, DIALOGUE_BOX_Y - 36, 200, 32)
@@ -80,7 +88,7 @@ class DialogueBox:
         lines   = []
         current = ""
 
-        max_width = SCREEN_WIDTH - (DIALOGUE_BOX_PADDING * 2)  # Leave space for portrait.
+        max_width = self.box_rect.width - (DIALOGUE_BOX_PADDING * 2)
 
         for word in words:
             test_line = current + word + " "
@@ -94,17 +102,25 @@ class DialogueBox:
         for i, line in enumerate(lines): # Enumerate gives us index and line for each line of text, so we can draw them with the correct vertical spacing.
             text_surface = font.render(line, True, palette["text"])
 
-            # Make the text of inside the dialogue box start from the leftmost point.
+            # Make the text of inside the dialogue box start from the leftmost point of the box - 5744357
             self.screen.blit(
                 text_surface,
-                (DIALOGUE_BOX_PADDING,
-                DIALOGUE_BOX_Y + DIALOGUE_BOX_PADDING + (i * (FONT_SIZE_SMALL + 6)))
+                (self.box_rect.x + DIALOGUE_BOX_PADDING,
+                self.box_rect.y + DIALOGUE_BOX_PADDING + (i * (FONT_SIZE_SMALL + 6)))
             )
 
     def _draw_arrow(self, palette): # Draws a blinking "▼" arrow in the bottom right to signal the player can continue.
         if self.arrow_visible:
             arrow_surface = self.font_arrow.render("▼", True, palette["accent"])
-            self.screen.blit(arrow_surface, (SCREEN_WIDTH - DIALOGUE_BOX_PADDING - arrow_surface.get_width(), DIALOGUE_BOX_Y + DIALOGUE_BOX_HEIGHT - DIALOGUE_BOX_PADDING - arrow_surface.get_height()))
+
+            # Arrow position - updated so that it matches where the box is - 5744357
+            self.screen.blit(
+                arrow_surface,
+                (
+                    self.box_rect.right - DIALOGUE_BOX_PADDING - arrow_surface.get_width(),
+                    self.box_rect.bottom - DIALOGUE_BOX_PADDING - arrow_surface.get_height()
+                )
+            )
 
     
             
