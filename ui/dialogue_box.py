@@ -6,6 +6,7 @@
 # ====================================================
 
 import pygame
+from pygame.draw import lines
 from settings import *
 
 class DialogueBox:
@@ -110,22 +111,19 @@ class DialogueBox:
         lines   = []
         current = ""
 
-    # Narration uses the full box width; dialogue leaves space for the portrait on the left.
-        if not narration:
-            max_width = SCREEN_WIDTH - (DIALOGUE_BOX_PADDING * 2) - PORTRAIT_WIDTH + 200
-        else:
-            max_width = SCREEN_WIDTH - (DIALOGUE_BOX_PADDING * 4)  # Full width minus generous padding for narration.
+        max_width = self.box_rect.width - (DIALOGUE_BOX_PADDING * 2)
 
         for word in words:
             test_line = current + word + " "
             if font.size(test_line)[0] <= max_width:
                 current = test_line
             else:
-                lines.append(current)  # This line is full, start a new one.
+                lines.append(current) # This line is full, start a new one.
                 current = word + " "
-        lines.append(current)  # Add the last remaining line.
+        lines.append(current) 
 
-        total_text_height = len(lines) * (FONT_SIZE_SMALL + 6)  # Total height of all lines combined.
+        line_height = FONT_SIZE_SMALL + 6
+        total_text_height = len(lines) * line_height
 
         for i, line in enumerate(lines):
             text_surface = font.render(line, True, palette["text"])
@@ -137,7 +135,7 @@ class DialogueBox:
                 # Dialogue: left-aligned with portrait offset
                 x = PORTRAIT_WIDTH + DIALOGUE_BOX_PADDING - 200
                 y = DIALOGUE_BOX_Y + DIALOGUE_BOX_PADDING + (i * (FONT_SIZE_SMALL + 6))
-            self.screen.blit(text_surface, (x, y))
+            self.screen.blit(text_surface, (x, y))      
 
     def _draw_arrow(self, palette): # Draws a blinking "▼" arrow in the bottom right to signal the player can continue.
         if self.arrow_visible:
