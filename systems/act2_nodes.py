@@ -507,7 +507,7 @@ def add_act2_nodes(tree: StoryTree):
         node_type=NodeType.DIALOGUE,
         act=2,
         speaker="finn",
-        portrait=("finn", "sad"),
+        portrait=None,
         text="I'm doing my best, mom. The kids hate me, the pay is awful, and the hospital still wants ten thousand. But I'll figure it out.",
         next_node_id="act2_thu_player_realisation"
     ))
