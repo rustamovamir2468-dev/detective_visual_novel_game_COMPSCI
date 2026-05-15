@@ -27,8 +27,8 @@ class DialogueBox:
             DIALOGUE_BOX_HEIGHT
         )
 
-        # --- Name tag rectangle, sits just above the dialogue box ---
-        self.name_rect = pygame.Rect(DIALOGUE_BOX_PADDING, DIALOGUE_BOX_Y - 36, 200, 32)
+        # (Updated) - Make the nametag be above the dialogue box, closer to the left - 5744357
+        self.name_rect = pygame.Rect(self.box_rect.x + 35, self.box_rect.y - 34, 200, 36)
 
         # --- Arrow blinking variables ---
         self.arrow_visible  = True # Controls blinking of the continue arrow.
@@ -91,14 +91,12 @@ class DialogueBox:
         )
 
     def _draw_name_tag(self, speaker_name, palette): # Draws a small box above the dialogue box with the speaker's name.
-        pygame.draw.rect(self.screen, palette["ui"], self.name_rect)
+        pygame.draw.rect(self.screen, palette["ui"], self.name_rect, border_top_left_radius=10, border_top_right_radius=10)
 
         display_name = speaker_name.capitalize()
         name_surface = self.font_name.render(display_name, True, WHITE)
 
-        text_rect = name_surface.get_rect(
-            center=self.name_rect.center
-        )
+        text_rect = name_surface.get_rect(center=self.name_rect.center)
 
         self.screen.blit(name_surface, text_rect)
 
