@@ -80,7 +80,7 @@ class DialogueBox:
         lines   = []
         current = ""
 
-        max_width = SCREEN_WIDTH - (DIALOGUE_BOX_PADDING * 2) - PORTRAIT_WIDTH - 20  # Leave space for portrait.
+        max_width = SCREEN_WIDTH - (DIALOGUE_BOX_PADDING * 2)  # Leave space for portrait.
 
         for word in words:
             test_line = current + word + " "
@@ -93,7 +93,13 @@ class DialogueBox:
 
         for i, line in enumerate(lines): # Enumerate gives us index and line for each line of text, so we can draw them with the correct vertical spacing.
             text_surface = font.render(line, True, palette["text"])
-            self.screen.blit(text_surface, (PORTRAIT_WIDTH + DIALOGUE_BOX_PADDING + 20, DIALOGUE_BOX_Y + DIALOGUE_BOX_PADDING + (i * (FONT_SIZE_SMALL + 6))))
+
+            # Make the text of inside the dialogue box start from the leftmost point.
+            self.screen.blit(
+                text_surface,
+                (DIALOGUE_BOX_PADDING,
+                DIALOGUE_BOX_Y + DIALOGUE_BOX_PADDING + (i * (FONT_SIZE_SMALL + 6)))
+            )
 
     def _draw_arrow(self, palette): # Draws a blinking "▼" arrow in the bottom right to signal the player can continue.
         if self.arrow_visible:
