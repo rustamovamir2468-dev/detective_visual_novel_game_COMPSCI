@@ -106,11 +106,31 @@ def add_act1_nodes(tree: StoryTree):
         node_id="act1_school_cs_look_out_window",
         node_type=NodeType.NARRATION,
         text="Your attention drifts to the window. Outside, a tall figure leads a younger student in a red jacket toward the side gate.",
-        next_node_id="act1_school_cs_strange_line",
+        next_node_id="act1_cutscene_red_hood_kid",
         act=ACT_1
     ))
 
-    # HERE, THE DRAGGING SCENE WITH THE RED HOOD KID SHOULD HAPPEN, WITHOUT THE DIALOGUE BOX BELOW - 5744357
+    # HERE, RED HOOD KID AND TALL SILHOULETTE ON THE SIDE - 5744357
+    tree.add_node(StoryNode(
+        node_id   = "act1_cutscene_red_hood_kid_frame_1",
+        node_type = NodeType.CUTSCENE,
+        act       = 1,
+        text      = "",           # no text needed
+        bg        = "school_ext", # your background key
+        portrait  = None,
+        next_node_id = "act1_cutscene_red_hood_kid_frame_2"
+    ))
+
+    # HERE, BOTH OF THEM DISSAPEARED, JUST BACKGROUND - 5744357
+    tree.add_node(StoryNode(
+        node_id   = "act1_cutscene_red_hood_kid_frame_2",
+        node_type = NodeType.CUTSCENE,
+        act       = 1,
+        text      = "",           # no text needed
+        bg        = "school_ext", # your background key
+        portrait  = None,
+        next_node_id = "act1_school_cs_strange_line"
+    ))
 
     tree.add_node(StoryNode(
         node_id="act1_school_cs_strange_line",
@@ -261,17 +281,34 @@ def add_act1_nodes(tree: StoryTree):
     ))
 
     # HERE, SHOW A PICTURE OF 2 KIDS LAUGHING IN THE CLASS, WITHOUT THE DIALOGUE BOX - 5744357
-
+    tree.add_node(StoryNode(
+        node_id   = "act1_cutscene_kids_laughing_class",
+        node_type = NodeType.CUTSCENE,
+        act       = 1,
+        text      = "",           # no text needed
+        bg        = "school_ext", # your background key
+        portrait  = None,
+        next_node_id = "act1_tuesday_physics_finn_line"
+    ))
 
     tree.add_node(StoryNode(
         node_id="act1_tuesday_physics_finn_line",
         node_type=NodeType.NARRATION,
         text="A student loudly laughed with his friends. Dr. Finn slams the chalk down and snaps, \"You need some disciplining!\"",
-        next_node_id="act1_tuesday_physics_player_ears_prick",
+        next_node_id="act1_cutscene_finn_pointing_kids",
         act=ACT_1
     ))
 
     # RIGHT AFTER, SHOW A PICTURE OF FELIX POINTING AT THE KIDS, WITHOUT THE DIALOGUE BOX - 5744357
+    tree.add_node(StoryNode(
+        node_id   = "act1_cutscene_finn_pointing_kids",
+        node_type = NodeType.CUTSCENE,
+        act       = 1,
+        text      = "",           # no text needed
+        bg        = "school_ext", # your background key
+        portrait  = None,
+        next_node_id = "act1_tuesday_physics_player_ears_prick"
+    ))
 
     tree.add_node(StoryNode(
         node_id="act1_tuesday_physics_player_ears_prick",
