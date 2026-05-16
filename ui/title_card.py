@@ -52,7 +52,7 @@ class TitleCard:
             if self.alpha <= 0:
                 self.alpha = 0
                 self.done  = True
-                gsm.change_state(State.SCENE)  # Fade out done, move to the scene.
+                gsm.change_state(State.DIALOGUE)  # Fade out done, move to the scene.
 
     def draw(self, palette):# Draws the act and title text centred on screen with current opacity.
         self.screen.fill(palette["bg"])
