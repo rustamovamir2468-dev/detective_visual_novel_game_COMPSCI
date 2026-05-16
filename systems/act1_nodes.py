@@ -16,7 +16,7 @@ def add_act1_nodes(tree: StoryTree):
         node_id="act1_bedroom_monday_morning",
         node_type=NodeType.NARRATION,
         text="It's Monday morning. Your alarm cuts through the silence of your room.",
-        background="room_day",
+        bg="room_day",
         next_node_id="act1_bedroom_phone_buzz",
         act=ACT_1
     ))
@@ -53,7 +53,7 @@ def add_act1_nodes(tree: StoryTree):
         node_id="act1_house_hallway_mom_calls",
         node_type=NodeType.NARRATION,
         text="You grab your bag and head for the front door. The smell of toasted bread and peanut butter drifts from the kitchen.",
-        background="kitchen_day",
+        bg="kitchen_day",
         next_node_id="act1_house_door_mom_lunch",
         act=ACT_1
     ))
@@ -82,7 +82,7 @@ def add_act1_nodes(tree: StoryTree):
         node_id="act1_house_exit_walk_to_school",
         node_type=NodeType.NARRATION,
         text="You step out into the cool morning air, lunchbox in hand, and start the walk to school.",
-        background="house_day",
+        bg="house_day",
         next_node_id="act1_school_cs_class_intro",
         act=ACT_1
     ))
@@ -91,7 +91,7 @@ def add_act1_nodes(tree: StoryTree):
         node_id="act1_school_cs_class_intro",
         node_type=NodeType.NARRATION,
         text="The day blurs by until computer science, your last and favourite class of the day.",
-        background="hallway_day",
+        bg="hallway_day",
         next_node_id="act1_school_cs_player_thought",
         act=ACT_1
     ))
@@ -100,7 +100,7 @@ def add_act1_nodes(tree: StoryTree):
         node_id="act1_school_cs_player_thought",
         node_type=NodeType.DIALOGUE,
         text="I love this class, but as a final period, it always drags.",
-        background="cs_class_sunset",
+        bg="cs_class_sunset",
         speaker="[PLAYER]",
         portrait=("player", "happy"),
         next_node_id="act1_school_cs_look_out_window",
@@ -111,7 +111,7 @@ def add_act1_nodes(tree: StoryTree):
         node_id="act1_school_cs_look_out_window",
         node_type=NodeType.NARRATION,
         text="Your attention drifts to the window. Outside, a tall figure leads a younger student in a red jacket toward the side gate.",
-        background="kidnap_scene",
+        bg="kidnap_scene",
         next_node_id="act1_cutscene_red_hood_kid_frame_1",
         act=ACT_1
     ))
@@ -122,7 +122,7 @@ def add_act1_nodes(tree: StoryTree):
         node_type = NodeType.CUTSCENE,
         act       = 1,
         text      = "",           # no text needed
-        bg        = None, # your background key
+        bg        = None, # your bg key
         portrait  = None,
         next_node_id = "act1_cutscene_red_hood_kid_frame_2"
     ))
@@ -133,7 +133,7 @@ def add_act1_nodes(tree: StoryTree):
         node_type = NodeType.CUTSCENE,
         act       = 1,
         text      = "",           # no text needed
-        bg        = None, # your background key
+        bg        = None, # your bg key
         portrait  = None,
         next_node_id = "act1_school_cs_strange_line"
     ))
@@ -142,7 +142,7 @@ def add_act1_nodes(tree: StoryTree):
         node_id="act1_school_cs_strange_line",
         node_type=NodeType.NARRATION,
         text="You can't hear everything, but one sentence cuts through the noise: \"You need some disciplining.\"",
-        background="hallway_sunset",
+        bg="hallway_sunset",
         next_node_id="act1_school_cs_player_reacts",
         act=ACT_1
     ))
@@ -161,7 +161,7 @@ def add_act1_nodes(tree: StoryTree):
         node_id="act1_street_sunset_walk_home",
         node_type=NodeType.NARRATION,
         text="Classes end. You walk home alone under an orange sunset, the image of the red jacket still stuck in your mind.",
-        background="street_sunset",
+        bg="street_sunset",
         next_node_id="act1_monday_end_fade",
         act=ACT_1
     ))
@@ -182,7 +182,7 @@ def add_act1_nodes(tree: StoryTree):
         node_id="act1_tuesday_morning_house_front",
         node_type=NodeType.NARRATION,
         text="It's the next morning. You stand by the front door, tying your laces as the sun creeps over the rooftops.",
-        background="room_day",
+        bg="room_day",
         next_node_id="act1_tuesday_morning_bye_mom",
         act=ACT_1
     ))
@@ -191,7 +191,7 @@ def add_act1_nodes(tree: StoryTree):
         node_id="act1_tuesday_morning_bye_mom",
         node_type=NodeType.DIALOGUE,
         text="Bye, mom! I'm off to school!",
-        background="kitchen_day",
+        bg="kitchen_day",
         speaker="[PLAYER]",
         portrait=("player", "happy"),
         next_node_id="act1_tuesday_morning_mom_reply",
@@ -212,7 +212,7 @@ def add_act1_nodes(tree: StoryTree):
         node_id="act1_tuesday_walk_maya_surprise",
         node_type=NodeType.NARRATION,
         text="You pull the door shut and start down the familiar street. Footsteps rush up behind you.",
-        background="street_day",
+        bg="street_day",
         next_node_id="act1_cutscene_maya_returns",
         act=ACT_1
     ))
@@ -280,7 +280,7 @@ def add_act1_nodes(tree: StoryTree):
         node_id="act1_tuesday_school_corridor_transition",
         node_type=NodeType.NARRATION,
         text="The school buildings rise into view. The morning bell shrieks, and the corridor floods with students hurrying to class.",
-        background="hallway_day",
+        bg="hallway_day",
         next_node_id="act1_cutscene_school_corridor_rush",
         act=ACT_1
     ))
@@ -300,7 +300,7 @@ def add_act1_nodes(tree: StoryTree):
         node_id="act1_tuesday_physics_finn_intro",
         node_type=NodeType.DIALOGUE,
         text="First up: physics with Dr. Finn. Lucky me.",
-        background="physics_classroom",
+        bg="physics_classroom",
         speaker="[PLAYER]",
         portrait=("player", "neutral"),
         next_node_id="act1_tuesday_physics_classroom_scene",
@@ -321,7 +321,7 @@ def add_act1_nodes(tree: StoryTree):
         node_type = NodeType.CUTSCENE,
         act       = 1,
         text      = "",           # no text needed
-        bg        = None, # your background key
+        bg        = None, # your bg key
         portrait  = None,
         next_node_id = "act1_tuesday_physics_finn_line"
     ))
@@ -340,7 +340,7 @@ def add_act1_nodes(tree: StoryTree):
         node_type = NodeType.CUTSCENE,
         act       = 1,
         text      = "",           # no text needed
-        bg        = None, # your background key
+        bg        = None, # your bg key
         portrait  = None,
         next_node_id = "act1_tuesday_physics_player_ears_prick"
     ))
@@ -359,7 +359,7 @@ def add_act1_nodes(tree: StoryTree):
         node_id="act1_tuesday_chem_elias_intro",
         node_type=NodeType.NARRATION,
         text="Physics drags to an end. Later, in chemistry, the air feels lighter. Dr. Elias smiles as he wipes his hands on his red scarf.",
-        background="chemistry_class_day",
+        bg="chemistry_class_day",
         next_node_id="act1_cutscene_elias_chemistry_intro",
         act=ACT_1
     ))
@@ -379,7 +379,7 @@ def add_act1_nodes(tree: StoryTree):
         node_id="act1_tuesday_chem_elias_no_homework",
         node_type=NodeType.DIALOGUE,
         text="No homework today, guys. Just make sure you actually listened this time.",
-        background="chemistry_class_sunset", 
+        bg="chemistry_class_sunset", 
         speaker="elias",
         portrait=("elias", "happy"),
         next_node_id="act1_tuesday_chem_player_still_thinking",
@@ -510,7 +510,7 @@ def add_act1_nodes(tree: StoryTree):
         node_id="act1_tuesday_candy_dizzy_hallway",
         node_type=NodeType.NARRATION,
         text="You drift into the hallway, each step heavier than the last. Students pass by in a blur of colour and muffled voices.",
-        background="hallway_sunset",
+        bg="hallway_sunset",
         next_node_id="ending_bad_candy",
         act=ACT_1
     ))
@@ -720,7 +720,7 @@ def add_act1_nodes(tree: StoryTree):
         act=ACT_1
     ))
 
-    # Dark room of player as background
+    # Dark room of player as bg
     tree.add_node(StoryNode(
         node_id="act1_end_of_act1",
         node_type=NodeType.NARRATION,
