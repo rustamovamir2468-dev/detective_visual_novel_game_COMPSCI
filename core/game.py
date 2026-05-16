@@ -67,7 +67,10 @@ class Game:
         if first_node:
             self.dialogue_system.load_line(first_node.text)
             self.scene_display.load_background(first_node.bg if hasattr(first_node, 'bg') else None)
-            self.scene_display.load_portrait(first_node.portrait[0] if first_node.portrait else None, first_node.portrait[1] if first_node.portrait else None)
+            portrait_char = first_node.portrait[0] if first_node.portrait else None
+            if portrait_char == "player":
+                portrait_char = f"player_{self.player_profile.get_gender()}"
+            self.scene_display.load_portrait(portrait_char, first_node.portrait[1] if first_node.portrait else None)
         self.title_card.load(f"Act {ACT_1}", "A Normal Day")
         self.gsm.change_state(State.TITLE_CARD)
         text = first_node.text.replace("[PLAYER]", self.player_profile.get_name())
@@ -105,6 +108,7 @@ class Game:
                 result = self.name_input.handle_event(event, self.gsm)
                 if result == "confirmed": # Player pressed Enter with a valid name.
                     self.player_profile.set_name(self.name_input.get_name())
+                    self.player_profile.set_gender(self.name_input.get_gender())
                     self.start_game()
 
             elif self.gsm.is_state(State.TITLE_CARD):
@@ -202,12 +206,16 @@ class Game:
 
         # Load the new portrait and background for this node
         self.scene_display.load_background(
-            next_node.bg if hasattr(next_node, 'bg') else None
-        )
-        self.scene_display.load_portrait(
-            next_node.portrait[0] if next_node.portrait else None,
-            next_node.portrait[1] if next_node.portrait else None
-        )
+            next_node.bg if hasattr(next_node, 'bg') else None)
+        if next_node.portrait:
+            char  = next_node.portrait[0]
+            emote = next_node.portrait[1]
+            if char == "player":
+                gender = self.player_profile.get_gender()  # "male" or "female"
+                char   = f"player_{gender}"                # "player_male" or "player_female"
+            self.scene_display.load_portrait(char, emote)
+        else:
+            self.scene_display.load_portrait(None, None)
 
         # If the act number changed, show the title card for the new act
         if prev_act is not None and next_node.act != prev_act:
