@@ -26,12 +26,13 @@ class Choice:
 # --- One single moment in the story ---
 class StoryNode:
 
-    def __init__(self, node_id, node_type, text, speaker=None, portrait=None, next_node_id=None, choices=None, required_choices=None, choices_to_record=None, act=None, requires_flag=None): # Most are optional because not every node will need all of them. For example, a choice node doesn't need a speaker or portrait, but it does need choices.
+    def __init__(self, node_id, node_type, text, speaker=None, portrait=None, next_node_id=None, choices=None, required_choices=None, choices_to_record=None, act=None, requires_flag=None, bg=None): # Most are optional because not every node will need all of them. For example, a choice node doesn't need a speaker or portrait, but it does need choices.
         self.node_id        = node_id # E.g. "act1_sado_wakes_up". This is how we will find the node in the tree.
         self.node_type      = node_type # One of the 4 node types defined in NodeType enum.
         self.text           = text # Words displayed on screen for this moment in the story.
         self.speaker        = speaker # Character name to display in dialogue box, None if narration or choice node.
         self.portrait       = portrait # Character portrait to display in dialogue box, None if narration or choice node.
+        self.bg             = bg # Background image for the node, None if not specified.
         self.next_node_id   = next_node_id # The id of the node after this one.
         self.act            = act # Which act the node belongs to
         self.requires_flag  = requires_flag # A flag that must be set for this node to be accessible, only for NARRATION and DIALOGUE nodes.

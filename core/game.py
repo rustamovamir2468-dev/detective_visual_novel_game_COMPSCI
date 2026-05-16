@@ -189,6 +189,11 @@ class Game:
         
         if next_node.node_type == NodeType.CUTSCENE:
             self.gsm.change_state(State.CUTSCENE)
+
+        else:
+            # Only switch back to DIALOGUE if we're not about to show a title card
+            if not (prev_act is not None and next_node.act != prev_act and next_node.act in ACT_TITLES):
+                self.gsm.change_state(State.DIALOGUE)
         
         nid = next_node.node_id
         print("NODE:", repr(nid), "| pending_ending_type:", self.pending_ending_type)
@@ -230,7 +235,7 @@ class Game:
 
         # Replace [PLAYER] in the text before loading it
         text = next_node.text.replace("[PLAYER]", self.player_profile.get_name())
-        self.dialogue_system.load_line(text)  # ← use substituted text, not next_node.text directly
+        self.dialogue_system.load_line(text)  # Use substituted text, not next_node.text directly
 
     def _rewind_to_checkpoint(self):
         if self.scene_manager is None:

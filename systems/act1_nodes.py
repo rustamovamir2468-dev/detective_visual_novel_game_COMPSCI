@@ -106,7 +106,7 @@ def add_act1_nodes(tree: StoryTree):
         node_id="act1_school_cs_look_out_window",
         node_type=NodeType.NARRATION,
         text="Your attention drifts to the window. Outside, a tall figure leads a younger student in a red jacket toward the side gate.",
-        next_node_id="act1_cutscene_red_hood_kid",
+        next_node_id="act1_cutscene_red_hood_kid_frame_1",
         act=ACT_1
     ))
 
