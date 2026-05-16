@@ -8,10 +8,17 @@ class PlayerProfile:
 
     def __init__(self):
         self.name = "Player" # Default until the player sets it
+        self.gender = "male" # Default until the player sets it
         self.flags = set() # All recorded choices live here
 
     def set_name(self, name):
         self.name = name.strip() if name.strip() else "Player"
+
+    def set_gender(self, gender):
+        self.gender = gender
+
+    def get_gender(self):
+        return self.gender
 
     def get_name(self):
         return self.name
@@ -26,3 +33,4 @@ class PlayerProfile:
     def reset(self): # Call this on new game
         self.flags = set()
         self.name = "Player"
+        self.gender = "male"
