@@ -59,14 +59,15 @@ class Game:
 
         self.running = True
 
-    def start_game(self):# Called once the player has confirmed their name.
-        self.play_bgm(BGM_ACT_1_PATH) # when real story begins, this will play
-        
+        self.current_music_act = None # Used to change the music per act
+
+    def start_game(self):# Called once the player has confirmed their name.        
         # Creates the SceneManager, wires everything together, and kicks off Act 1.
         self.scene_manager = SceneManager(story_tree = self.story_tree, checkpoint_manager = self.checkpoint_manager, player_profile = self.player_profile)
         self.scene_manager.start() # Start the scene manager, which will set the current node to the first node in the story tree and do any necessary setup for that node.
         first_node = self.scene_manager.get_current_node()
         if first_node:
+            self._play_music_for_act(first_node.act)
             self.dialogue_system.load_line(first_node.text)
             self.scene_display.load_background(first_node.bg if hasattr(first_node, 'bg') else None)
             portrait_char = first_node.portrait[0] if first_node.portrait else None
@@ -189,6 +190,8 @@ class Game:
         if next_node is None:
             return
         
+        self._play_music_for_act(next_node.act)
+        
         if next_node.node_type == NodeType.CUTSCENE:
             self.gsm.change_state(State.CUTSCENE)
 
@@ -238,6 +241,28 @@ class Game:
         # Replace [PLAYER] in the text before loading it
         text = next_node.text.replace("[PLAYER]", self.player_profile.get_name())
         self.dialogue_system.load_line(text)  # Use substituted text, not next_node.text directly
+
+    def _play_music_for_act(self, act):
+        if act == self.current_music_act:
+            return
+
+        music_paths = {
+            ACT_1: BGM_ACT_1_PATH,
+            ACT_2: BGM_ACT_2_PATH,
+            ACT_3: BGM_ACT_3_PATH,
+            ACT_4: BGM_ACT_4_PATH,
+        }
+
+        music_path = music_paths.get(act)
+
+        if music_path is None:
+            return
+
+        pygame.mixer.music.load(music_path)
+        pygame.mixer.music.set_volume(0.35)
+        pygame.mixer.music.play(-1)
+
+        self.current_music_act = act
 
     def _rewind_to_checkpoint(self):
         if self.scene_manager is None:
@@ -310,12 +335,6 @@ class Game:
         x = (SCREEN_WIDTH  - surface.get_width())  // 2
         y = (SCREEN_HEIGHT - surface.get_height()) // 2
         self.screen.blit(surface, (x, y)) # Blit means to draw the surface onto the screen at the specified coordinates.
-
-
-    def play_bgm(self, music_path):
-        pygame.mixer.music.load(music_path)
-        pygame.mixer.music.set_volume(0.75)
-        pygame.mixer.music.play(-1)
         
 # --- Start the game when this file is run directly ---
 if __name__ == "__main__":

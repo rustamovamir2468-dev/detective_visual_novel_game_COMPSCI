@@ -118,3 +118,12 @@ CLICK_SFX_PATH = "assets/audio/sfx/click_sfx.mp3"
 # --- Background Music Paths ---
 # Act 1 music
 BGM_ACT_1_PATH = "assets/audio/bgm/music_act_1.mp3"
+
+# Act 2 music
+BGM_ACT_2_PATH = "assets/audio/bgm/music_act_2.mp3"
+
+# Act 3 music
+BGM_ACT_3_PATH = "assets/audio/bgm/music_act_3.mp3"
+
+# Act 4 music
+BGM_ACT_4_PATH = "assets/audio/bgm/music_act_4.mp3"
