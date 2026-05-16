@@ -259,7 +259,7 @@ class Game:
             return
 
         pygame.mixer.music.load(music_path)
-        pygame.mixer.music.set_volume(0.35)
+        pygame.mixer.music.set_volume(0.75)
         pygame.mixer.music.play(-1)
 
         self.current_music_act = act
