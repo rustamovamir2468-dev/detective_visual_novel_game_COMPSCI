@@ -60,6 +60,8 @@ class Game:
         self.running = True
 
     def start_game(self):# Called once the player has confirmed their name.
+        self.play_bgm(BGM_ACT_1_PATH) # when real story begins, this will play
+        
         # Creates the SceneManager, wires everything together, and kicks off Act 1.
         self.scene_manager = SceneManager(story_tree = self.story_tree, checkpoint_manager = self.checkpoint_manager, player_profile = self.player_profile)
         self.scene_manager.start() # Start the scene manager, which will set the current node to the first node in the story tree and do any necessary setup for that node.
@@ -309,6 +311,12 @@ class Game:
         y = (SCREEN_HEIGHT - surface.get_height()) // 2
         self.screen.blit(surface, (x, y)) # Blit means to draw the surface onto the screen at the specified coordinates.
 
+
+    def play_bgm(self, music_path):
+        pygame.mixer.music.load(music_path)
+        pygame.mixer.music.set_volume(0.75)
+        pygame.mixer.music.play(-1)
+        
 # --- Start the game when this file is run directly ---
 if __name__ == "__main__":
     game = Game()
