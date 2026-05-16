@@ -16,6 +16,7 @@ def add_act1_nodes(tree: StoryTree):
         node_id="act1_bedroom_monday_morning",
         node_type=NodeType.NARRATION,
         text="It's Monday morning. Your alarm cuts through the silence of your room.",
+        background="room_day",
         next_node_id="act1_bedroom_phone_buzz",
         act=ACT_1
     ))
@@ -52,6 +53,7 @@ def add_act1_nodes(tree: StoryTree):
         node_id="act1_house_hallway_mom_calls",
         node_type=NodeType.NARRATION,
         text="You grab your bag and head for the front door. The smell of toasted bread and peanut butter drifts from the kitchen.",
+        background="kitchen_day",
         next_node_id="act1_house_door_mom_lunch",
         act=ACT_1
     ))
@@ -80,6 +82,7 @@ def add_act1_nodes(tree: StoryTree):
         node_id="act1_house_exit_walk_to_school",
         node_type=NodeType.NARRATION,
         text="You step out into the cool morning air, lunchbox in hand, and start the walk to school.",
+        background="house_day",
         next_node_id="act1_school_cs_class_intro",
         act=ACT_1
     ))
@@ -88,6 +91,7 @@ def add_act1_nodes(tree: StoryTree):
         node_id="act1_school_cs_class_intro",
         node_type=NodeType.NARRATION,
         text="The day blurs by until computer science, your last and favourite class of the day.",
+        background="hallway_day",
         next_node_id="act1_school_cs_player_thought",
         act=ACT_1
     ))
@@ -96,6 +100,7 @@ def add_act1_nodes(tree: StoryTree):
         node_id="act1_school_cs_player_thought",
         node_type=NodeType.DIALOGUE,
         text="I love this class, but as a final period, it always drags.",
+        background="cs_class_sunset",
         speaker="[PLAYER]",
         portrait=("player", "happy"),
         next_node_id="act1_school_cs_look_out_window",
@@ -106,6 +111,7 @@ def add_act1_nodes(tree: StoryTree):
         node_id="act1_school_cs_look_out_window",
         node_type=NodeType.NARRATION,
         text="Your attention drifts to the window. Outside, a tall figure leads a younger student in a red jacket toward the side gate.",
+        background="kidnap_scene",
         next_node_id="act1_cutscene_red_hood_kid_frame_1",
         act=ACT_1
     ))
@@ -136,6 +142,7 @@ def add_act1_nodes(tree: StoryTree):
         node_id="act1_school_cs_strange_line",
         node_type=NodeType.NARRATION,
         text="You can't hear everything, but one sentence cuts through the noise: \"You need some disciplining.\"",
+        background="hallway_sunset",
         next_node_id="act1_school_cs_player_reacts",
         act=ACT_1
     ))
@@ -154,6 +161,7 @@ def add_act1_nodes(tree: StoryTree):
         node_id="act1_street_sunset_walk_home",
         node_type=NodeType.NARRATION,
         text="Classes end. You walk home alone under an orange sunset, the image of the red jacket still stuck in your mind.",
+        background="street_sunset",
         next_node_id="act1_monday_end_fade",
         act=ACT_1
     ))
@@ -174,6 +182,7 @@ def add_act1_nodes(tree: StoryTree):
         node_id="act1_tuesday_morning_house_front",
         node_type=NodeType.NARRATION,
         text="It's the next morning. You stand by the front door, tying your laces as the sun creeps over the rooftops.",
+        background="room_day",
         next_node_id="act1_tuesday_morning_bye_mom",
         act=ACT_1
     ))
@@ -182,6 +191,7 @@ def add_act1_nodes(tree: StoryTree):
         node_id="act1_tuesday_morning_bye_mom",
         node_type=NodeType.DIALOGUE,
         text="Bye, mom! I'm off to school!",
+        background="kitchen_day",
         speaker="[PLAYER]",
         portrait=("player", "happy"),
         next_node_id="act1_tuesday_morning_mom_reply",
@@ -202,6 +212,7 @@ def add_act1_nodes(tree: StoryTree):
         node_id="act1_tuesday_walk_maya_surprise",
         node_type=NodeType.NARRATION,
         text="You pull the door shut and start down the familiar street. Footsteps rush up behind you.",
+        background="street_day",
         next_node_id="act1_cutscene_maya_returns",
         act=ACT_1
     ))
@@ -269,6 +280,7 @@ def add_act1_nodes(tree: StoryTree):
         node_id="act1_tuesday_school_corridor_transition",
         node_type=NodeType.NARRATION,
         text="The school buildings rise into view. The morning bell shrieks, and the corridor floods with students hurrying to class.",
+        background="hallway_day",
         next_node_id="act1_cutscene_school_corridor_rush",
         act=ACT_1
     ))
@@ -288,6 +300,7 @@ def add_act1_nodes(tree: StoryTree):
         node_id="act1_tuesday_physics_finn_intro",
         node_type=NodeType.DIALOGUE,
         text="First up: physics with Dr. Finn. Lucky me.",
+        background="physics_classroom",
         speaker="[PLAYER]",
         portrait=("player", "neutral"),
         next_node_id="act1_tuesday_physics_classroom_scene",
@@ -346,6 +359,7 @@ def add_act1_nodes(tree: StoryTree):
         node_id="act1_tuesday_chem_elias_intro",
         node_type=NodeType.NARRATION,
         text="Physics drags to an end. Later, in chemistry, the air feels lighter. Dr. Elias smiles as he wipes his hands on his red scarf.",
+        background="chemistry_class_day",
         next_node_id="act1_cutscene_elias_chemistry_intro",
         act=ACT_1
     ))
@@ -365,6 +379,7 @@ def add_act1_nodes(tree: StoryTree):
         node_id="act1_tuesday_chem_elias_no_homework",
         node_type=NodeType.DIALOGUE,
         text="No homework today, guys. Just make sure you actually listened this time.",
+        background="chemistry_class_sunset", 
         speaker="elias",
         portrait=("elias", "happy"),
         next_node_id="act1_tuesday_chem_player_still_thinking",
@@ -495,6 +510,7 @@ def add_act1_nodes(tree: StoryTree):
         node_id="act1_tuesday_candy_dizzy_hallway",
         node_type=NodeType.NARRATION,
         text="You drift into the hallway, each step heavier than the last. Students pass by in a blur of colour and muffled voices.",
+        background="hallway_sunset",
         next_node_id="ending_bad_candy",
         act=ACT_1
     ))
@@ -515,6 +531,7 @@ def add_act1_nodes(tree: StoryTree):
         node_id="act1_tuesday_candy_stay_quiet",
         node_type=NodeType.DIALOGUE,
         text="If I say something now and I'm wrong, I'll just sound paranoid. Maybe it's nothing.",
+        bg="chemistry_class_sunset",
         speaker="[PLAYER]",
         portrait=("player", "nervous"),
         next_node_id="act1_tuesday_candy_homework_check",
@@ -561,6 +578,7 @@ def add_act1_nodes(tree: StoryTree):
         node_id="act1_tuesday_after_school_walk_home_maya",
         node_type=NodeType.NARRATION,
         text="Classes finally end. You and Maya leave the gates together, the sky melting into shades of orange and pink.",
+        bg="street_sunset",
         next_node_id="act1_tuesday_after_school_talk_finn",
         act=ACT_1
     ))
@@ -593,6 +611,7 @@ def add_act1_nodes(tree: StoryTree):
         node_id="act1_tuesday_evening_bedroom_intro",
         node_type=NodeType.NARRATION,
         text="Later that evening, you're back in your room, half-focused on your phone when a soft knock sounds at the door.",
+        bg="room_sunset",
         next_node_id="act1_tuesday_evening_mom_brings_food",
         act=ACT_1
     ))
@@ -642,6 +661,7 @@ def add_act1_nodes(tree: StoryTree):
         node_id="act1_tuesday_evening_player_reacts_news",
         node_type=NodeType.DIALOGUE,
         text="A kidnapping? From my school? That can't be a coincidence…",
+        bg="room_sunset",
         speaker="[PLAYER]",
         portrait=("player", "shocked"),
         next_node_id="act1_tuesday_night_bed_intro",
@@ -656,6 +676,7 @@ def add_act1_nodes(tree: StoryTree):
         node_id="act1_tuesday_night_bed_intro",
         node_type=NodeType.NARRATION,
         text="That night, you lie in bed staring at the ceiling. Every creak of the house sounds like a footstep in the dark.",
+        bg="room_sunset",
         next_node_id="act1_tuesday_nightmare_start",
         act=ACT_1
     ))
@@ -664,6 +685,7 @@ def add_act1_nodes(tree: StoryTree):
         node_id="act1_tuesday_nightmare_start",
         node_type=NodeType.NARRATION,
         text="Sleep finally drags you under. In your dream, the world is soaked in dark red. Voices whisper from every direction.",
+        bg="black_screen",
         next_node_id="act1_cutscene_nightmare_red_world",
         act=ACT_1
     ))
@@ -673,7 +695,7 @@ def add_act1_nodes(tree: StoryTree):
         node_id="act1_cutscene_nightmare_red_world",
         node_type=NodeType.CUTSCENE,
         text="",
-        bg=None,
+        bg="finn_nightmare",
         portrait=None,
         next_node_id="act1_cutscene_nightmare_shadows",
         act=ACT_1
@@ -684,7 +706,7 @@ def add_act1_nodes(tree: StoryTree):
         node_id="act1_cutscene_nightmare_shadows",
         node_type=NodeType.CUTSCENE,
         text="",
-        bg=None,
+        bg="finn_nightmare_2",
         portrait=None,
         next_node_id="act1_tuesday_nightmare_voice_line",
         act=ACT_1
@@ -703,6 +725,7 @@ def add_act1_nodes(tree: StoryTree):
         node_id="act1_end_of_act1",
         node_type=NodeType.NARRATION,
         text="You jolt awake, heart racing, the words still echoing in your ears.",
+        bg="room_sunset",
         next_node_id="act2_wed_morning_news_intro",
         act=ACT_1
     ))
