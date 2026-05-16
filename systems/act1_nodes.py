@@ -116,7 +116,7 @@ def add_act1_nodes(tree: StoryTree):
         node_type = NodeType.CUTSCENE,
         act       = 1,
         text      = "",           # no text needed
-        bg        = "school_ext", # your background key
+        bg        = None, # your background key
         portrait  = None,
         next_node_id = "act1_cutscene_red_hood_kid_frame_2"
     ))
@@ -127,7 +127,7 @@ def add_act1_nodes(tree: StoryTree):
         node_type = NodeType.CUTSCENE,
         act       = 1,
         text      = "",           # no text needed
-        bg        = "school_ext", # your background key
+        bg        = None, # your background key
         portrait  = None,
         next_node_id = "act1_school_cs_strange_line"
     ))
@@ -286,7 +286,7 @@ def add_act1_nodes(tree: StoryTree):
         node_type = NodeType.CUTSCENE,
         act       = 1,
         text      = "",           # no text needed
-        bg        = "school_ext", # your background key
+        bg        = None, # your background key
         portrait  = None,
         next_node_id = "act1_tuesday_physics_finn_line"
     ))
@@ -305,7 +305,7 @@ def add_act1_nodes(tree: StoryTree):
         node_type = NodeType.CUTSCENE,
         act       = 1,
         text      = "",           # no text needed
-        bg        = "school_ext", # your background key
+        bg        = None, # your background key
         portrait  = None,
         next_node_id = "act1_tuesday_physics_player_ears_prick"
     ))
