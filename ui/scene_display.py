@@ -16,21 +16,28 @@ class SceneDisplay:
         self.current_bg       = None     # The current background surface ready to draw.
         self.current_portrait = None    # The current portrait surface ready to draw.
 
-    def load_background(self, bg_path): # Loads a background image from a file path and scales it to fill the screen.
-        # If the image was already loaded before, uses the cached version instead.
-        if bg_path is None:
-            self.current_bg = None
+    def load_background(self, bg_key):
+        if bg_key is None:
             return
 
-        if bg_path not in self.bg_cache:
+        # Try .jpg first, then .png
+        for ext in ("jpg", "png"):
+            bg_path = f"assets/images/background/{bg_key}.{ext}"
+            if bg_path in self.bg_cache:
+                self.current_bg = self.bg_cache[bg_path]
+                return
             try:
-                image = pygame.image.load(bg_path).convert()                        # convert() speeds up drawing.
-                image = pygame.transform.scale(image, (SCREEN_WIDTH, SCREEN_HEIGHT)) # Scale to fill the screen.
+                image = pygame.image.load(bg_path).convert()
+                image = pygame.transform.scale(image, (SCREEN_WIDTH, SCREEN_HEIGHT))
                 self.bg_cache[bg_path] = image
+                self.current_bg = image
+                return
             except FileNotFoundError:
-                self.bg_cache[bg_path] = None  # File doesn't exist yet, store None as placeholder.
+                continue
 
-        self.current_bg = self.bg_cache[bg_path]
+        # Neither extension found
+        print(f"[Missing background] {bg_key}")
+        self.current_bg = None
 
     def load_portrait(self, character, state): # Loads a character portrait based on the character name and emotion state.
         # e.g. character="elias", state="demon" loads assets/portraits/elias_demon.png
