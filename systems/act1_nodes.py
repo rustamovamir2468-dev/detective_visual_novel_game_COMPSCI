@@ -202,6 +202,17 @@ def add_act1_nodes(tree: StoryTree):
         node_id="act1_tuesday_walk_maya_surprise",
         node_type=NodeType.NARRATION,
         text="You pull the door shut and start down the familiar street. Footsteps rush up behind you.",
+        next_node_id="act1_cutscene_maya_returns",
+        act=ACT_1
+    ))
+
+    # Maya appears Tuesday morning cutscene - 5744357
+    tree.add_node(StoryNode(
+        node_id="act1_cutscene_maya_returns",
+        node_type=NodeType.CUTSCENE,
+        text="",
+        bg=None,
+        portrait=None,
         next_node_id="act1_tuesday_walk_maya_appears",
         act=ACT_1
     ))
@@ -258,6 +269,17 @@ def add_act1_nodes(tree: StoryTree):
         node_id="act1_tuesday_school_corridor_transition",
         node_type=NodeType.NARRATION,
         text="The school buildings rise into view. The morning bell shrieks, and the corridor floods with students hurrying to class.",
+        next_node_id="act1_cutscene_school_corridor_rush",
+        act=ACT_1
+    ))
+
+    # Crowded school corridor after the bell cutscene - 5744357
+    tree.add_node(StoryNode(
+        node_id="act1_cutscene_school_corridor_rush",
+        node_type=NodeType.CUTSCENE,
+        text="",
+        bg=None,
+        portrait=None,
         next_node_id="act1_tuesday_physics_finn_intro",
         act=ACT_1
     ))
@@ -324,6 +346,17 @@ def add_act1_nodes(tree: StoryTree):
         node_id="act1_tuesday_chem_elias_intro",
         node_type=NodeType.NARRATION,
         text="Physics drags to an end. Later, in chemistry, the air feels lighter. Dr. Elias smiles as he wipes his hands on his red scarf.",
+        next_node_id="act1_cutscene_elias_chemistry_intro",
+        act=ACT_1
+    ))
+
+    # Elias is introduced in the chemistry classroom cutscene - 5744357
+    tree.add_node(StoryNode(
+        node_id="act1_cutscene_elias_chemistry_intro",
+        node_type=NodeType.CUTSCENE,
+        text="",
+        bg=None,
+        portrait=None,
         next_node_id="act1_tuesday_chem_elias_no_homework",
         act=ACT_1
     ))
@@ -425,6 +458,17 @@ def add_act1_nodes(tree: StoryTree):
         node_id="act1_tuesday_candy_distribution",
         node_type=NodeType.NARRATION,
         text="Dr. Elias moves between the rows with an easy smile, placing a bright, wrapped candy on each desk. The girl from before laughs it off and unwraps hers right away.",
+        next_node_id="act1_cutscene_candy_distribution",
+        act=ACT_1
+    ))
+
+    # Elias gives candy to the class cutscene - 5744357
+    tree.add_node(StoryNode(
+        node_id="act1_cutscene_candy_distribution",
+        node_type=NodeType.CUTSCENE,
+        text="",
+        bg=None,
+        portrait=None,
         next_node_id="act1_tuesday_candy_player_eats",
         act=ACT_1
     ))
@@ -579,6 +623,17 @@ def add_act1_nodes(tree: StoryTree):
         text="By the way… have you seen the news? There was a kidnapping of a kid from your school. Westwood School.",
         speaker="mom",
         portrait=("mom", "nervous"),
+        next_node_id="act1_cutscene_evening_news_reveal",
+        act=ACT_1
+    ))
+
+    # TV news cutscene - 5744357
+    tree.add_node(StoryNode(
+        node_id="act1_cutscene_evening_news_reveal",
+        node_type=NodeType.CUTSCENE,
+        text="",
+        bg=None,
+        portrait=None,
         next_node_id="act1_tuesday_evening_player_reacts_news",
         act=ACT_1
     ))
@@ -609,6 +664,28 @@ def add_act1_nodes(tree: StoryTree):
         node_id="act1_tuesday_nightmare_start",
         node_type=NodeType.NARRATION,
         text="Sleep finally drags you under. In your dream, the world is soaked in dark red. Voices whisper from every direction.",
+        next_node_id="act1_cutscene_nightmare_red_world",
+        act=ACT_1
+    ))
+
+    # Nightmare begins with dark red theme - 5744357
+    tree.add_node(StoryNode(
+        node_id="act1_cutscene_nightmare_red_world",
+        node_type=NodeType.CUTSCENE,
+        text="",
+        bg=None,
+        portrait=None,
+        next_node_id="act1_cutscene_nightmare_shadows",
+        act=ACT_1
+    ))
+
+    # Shadow figures appear in the nightmare: NO DISTINCTION - 5744357
+    tree.add_node(StoryNode(
+        node_id="act1_cutscene_nightmare_shadows",
+        node_type=NodeType.CUTSCENE,
+        text="",
+        bg=None,
+        portrait=None,
         next_node_id="act1_tuesday_nightmare_voice_line",
         act=ACT_1
     ))
@@ -621,6 +698,7 @@ def add_act1_nodes(tree: StoryTree):
         act=ACT_1
     ))
 
+    # Dark room of player as background
     tree.add_node(StoryNode(
         node_id="act1_end_of_act1",
         node_type=NodeType.NARRATION,
