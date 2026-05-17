@@ -13,6 +13,7 @@ def add_act3_nodes(tree: StoryTree):
         node_type=NodeType.NARRATION,
         act=3,
         text="By Friday morning, the halls feel thinner, like the school itself is holding its breath.",
+        bg="hallway_day",
         next_node_id="act3_fri_morning_hannah_reserved"
     ))
 
@@ -21,6 +22,7 @@ def add_act3_nodes(tree: StoryTree):
         node_type=NodeType.NARRATION,
         act=3,
         text="In computer science, Dr. Hannah moves through the lesson with less of her usual energy, eyes flicking to the door and windows more than the code on the board.",
+        bg="cs_class_day",
         next_node_id="act3_fri_player_notices_hannah"
     ))
 
@@ -77,6 +79,7 @@ def add_act3_nodes(tree: StoryTree):
         node_type=NodeType.NARRATION,
         act=3,
         text="After the final bell, you and Maya hang back near the staff parking lot. Dr. Hannah eventually appears with her bag, heading toward her car.",
+        bg="carpark_sunset",
         next_node_id="act3_fri_choice_follow_style"
     ))
 
@@ -162,6 +165,7 @@ def add_act3_nodes(tree: StoryTree):
         node_type=NodeType.NARRATION,
         act=3,
         text="Hannah's car slips out of the lot and into late-afternoon traffic. You and Maya trail from a distance, turning whenever her indicator flashes.",
+        bg="town_street",
         next_node_id="act3_fri_follow_weird_turn"
     ))
 
@@ -170,6 +174,7 @@ def add_act3_nodes(tree: StoryTree):
         node_type=NodeType.NARRATION,
         act=3,
         text="After a few normal turns past shops and houses, she suddenly cuts down a narrow side street you barely recognise.",
+        bg="alley",
         next_node_id="act3_fri_corner_disappears"
     ))
 
