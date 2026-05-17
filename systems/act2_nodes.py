@@ -13,6 +13,7 @@ def add_act2_nodes(tree: StoryTree):
         node_type=NodeType.NARRATION,
         act=2,
         text="The second missing-kid headline has everyone on edge. Every TV in town seems stuck on the same news channel.",
+        bg="news_screen",
         next_node_id="act2_wed_morning_player_leaves_home"
     ))
 
@@ -21,6 +22,7 @@ def add_act2_nodes(tree: StoryTree):
         node_type=NodeType.NARRATION,
         act=2,
         text="You rush through your morning routine and head out, the reporter's voice still echoing in your mind.",
+        bg="room_day",
         next_node_id="act2_wed_morning_school_gate_guard"
     ))
 
@@ -29,6 +31,7 @@ def add_act2_nodes(tree: StoryTree):
         node_type=NodeType.NARRATION,
         act=2,
         text="At the school gate, a new security guard stands stiffly by the entrance, scanning each student as they walk in.",
+        bg="westwood_day",
         next_node_id="act2_wed_morning_guard_interaction_choice"
     ))
 
@@ -64,6 +67,7 @@ def add_act2_nodes(tree: StoryTree):
         node_type=NodeType.NARRATION,
         act=2,
         text="Inside, the corridor buzzes with nervous chatter about curfews, police patrols, and missing classmates.",
+        bg="hallway_day",
         next_node_id="act2_wed_finn_class_intro"
     ))
 
@@ -72,6 +76,7 @@ def add_act2_nodes(tree: StoryTree):
         node_type=NodeType.NARRATION,
         act=2,
         text="By the time physics rolls around, the air in Dr. Finn's classroom feels heavier than usual.",
+        bg="physics_classroom",
         next_node_id="act2_wed_finn_start_lesson"
     ))
 
@@ -129,6 +134,7 @@ def add_act2_nodes(tree: StoryTree):
         node_type=NodeType.NARRATION,
         act=2,
         text="As the rest of the class stares at their notes, you quietly slip out, heart pounding in your ears.",
+        bg="hallway_day",
         next_node_id="act2_wed_corridor_finn_elias_scene"
     ))
 
@@ -195,6 +201,7 @@ def add_act2_nodes(tree: StoryTree):
         node_type=NodeType.NARRATION,
         act=2,
         text="Hours later, the story still circles in your head. You stay behind in the chemistry lab after school, determined to catch up on notes and prove you're not just causing trouble.",
+        bg="chemistry_class_sunset",
         next_node_id="ending_bad_chem_lab"
     ))
 
@@ -203,6 +210,7 @@ def add_act2_nodes(tree: StoryTree):
         node_type=NodeType.NARRATION,
         act=2,
         text="The quiet room grows hazy. A faint hiss whispers from a forgotten burner. By the time you notice the smell, it's already too late.",
+        bg="chemistry_closeup",
         next_node_id=None
     ))
 
@@ -213,6 +221,7 @@ def add_act2_nodes(tree: StoryTree):
         node_type=NodeType.NARRATION,
         act=2,
         text="You grip your pen tighter and stare at the worksheet. Confronting Finn in front of everyone would only make you look crazy.",
+        bg:"physics_class",
         next_node_id="act2_wed_finn_class_resumes"
     ))
 
@@ -229,6 +238,7 @@ def add_act2_nodes(tree: StoryTree):
         node_type=NodeType.NARRATION,
         act=2,
         text="Out in the corridor, students spill toward their next lessons, whispering about the kid who got kicked out and the security guard outside.",
+        bg="physics_class",
         next_node_id="act2_wed_lunch_with_maya"
     ))
 
@@ -239,6 +249,7 @@ def add_act2_nodes(tree: StoryTree):
         speaker="maya",
         portrait=("maya", "nervous"),
         text="You looked really tense in physics. Did something happen, or is it just the whole kidnapping thing?",
+        bg="hallway_day",
         next_node_id="act2_wed_player_lunch_reply"
     ))
 
@@ -275,6 +286,7 @@ def add_act2_nodes(tree: StoryTree):
         node_type=NodeType.NARRATION,
         act=2,
         text="After the final bell, you and Maya leave the building together. The sunset paints the pavement gold.",
+        bg="westwood_sunset",
         next_node_id="act2_wed_after_school_talk_missing_kids"
     ))
 
@@ -313,6 +325,7 @@ def add_act2_nodes(tree: StoryTree):
         node_type=NodeType.NARRATION,
         act=2,
         text="The next morning, the news is already blaring when you reach the kitchen. Your mom stares at the screen, her face pale.",
+        bg="kitchen_day",
         next_node_id="act2_thu_morning_tv_report"
     ))
 
