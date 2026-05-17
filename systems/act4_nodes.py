@@ -272,6 +272,7 @@ def add_act4_nodes(tree: StoryTree):
         node_id="ending_bad_police_explosion",
         node_type=NodeType.NARRATION,
         act=4,
+        bg="explosion_image",
         text="Elias had planned for heroes. The explosion tore through the church and the road alike, swallowing police, teachers, and students in one blinding wave.",
         next_node_id=None
     ))
