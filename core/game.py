@@ -189,7 +189,7 @@ class Game:
         next_node = self.scene_manager.get_current_node()
         if next_node is None:
             return
-        
+            
         self._play_music_for_act(next_node.act)
         
         if next_node.node_type == NodeType.CUTSCENE:
