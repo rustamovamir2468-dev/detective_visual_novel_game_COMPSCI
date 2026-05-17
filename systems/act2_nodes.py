@@ -238,10 +238,7 @@ def add_act2_nodes(tree: StoryTree):
         node_type=NodeType.NARRATION,
         act=2,
         text="Out in the corridor, students spill toward their next lessons, whispering about the kid who got kicked out and the security guard outside.",
-<<<<<<< HEAD
-=======
         bg="physics_class",
->>>>>>> c7aa759b6571a676c3df17a9ba4fa0de47ac687c
         next_node_id="act2_wed_lunch_with_maya"
     ))
 
