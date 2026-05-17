@@ -221,7 +221,7 @@ def add_act2_nodes(tree: StoryTree):
         node_type=NodeType.NARRATION,
         act=2,
         text="You grip your pen tighter and stare at the worksheet. Confronting Finn in front of everyone would only make you look crazy.",
-        bg:"physics_class",
+        bg="physics_class",
         next_node_id="act2_wed_finn_class_resumes"
     ))
 
@@ -315,6 +315,7 @@ def add_act2_nodes(tree: StoryTree):
         node_type=NodeType.NARRATION,
         act=2,
         text="At the corner, you and Maya split ways, heading down different streets as the sky fades from orange to deep blue.",
+        bg="street_sunset",
         next_node_id="act2_thu_morning_news_intro"
     ))
 
@@ -334,6 +335,7 @@ def add_act2_nodes(tree: StoryTree):
         node_type=NodeType.NARRATION,
         act=2,
         text="On-screen, a reporter stands near the school gates. A small red cloth is taped off behind her, flapping in the wind.",
+        bg="westwood_day",
         next_node_id="act2_thu_morning_player_reacts"
     ))
 
@@ -344,6 +346,7 @@ def add_act2_nodes(tree: StoryTree):
         speaker="player",
         portrait="shocked",
         text="That's… our school. And that's the red cloth they found?",
+        bg="kitchen_day",
         next_node_id="act2_thu_morning_mom_worried"
     ))
 
@@ -362,6 +365,7 @@ def add_act2_nodes(tree: StoryTree):
         node_type=NodeType.NARRATION,
         act=2,
         text="You promise you'll be careful, grab your bag, and head out, the image of the red cloth burned into your mind.",
+        bg="house_day",
         next_node_id="act2_thu_morning_walk_to_school"
     ))
 
@@ -370,6 +374,7 @@ def add_act2_nodes(tree: StoryTree):
         node_type=NodeType.NARRATION,
         act=2,
         text="The streets to school feel quieter than usual. Fewer kids, more nervous parents watching from doorways.",
+        bg="street_day",
         next_node_id="act2_thu_morning_meet_maya"
     ))
 
@@ -426,6 +431,7 @@ def add_act2_nodes(tree: StoryTree):
         node_type=NodeType.NARRATION,
         act=2,
         text="Later, in the corridor, you spot Dr. Finn at his classroom door. Today, his usual red handkerchief is nowhere to be seen.",
+        bg="hallway_day",
         next_node_id="act2_thu_morning_player_comment"
     ))
 
@@ -480,6 +486,7 @@ def add_act2_nodes(tree: StoryTree):
         node_type=NodeType.NARRATION,
         act=2,
         text="After the final bell, you and Maya linger near the parking lot, pretending to scroll your phones while staff cars slowly pull out.",
+        bg="carpark_sunset",
         next_node_id="act2_thu_after_school_follow_car"
     ))
 
@@ -496,6 +503,7 @@ def add_act2_nodes(tree: StoryTree):
         node_type=NodeType.NARRATION,
         act=2,
         text="The route winds away from school, past familiar shops and into quieter streets lined with worn-down houses.",
+        bg="campus_street",
         next_node_id="act2_thu_outside_house_listen"
     ))
 
@@ -522,6 +530,7 @@ def add_act2_nodes(tree: StoryTree):
         speaker="finn",
         portrait=None,
         text="I'm doing my best, mom. The kids hate me, the pay is awful, and the hospital still wants ten thousand. But I'll figure it out.",
+        bg="finn_sad",
         next_node_id="act2_thu_player_realisation"
     ))
 
@@ -532,6 +541,7 @@ def add_act2_nodes(tree: StoryTree):
         speaker="player",
         portrait="shocked",
         text="He's not some monster… he's just trying to keep his job and pay for her treatment.",
+        bg="campus_street",
         next_node_id="act2_thu_maya_realisation"
     ))
 
@@ -568,6 +578,7 @@ def add_act2_nodes(tree: StoryTree):
         node_type=NodeType.NARRATION,
         act=2,
         text="By the time you and Maya head back toward town, the sun is dipping low. The tracking app blips quietly in your pocket.",
+        bg="street_sunset",
         next_node_id="act2_end_of_act2"
     ))
 
